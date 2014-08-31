@@ -1,28 +1,7 @@
-== README
+== Prescription Manager
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+People on medicare advantage insurance have to manage their drug costs with the donut hole. This database app is designed to allow you to manage all your prescriptions and watch their renewals. It also will show you how much cost you need each month based on how they will renew. This will make it easier to budget and plan for expenses. In addition, knowing how much it will add to the donut hole to see where you are at and plan accordingly.
 
-Things you may want to cover:
+This will utilize ruby , rails and active record.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Randy Leighton
