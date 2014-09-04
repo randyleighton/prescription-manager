@@ -1,4 +1,6 @@
-<%= render('/layouts/errors', :object => @drug) %>
+<div id = "error_box" class = "row">
+  <%= render('/layouts/errors', :object => @drug) %>
+</div>
 
 <%= form_for(@drug) do |f| %>
   <div class="form-group">
@@ -6,6 +8,6 @@
     <%= f.text_field :name %>
     <%= f.label :description %>
     <%= f.text_field :description %>
-    <%= f.submit(:class="btn btn-primary") %>
+    <%= f.submit(:class => "btn btn-primary") %>
   </div>
 <% end %>

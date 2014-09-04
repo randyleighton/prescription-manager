@@ -6,7 +6,7 @@
 
   <div class="row">
     <% @drugs.each do |drug|%>
-      <%= link_to "drug.name", drug_path(@drug)%>
+      <%= link_to "#{drug.name}", drug_path(drug)%>
     <% end %>
   </div>
 

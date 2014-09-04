@@ -6,11 +6,16 @@ class DrugsController < ApplicationController
 
   def new
     @drug = Drug.new
-
   end
 
   def create
-
+    @drug = Drug.new(params[:drug])
+    if @drug.save
+      flash[:notice]="Created Successfully."
+      redirect_to drugs_path
+    else
+      render 'new'
+    end
   end
 
 
