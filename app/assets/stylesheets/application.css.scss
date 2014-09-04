@@ -15,3 +15,14 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  margin: 1em;
+}
+
+#error_box {
+  display: none;
+  background: lightblue;
+  padding: 20px;
+  color: blue;
+}

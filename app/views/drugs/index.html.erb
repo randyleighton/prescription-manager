@@ -1,25 +1,18 @@
+<% content_for(:title, "Home | Drugs" ) %>
+
 <div class="container-fluid">
 
 <h2>All Prescriptions</h2>
 
-<div class="row">
-  <% @drugs.each do |drug|%>
-    <%= link_to "drug.name", drug_path(@drug)%>
-  <% end %>
-</div>
+  <div class="row">
+    <% @drugs.each do |drug|%>
+      <%= link_to "drug.name", drug_path(@drug)%>
+    <% end %>
+  </div>
 
-<div class="row">
-  <%= link_to "New Drug", new_drug_path, :class =>"btn btn-primary" %>
-</div>
-
-
-
-
-
-
-
-
-
+  <div class="row">
+    <%= link_to "New Drug", new_drug_path, :class =>"btn btn-primary" %>
+  </div>
 
 
 </div>

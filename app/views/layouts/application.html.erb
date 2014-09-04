@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Prescriptions</title>
+<title><%= yield(:title) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,6 +9,20 @@
 <body>
 
 <%= yield %>
+
+<% if flash[:notice] == "Created Successfully." %>
+      <div class="alert alert-success" role="alert">
+        <%= flash[:notice] %>
+      </div>
+    <% elsif flash[:notice] == "Updated Successfully." %>
+      <div class="alert alert-info" role="alert">
+        <%= flash[:notice] %>
+      </div>
+    <% elsif flash[:notice] == "Removed Successfully." %>
+      <div class="alert alert-danger" role="alert">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
 
 </body>
 </html>

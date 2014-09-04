@@ -1,0 +1,11 @@
+<%= render('/layouts/errors', :object => @drug) %>
+
+<%= form_for(@drug) do |f| %>
+  <div class="form-group">
+    <%= f.label :name%>
+    <%= f.text_field :name %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <%= f.submit(:class="btn btn-primary") %>
+  </div>
+<% end %>
