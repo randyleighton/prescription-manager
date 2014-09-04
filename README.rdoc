@@ -5,3 +5,61 @@ People on medicare advantage insurance have to manage their drug costs with the 
 This will utilize ruby , rails and active record.
 
 Randy Leighton
+
+---
+To run this locally:
+$ git clone https://github.com/randyleighton/prescriptions-management-rails.git
+$ rake db:create
+$ rake db:migrate
+$ rails server
+Web Browser Address => http://localhost:3000/
+---
+* Created in Ruby 2.0.0, Rails 4.1.5
+* Utilizes Bundle gem to manage gem dependencies
+* Database utilized: PostgreSQL
+* Database names: prescriptions_development, prescriptions_test
+* Testing utilizes Rails helper, rspec 3.0.4, and rspec-rails 3.0.2
+  (if gem versions are lower than these try to use "bundle update")
+---
+There are many new and previous criteria this project will focus on:
+
+New criteria: Conventional Rails
+*Does your code continue to meet all of the standards from last week?
+*Do the routes use resources properly?
+*Are unused routes removed?
+*Is implicit rendering used properly in controllers?
+*Are route helpers used for all URLs?
+*Are all forms built with form helpers?
+*Is the app protected from CSRF?
+*Is the app protected from mass-assignment?
+*Is there thorough integration test coverage?
+*Is authentication implemented properly?
+
+Previous Rails Criteria:
+* Routes are created to utilize RESTful format.
+* There is a route for the homepage.
+* Render and redirecting are being utilized in the controller with flash messages.
+* Application logic in the models, and controllers do as little work as possible.
+* Parameters are utilizing the better parameters nesting format. The movie controller is using the params[:movie] format.
+* Forms display errors correctly, including partials.
+* Flash message is in place for new record creation, record updating, and deleting. These use bootstrap in the application.html.erb to utilize alerts.
+* Reused code for error checking and forms is refactored into partials.
+* App utilizes the asset pipeline for CSS. Bootstrap is setup and configured to run. The app/assets/stylesheets/application.css.scss file is renamed and contains css.
+---
+    TABLE - prescriptions
+    t.integer  "drug_id"
+    t.string   "drug_uom"
+    t.integer  "quantity"
+    t.date     "date"
+    t.integer  "renewal_interval"
+    t.float    "cost_not_in_dh"
+    t.float    "cost_in_dh"
+    t.float    "bill_to_dh"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+---
+    TABLE - drugs
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
