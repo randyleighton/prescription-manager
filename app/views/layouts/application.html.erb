@@ -7,22 +7,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="page_header" class="row jumbotron">
+  <img src="http://www.employmentlawyernewyork.com/images/medical_1.jpg">
+  <h2>Prescriptions Management</h2>
+</div>
 
-<%= yield %>
+<div class="container-fluid">
+  <div id="yield_body"class="row">
+    <%= yield %>
+  </div>
 
-<% if flash[:notice] == "Created Successfully." %>
-      <div class="alert alert-success" role="alert">
-        <%= flash[:notice] %>
-      </div>
-    <% elsif flash[:notice] == "Updated Successfully." %>
-      <div class="alert alert-info" role="alert">
-        <%= flash[:notice] %>
-      </div>
-    <% elsif flash[:notice] == "Removed Successfully." %>
-      <div class="alert alert-danger" role="alert">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-
+  <div id="flash_notice" class="row">
+    <% if flash[:notice] == "Created Successfully." %>
+          <div class="alert alert-success" role="alert">
+            <%= flash[:notice] %>
+          </div>
+        <% elsif flash[:notice] == "Updated Successfully." %>
+          <div class="alert alert-info" role="alert">
+            <%= flash[:notice] %>
+          </div>
+        <% elsif flash[:notice] == "Removed Successfully." %>
+          <div class="alert alert-danger" role="alert">
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
+  </div>
+</div>
 </body>
 </html>
