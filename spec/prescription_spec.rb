@@ -6,6 +6,6 @@ it { should validate_presence_of :drug_uom }
 it { should validate_presence_of :renewal_interval }
 
 it { should belong_to :drug}
-# it { should have_many :prescription_transactions}
+it { should have_many :prescription_transactions}
 
 end

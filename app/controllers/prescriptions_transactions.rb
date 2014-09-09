@@ -1,3 +1,0 @@
-class PrescriptionsTransactions < ApplicationController
-
-end
