@@ -1,0 +1,36 @@
+<% content_for(:title, "World of Prescriptions" ) %>
+
+    <div class="body_col col-xs-3">
+      <%= link_to image_tag("prescription.jpg", :border=>1, :class=>"image_box"), prescriptions_path %>
+      <p>Manage Prescriptions: Add new prescriptions, view all current prescriptions</p>
+    </div>
+
+    <div class="body_col col-xs-3">
+      <%= link_to image_tag("drug.jpg", :border=>1, :class=>"image_box"), drugs_path %>
+      <p>Manage Drugs: Add and view all drugs in your library. These will be added to your prescriptions.</p>
+    </div>
+
+    <div class="body_col col-xs-3">
+      <%= link_to image_tag("cost.jpg", :border=>1, :class=>"image_box"), drugs_path %>
+      <p>Manage costs: Look at your totals for the donut hole and how much you have spent on prescriptions year to date.</p>
+    </div>
+
+    <aside class="col-xs-3">
+      <div class="row aside_box">
+        <p>Donut Hole Remaining:</p>
+        <p>$1,326.00</p>
+      </div>
+      <div class="row aside_box">
+        <p>Out of Pocket YTD:</p>
+        <p>$345.00</p>
+      </div>
+      <div class="row aside_box2">
+        <p>Utilize this tool to manage your monthly prescriptions. It is challenging to understand the donut hole and to understand
+            the current yearly cost. This tool allows you to put in a monthly cost to your donut hole from your statement and the
+            tool will keep track of the yearly running total for the donut hole and your total prescriptions cost you have paid.
+            For more on the donut hole gap from the government website click here <a href="http://www.medicare.gov/part-d/costs/coverage-gap/part-d-coverage-gap.html">Medicare.gov</a></p>
+      </div
+    </aside>
+
+
+

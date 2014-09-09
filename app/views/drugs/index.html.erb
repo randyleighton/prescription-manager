@@ -1,18 +1,14 @@
-<% content_for(:title, "Home | Drugs" ) %>
-
-<div class="container-fluid">
-
-<h3>All Prescriptions</h3>
-
-  <div class="row">
-    <% @drugs.each do |drug|%>
-      <%= link_to "#{drug.name}", drug_path(drug)%>
-    <% end %>
+<% content_for(:title, "Drugs | WoP" ) %>
+<div>
+  <h3>Current Drugs:</h3>
+  <div class="body_fixed col-xs-9 clearfix container-fluid">
+      <% @drugs.each do |drug|%>
+        <div class="drug_tag"><%= link_to "#{drug.name}", drug_path(drug)%></div>
+      <% end %>
   </div>
-
-  <div class="row">
-    <%= link_to "New Drug", new_drug_path, :class =>"btn btn-primary" %>
-  </div>
-
-
+  <aside class="aside_box col-xs-3 clearfix container-fluid">
+    <div>Management Options</div>
+    <div><%= link_to "New Drug", new_drug_path, :class =>"btn btn-primary" %></div>
+  </aside>
 </div>
+

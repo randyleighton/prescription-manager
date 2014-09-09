@@ -2,22 +2,69 @@
 @import "bootstrap";
 
 body {
-  margin: 1em;
+  margin: .5em;
 }
 
-#error_box {
-  display: none;
-  background: lightblue;
-  padding: 20px;
-  color: blue;
+.jumbotron {
+ text-shadow: black 0.3em 0.3em 0.3em;
 }
-h2 {
+
+.heading_text {
   color: #428bca;
-}
+  font-family: 'Lobster', cursive;
+  font-size: 6em;
+  font-style: italic;
 
+}
 #page_header img {
-  height: 150px;
+  max-height: 20%;
   float: right;
+  border-radius: 10px;
   border: 2px solid #999;
-
 }
+.image_box {
+  max-width: 100%;
+  border-radius: 2em;
+}
+.body_col {
+  text-align: center;
+  padding: 5px;
+}
+.aside_box {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid blue;
+  border-radius: 7px;
+  background-color: #eeeeee;
+}
+.aside_box2 {
+  padding: 10px;
+  border-radius: 7px;
+  text-align: center;
+  border: 1px solid blue;
+}
+.aside_box p {
+  color: red;
+  font-style: bold;
+}
+.drug_tag {
+  padding: 5px;
+  float: left;
+  margin: 2px;
+  background: white;
+  border-radius: 3px;
+  margin-left: 5px;
+  border:1px solid #6699FF;
+}
+.drug_tag:hover, .drug_tag a:hover {
+  background: #6699ff;
+  color: #eee;
+  text-decoration: none;
+}
+.body_fixed {
+  max-width: 100%
+}
+.btn {
+  margin: .5em;
+}
+

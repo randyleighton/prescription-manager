@@ -11,7 +11,7 @@ class DrugsController < ApplicationController
   def create
     @drug = Drug.new(params[:drug])
     if @drug.save
-      flash[:notice]="Created Successfully."
+      flash[:notice] = "Created Successfully."
       redirect_to drugs_path
     else
       render 'new'

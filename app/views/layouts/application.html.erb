@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 <title><%= yield(:title) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="page_header" class="row jumbotron">
-  <img src="http://www.employmentlawyernewyork.com/images/medical_1.jpg">
-  <h2>Prescriptions Management</h2>
-</div>
-
-<div class="container-fluid">
-  <div id="yield_body"class="row">
+<div class = "container-fluid">
+  <div id="page_header" class="row jumbotron">
+    <img src="http://www.employmentlawyernewyork.com/images/medical_1.jpg">
+    <%= link_to "World of Prescriptions", root_path, :class => "heading_text" %>
+<!--     <div class="heading_text">World of Prescriptions</div>
+ -->
+  </div>
+  <div class = "yield_body clearfix">
     <%= yield %>
   </div>
-
   <div id="flash_notice" class="row">
     <% if flash[:notice] == "Created Successfully." %>
-          <div class="alert alert-success" role="alert">
-            <%= flash[:notice] %>
-          </div>
-        <% elsif flash[:notice] == "Updated Successfully." %>
-          <div class="alert alert-info" role="alert">
-            <%= flash[:notice] %>
-          </div>
-        <% elsif flash[:notice] == "Removed Successfully." %>
-          <div class="alert alert-danger" role="alert">
-            <%= flash[:notice] %>
-          </div>
-        <% end %>
+      <div class="alert alert-success" role="alert">
+        <%= flash[:notice] %></div>
+    <% elsif flash[:notice] == "Updated Successfully." %>
+        <div class="alert alert-info" role="alert">
+          <%= flash[:notice] %></div>
+    <% elsif flash[:notice] == "Removed Successfully." %>
+      <div class="alert alert-danger" role="alert">
+        <%= flash[:notice] %></div>
+    <% else %>
+      <% if flash[:notice] != nil %>
+        <div class="alert alert-danger" role="alert">
+          <%= flash[:notice] %></div>
+      <% end%>
+    <% end %>
+      <% if flash[:alert] != nil %>
+        <div class="alert alert-danger" role="alert">
+          <%= flash[:alert] %></div>
+      <% end%>
   </div>
 </div>
 </body>
