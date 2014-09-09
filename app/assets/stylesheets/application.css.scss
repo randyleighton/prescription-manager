@@ -5,8 +5,17 @@ body {
   margin: .5em;
 }
 
-.jumbotron {
- text-shadow: black 0.3em 0.3em 0.3em;
+.jumbotron a {
+ text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+@media (max-width: 480px) {
+  .jumbotron a {
+    font-size: 2.8em;
+  }
+  #page_header img {
+  max-height: 20%;
+}
 }
 
 .heading_text {
