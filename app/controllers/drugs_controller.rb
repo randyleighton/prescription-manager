@@ -18,17 +18,15 @@ class DrugsController < ApplicationController
     end
   end
 
-
-  def edit
-
-  end
-
-
-  def update
+  def show
+    @drug = Drug.find(params[:id])
   end
 
   def destroy
-
+    @drug = Drug.find(params[:id])
+    flash[:notice] = "Removed Successfully."
+    @drug.destroy
+    redirect_to drugs_path
   end
 
 end
