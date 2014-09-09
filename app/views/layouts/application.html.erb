@@ -1,51 +1,57 @@
 <!DOCTYPE html>
-<html ng-app>
+<html>
 <head>
   <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
-  <script>
-    function Clock($scope) {
-      $scope.currentTime = new Date();
-    }
-  </script>
+
   <title><%= yield(:title) %></title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 </head>
 <body>
-<div class = "container-fluid">
-  <div id="page_header" class="row jumbotron">
-    <img src="http://www.employmentlawyernewyork.com/images/medical_1.jpg" class="img-responsive">
-    <%= link_to "World of Prescriptions", root_path, :class => "heading_text" %>
-  </div>
+  <div class = "container-fluid">
+    <div id="page_header" class="row jumbotron">
+      <img src="http://www.employmentlawyernewyork.com/images/medical_1.jpg" class="img-responsive">
+      <%= link_to "World of Prescriptions", root_path, :class => "heading_text" %>
+    </div>
 
-  <div class = "yield_body clearfix">
-    <div ng-controller='Clock'>Current Time: {{currentTime | date: 'h:mm:ss a'}}.</div>
+    <div class = "yield_body clearfix">
+      <%= yield %>
+    </div>
 
-    <%= yield %>
-  </div>
-  <div id="flash_notice" class="row">
-    <% if flash[:notice] == "Created Successfully." %>
-      <div class="alert alert-success" role="alert">
-        <%= flash[:notice] %></div>
-    <% elsif flash[:notice] == "Updated Successfully." %>
-        <div class="alert alert-info" role="alert">
+    <div id="flash_notice" class="row">
+      <% if flash[:notice] == "Created Successfully." %>
+        <div class="alert alert-success" role="alert">
           <%= flash[:notice] %></div>
-    <% elsif flash[:notice] == "Removed Successfully." %>
-      <div class="alert alert-danger" role="alert">
-        <%= flash[:notice] %></div>
-    <% else %>
-      <% if flash[:notice] != nil %>
+      <% elsif flash[:notice] == "Updated Successfully." %>
+          <div class="alert alert-info" role="alert">
+            <%= flash[:notice] %></div>
+      <% elsif flash[:notice] == "Removed Successfully." %>
         <div class="alert alert-danger" role="alert">
           <%= flash[:notice] %></div>
-      <% end%>
-    <% end %>
-      <% if flash[:alert] != nil %>
-        <div class="alert alert-danger" role="alert">
-          <%= flash[:alert] %></div>
-      <% end%>
+      <% else %>
+        <% if flash[:notice] != nil %>
+          <div class="alert alert-danger" role="alert">
+            <%= flash[:notice] %></div>
+        <% end%>
+      <% end %>
+        <% if flash[:alert] != nil %>
+          <div class="alert alert-danger" role="alert">
+            <%= flash[:alert] %></div>
+        <% end%>
+    </div>
+
+    <script>
+      function Clock($scope) {
+        $scope.currentTime = new Date();
+      }
+    </script>
+
+    <footer class="footer_css" ng-app>
+      <p ng-controller='Clock'>Angular Clock - Current Time: {{currentTime | date: 'h:mm:ss a'}} - Project By Randy Leighton</p>
+    </footer>
+
   </div>
-</div>
 </body>
 </html>

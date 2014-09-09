@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(version: 20140909054726) do
     t.datetime "updated_at"
   end
 
+  create_table "ledgers", force: true do |t|
+    t.integer  "donut_hole_total"
+    t.integer  "ytd_paid_total"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "prescriptions", force: true do |t|
     t.integer  "drug_id"
     t.string   "drug_uom"
@@ -39,22 +46,6 @@ ActiveRecord::Schema.define(version: 20140909054726) do
     t.integer  "ledger_id"
     t.date     "date"
     t.integer  "quantity"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "prescriptions_transactions", force: true do |t|
-    t.integer  "prescription_id"
-    t.integer  "transaction_id"
-    t.date     "date"
-    t.integer  "quantity"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "transactions", force: true do |t|
-    t.integer  "donut_hole_total"
-    t.integer  "ytd_paid_total"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

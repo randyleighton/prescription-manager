@@ -1,0 +1,13 @@
+<% content_for(:title, "Prescriptions | WoP" ) %>
+<div>
+  <h3>Current Prescriptions:</h3>
+  <div class="body_fixed col-xs-9 clearfix container-fluid">
+      <% @prescriptions.each do |prescription|%>
+        <div class="prescription_tag"><%= link_to "#{prescription.name}", prescription_path(prescription)%></div>
+      <% end %>
+  </div>
+  <aside class="aside_box col-xs-3 clearfix">
+    <div>Management Options</div>
+    <div><%= link_to "New Prescription", new_prescription_path, :class =>"btn btn-primary" %></div>
+  </aside>
+</div>
