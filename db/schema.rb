@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140909011510) do
+ActiveRecord::Schema.define(version: 20140909053245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,13 +22,6 @@ ActiveRecord::Schema.define(version: 20140909011510) do
     t.float    "cost_not_in_dh"
     t.float    "cost_in_dh"
     t.float    "bill_to_dh"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "ledgers", force: true do |t|
-    t.integer  "donut_hole_total"
-    t.integer  "ytd_paid_total"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -46,6 +39,13 @@ ActiveRecord::Schema.define(version: 20140909011510) do
     t.integer  "ledger_id"
     t.date     "date"
     t.integer  "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "transactions", force: true do |t|
+    t.integer  "donut_hole_total"
+    t.integer  "ytd_paid_total"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
