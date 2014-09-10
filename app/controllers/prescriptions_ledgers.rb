@@ -1,3 +1,0 @@
-class PrescriptionsLedgers < ApplicationController
-
-end
