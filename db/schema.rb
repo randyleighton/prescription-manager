@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140910152247) do
+ActiveRecord::Schema.define(version: 20140910154512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,18 +26,18 @@ ActiveRecord::Schema.define(version: 20140910152247) do
     t.datetime "updated_at"
   end
 
-  create_table "ledgers", force: true do |t|
-    t.integer  "donut_hole_total"
-    t.integer  "ytd_paid_total"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "prescription_ledgers", force: true do |t|
+  create_table "ledger_prescriptions", force: true do |t|
     t.integer  "prescription_id"
     t.integer  "ledger_id"
     t.date     "date"
     t.integer  "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ledgers", force: true do |t|
+    t.integer  "donut_hole_total"
+    t.integer  "ytd_paid_total"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
