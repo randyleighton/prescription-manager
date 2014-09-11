@@ -10,7 +10,6 @@ class PrescriptionsController < ApplicationController
   end
 
   def create
-    # @prescription = @prescription.drugs.new
     @prescription = Prescription.new(params[:prescription])
     if @prescription.save
       flash[:notice] = "Created Successfully."
@@ -21,11 +20,11 @@ class PrescriptionsController < ApplicationController
   end
 
   def show
-    @prescription = Prescription.find([:id])
+    @prescription = Prescription.find(params[:id])
   end
 
   def destroy
-    @prescription = Prescription.find([:id])
+    @prescription = Prescription.find(params[:id])
     @prescription.destroy
     flash[:notice] = "Removed Successfully."
     redirect_to prescriptions_path
