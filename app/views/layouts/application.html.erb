@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='MainApp'>
 <head>
   <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
-
+  <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js" %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
   <title><%= yield(:title) %></title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
 </head>
 <body>
   <div class = "container-fluid">
@@ -42,13 +41,10 @@
         <% end%>
     </div>
 
-    <script>
-      function Clock($scope) {
-        $scope.currentTime = new Date();
-      }
-    </script>
 
-    <footer class="footer_css" ng-app>
+
+    <footer class="footer_css">
+
       <p ng-controller='Clock'>Angular Clock - Current Time: {{currentTime | date: 'h:mm:ss a'}} - Project By Randy Leighton</p>
     </footer>
 
