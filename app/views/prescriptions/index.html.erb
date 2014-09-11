@@ -3,7 +3,9 @@
   <h3>Current Prescriptions:</h3>
   <div class="body_fixed col-xs-9 clearfix container-fluid">
       <% @prescriptions.each do |prescription|%>
-        <div class="prescription_tag"><%= link_to "#{prescription.name}", prescription_path(prescription)%></div>
+        <div class="prescription_tag">
+          <p>Prescription: <%= link_to "#{prescription.drug.name}", prescription_path(prescription)%></p>
+        </div>
       <% end %>
   </div>
   <aside class="aside_box col-xs-3 clearfix">

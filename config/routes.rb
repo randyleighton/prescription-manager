@@ -3,7 +3,15 @@ root 'welcome#index'
 
 resources :prescriptions
 resources :drugs
-resources :prescriptions_transactions
 resources :ledger
+resources :ledger_prescriptions
+
+resources :drugs do
+  resources :prescriptions
+end
+
+resources :prescriptions do
+  resources :drugs
+end
 
 end

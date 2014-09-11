@@ -6,12 +6,13 @@ class PrescriptionsController < ApplicationController
   end
 
   def new
-    @prescription = Prescription.drug.new
+    @prescription = Prescription.new
   end
 
   def create
-    @drug = Prescription.new(params[:prescription])
-    if @drug.save
+    # @prescription = @prescription.drugs.new
+    @prescription = Prescription.new(params[:prescription])
+    if @prescription.save
       flash[:notice] = "Created Successfully."
       redirect_to prescriptions_path
     else

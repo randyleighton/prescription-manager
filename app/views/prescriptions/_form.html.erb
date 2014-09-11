@@ -4,10 +4,11 @@
 
 <%= form_for(@prescription) do |f| %>
   <div class="form-group">
-    <%= f.label :name%>
-    <%= f.text_field :name %>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
+    <%= f.collection_select :drug_id, Drug.all, :id, :name, :class=>'form-select' %>
+    <%= f.label :Unit_of_Measure %>
+    <%= f.text_field :drug_uom %>
+    <%= f.label :Renewal_interval_in_months %>
+    <%= f.text_field :renewal_interval %>
     <%= f.submit(:class => "btn btn-primary") %>
   </div>
 <% end %>
