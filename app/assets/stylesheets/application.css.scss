@@ -1,6 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.nav-format {
+  float: left;
+  padding-right: 30px;
+  padding-top: 10px;
+}
+
 body {
   margin: .5em;
 }
