@@ -7,9 +7,12 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'bcrypt'
+gem "simple_form"
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'tzinfo-data'
+
 
 group :development do
   gem 'better_errors'
@@ -24,6 +27,7 @@ end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'capybara'
 end
 
 group :production do
