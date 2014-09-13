@@ -1,4 +1,5 @@
 class DrugsController < ApplicationController
+  before_filter :authorize, only: [:edit, :update]
 
   def index
     @drugs = Drug.all
@@ -11,7 +12,7 @@ class DrugsController < ApplicationController
   def create
     @drug = Drug.new(params[:drug])
     if @drug.save
-      flash[:notice] = "Created Successfully."
+      flash[:notice] = "Successful"
       redirect_to drugs_path
     else
       render 'new'
@@ -24,7 +25,7 @@ class DrugsController < ApplicationController
 
   def destroy
     @drug = Drug.find(params[:id])
-    flash[:notice] = "Removed Successfully."
+      flash[:notice] = "Successful"
     @drug.destroy
     redirect_to drugs_path
   end
