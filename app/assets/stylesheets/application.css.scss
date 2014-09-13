@@ -1,18 +1,30 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Lato:700|Titillium+Web);
 
 .nav-format {
   float: left;
   padding-right: 30px;
   padding-top: 10px;
+  font-size: 1.5em;
+}
+
+.navbar-brand {
+  color: #2a6496;
+  font-size: 1.5em;
+  padding-top: 15px;
 }
 
 body {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
   margin: .5em;
 }
 
-.jumbotron a {
- text-shadow: black 0.1em 0.1em 0.2em;
+.wop {
+  font-family: 'Titillium Web', sans-serif;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  text-align: center;
 }
 
 @media (max-width: 480px) {
@@ -30,7 +42,7 @@ body {
 
 .heading_text {
   color: #428bca;
-  font-family: 'Lobster', cursive;
+  font-family: 'Titillium Web', sans-serif;
   font-size: 6em;
   font-style: italic;
 
@@ -42,7 +54,7 @@ body {
   border: 2px solid #999;
 }
 .image_box {
-  max-width: 100%;
+  max-width: 85%;
   border-radius: 2em;
 }
 .body_col {
@@ -50,15 +62,15 @@ body {
   padding: 5px;
 }
 .aside_box {
+  background-color: #b9d3ee;
   padding: 10px;
   text-align: center;
-  border: 1px solid blue;
-  border-radius: 7px;
-  background-color: #eeeeee;
+  border: 1px solid #e7e7e7;
+  border-radius: 3px;
 }
 .aside_box2 {
   padding: 10px;
-  border-radius: 7px;
+  border-radius: 3px;
   text-align: center;
   border: 1px solid blue;
 }
