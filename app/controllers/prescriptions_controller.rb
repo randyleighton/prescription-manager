@@ -11,7 +11,7 @@ class PrescriptionsController < ApplicationController
   end
 
   def create
-    @prescription = Prescription.new(params[:prescription])
+    @prescription = Prescription.new(prescription_params)
     if @prescription.save
        flash[:notice] = "Successful"
       redirect_to prescriptions_path
@@ -31,4 +31,8 @@ class PrescriptionsController < ApplicationController
     redirect_to prescriptions_path
   end
 
+  def prescription_params
+    params.require(:prescription).permit(:drug_id, :drug_uom, :renewal_interval)
+  end
+  
 end

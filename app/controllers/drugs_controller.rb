@@ -10,7 +10,7 @@ class DrugsController < ApplicationController
   end
 
   def create
-    @drug = Drug.new(params[:drug])
+    @drug = Drug.new(drug_params)
     if @drug.save
       flash[:notice] = "Successful"
       redirect_to drugs_path
@@ -28,6 +28,10 @@ class DrugsController < ApplicationController
       flash[:notice] = "Successful"
     @drug.destroy
     redirect_to drugs_path
+  end
+
+  def drug_params
+    params.require(:drug).permit(:name, :description, :cost_not_in_dh, :cost_in_dh, :bill_to_dh)
   end
 
 end
