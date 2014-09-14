@@ -1,5 +1,5 @@
 class AddUserIdToPrescriptions < ActiveRecord::Migration
   def change
-    add_column :prescriptions, :user_id, :string
+    add_column :prescriptions, :user_id, :integer
   end
 end

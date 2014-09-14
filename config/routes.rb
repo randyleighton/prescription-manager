@@ -4,20 +4,19 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
-  resources :users
-  resources :sessions
-  resources :prescriptions
-  resources :drugs
-  resources :ledger
-  resources :ledger_prescriptions
-  
-  resources :drugs do
-    resources :prescriptions
-  end
   resources :users do
     resources :prescriptions do
       resources :drugs
     end
   end
+  
+ resources :drugs do
+    resources :prescriptions
+  end
+  resources :prescriptions
+  resources :drugs
+  resources :sessions
+  resources :ledger
+  resources :ledger_prescriptions
   
 end
