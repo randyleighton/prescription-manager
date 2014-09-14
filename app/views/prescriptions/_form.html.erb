@@ -9,6 +9,7 @@
     <%= f.text_field :drug_uom %>
     <%= f.label :Renewal_interval_in_months %>
     <%= f.text_field :renewal_interval %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.submit(:class => "btn btn-primary") %>
   </div>
 <% end %>

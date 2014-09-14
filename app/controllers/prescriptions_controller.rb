@@ -11,7 +11,6 @@ class PrescriptionsController < ApplicationController
   end
 
   def create
-    binding.pry
     @prescription = Prescription.new(prescription_params)
     if @prescription.save
        flash[:notice] = "Successful"
@@ -33,7 +32,7 @@ class PrescriptionsController < ApplicationController
   end
 
   def prescription_params
-    params.require(:prescription).permit(:drug_id, :drug_uom, :renewal_interval)
+    params.require(:prescription).permit(:drug_id, :drug_uom, :renewal_interval, :user_id)
   end
   
 end
