@@ -11,6 +11,7 @@ class PrescriptionsController < ApplicationController
   end
 
   def create
+    binding.pry
     @prescription = Prescription.new(prescription_params)
     if @prescription.save
        flash[:notice] = "Successful"
