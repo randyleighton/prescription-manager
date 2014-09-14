@@ -6,7 +6,7 @@
   <div class="form-group">
     <%= f.collection_select :drug_id, Drug.all, :id, :name, :class=>'form-select' %>
     <%= f.label :Unit_of_Measure %>
-    <%= f.text_field :drug_uom %>
+    <%= f.text_field :drug_uom, :autofocus=>true %>
     <%= f.label :Renewal_interval_in_months %>
     <%= f.text_field :renewal_interval %>
     <%= f.hidden_field :user_id, :value => current_user.id %>

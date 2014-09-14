@@ -4,7 +4,7 @@
   <div class="body_fixed col-xs-9 clearfix container-fluid">
       <% @prescriptions.each do |prescription|%>
         <div class="prescription_tag">
-          <p>Prescription: <%= link_to "#{prescription.drug.name}", prescription_path(prescription)%></p>
+          <p>Prescription: <%= link_to "#{prescription.drug.name}", prescription_path(prescription) %></p>
         </div>
       <% end %>
   </div>

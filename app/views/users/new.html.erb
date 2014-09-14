@@ -3,9 +3,9 @@
 <%= render "layouts/errors", :object => @user %>
 
 <%= form_for(@user) do |f| %>
-<div class="form-group">
-  <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :autofocus=>true %>
   </div>
   <div class="form-group">
     <%= f.label :password %>

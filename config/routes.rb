@@ -13,8 +13,8 @@ Rails.application.routes.draw do
  resources :drugs do
     resources :prescriptions
   end
+
   resources :prescriptions
-  resources :drugs
   resources :sessions
   resources :ledger
   resources :ledger_prescriptions

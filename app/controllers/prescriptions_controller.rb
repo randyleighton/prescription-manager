@@ -1,19 +1,24 @@
 class PrescriptionsController < ApplicationController
-  before_filter :authorize, only: [:edit, :update]
+  before_filter :authorize, only: [:index, :edit, :update]
 
   def index
     @prescriptions = Prescription.all
     @drugs = Drug.all
+
   end
 
   def new
+    @drugs = Drug.all
+    if !@drugs.any?
+      redirect_to drugs_path, notice: 'Create drugs to use in your prescriptions'
+    end
     @prescription = Prescription.new
   end
 
   def create
     @prescription = Prescription.new(prescription_params)
     if @prescription.save
-       flash[:notice] = "Successful"
+      flash[:notice] = "#{@prescription.drug.name} prescription created successfully."
       redirect_to prescriptions_path
     else
       render 'new'

@@ -1,5 +1,5 @@
 class DrugsController < ApplicationController
-  before_filter :authorize, only: [:edit, :update]
+  before_filter :authorize, only: [:index, :edit, :update]
 
   def index
     @drugs = Drug.all
@@ -12,7 +12,7 @@ class DrugsController < ApplicationController
   def create
     @drug = Drug.new(drug_params)
     if @drug.save
-      flash[:notice] = "Successful"
+      flash[:notice] = "#{@drug.name} created successfully."
       redirect_to drugs_path
     else
       render 'new'
