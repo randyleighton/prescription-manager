@@ -2,6 +2,15 @@
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Lato:700|Titillium+Web);
 
+
+.navbar-default .navbar-brand {
+  color: #2a6496
+}
+
+.navbar {
+  background-color: #b9d3ee;
+}
+
 .nav-format {
   float: left;
   padding-right: 30px;
@@ -11,7 +20,6 @@
 
 .navbar-brand {
   color: #2a6496;
-  font-size: 1.5em;
   padding-top: 15px;
 }
 
