@@ -10,4 +10,10 @@ describe "user sign in" do
     expect(page).to have_content 'Logged in as nacho'
   end
 
+  it "will take an existing user to the log in page" do
+    visit '/'
+    click_link 'Log In'
+    expect(page).to have_content 'Log In'
+  end
+
 end
