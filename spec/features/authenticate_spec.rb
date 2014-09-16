@@ -1,0 +1,13 @@
+require 'rails_helper'
+
+describe "user sign in" do
+  it "will successfully allow a user to sign up" do
+    visit '/signup'
+    fill_in 'Name', with: 'nacho'
+    fill_in 'Password', with: 'testpassword'
+    fill_in 'Password confirmation', with: 'testpassword'
+    click_button 'Create User'
+    expect(page).to have_content 'Logged in as nacho'
+  end
+
+end
