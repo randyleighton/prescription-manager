@@ -2,7 +2,6 @@
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Lato:700|Titillium+Web);
 
-
 .navbar-default .navbar-brand {
   color: #2a6496
 }
@@ -81,6 +80,11 @@ body {
   color: black;
 }
 .aside_box p {
+  color: red;
+  font-style: bold;
+  font-size: 1.3em;
+}
+.coming-soon {
   color: red;
   font-style: bold;
   font-size: 1.3em;
