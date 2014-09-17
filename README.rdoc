@@ -10,6 +10,8 @@ I am going to continue to develop this app and build more features into it in th
 ---
 Randy Leighton
 ---
+To view this on heroku: http://prescription-manager.herokuapp.com/
+---
 To run this locally:
 $ git clone https://github.com/randyleighton/prescriptions-management-rails.git
 $ rake db:create
