@@ -77,6 +77,19 @@ describe "individual prescriptions" do
     click_link 'Norco'
     expect(page).to have_content 'Delete this prescription'
   end
+  it "deletes an individual prescription when a user clicks on delete link" do
+    user = User.create(name: 'nacho', password: 'testpassword')
+    drug = Drug.create(name: 'Norco', description: 'Strong Stuff', cost_not_in_dh: 10, cost_in_dh: 10, bill_to_dh: 10)
+    prescrip = Prescription.create(drug_id: drug.id, user_id: user.id, drug_uom: 1, renewal_interval: 1)
+    visit '/login'
+    fill_in 'Name', with: 'nacho'
+    fill_in 'Password', with: 'testpassword'
+    click_button 'Log In'
+    visit '/prescriptions'
+    click_link 'Norco'
+    click_link 'Delete this prescription'
+    expect(page).to have_content 'Successful'
+  end
 
 
 

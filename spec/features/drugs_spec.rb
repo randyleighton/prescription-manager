@@ -75,7 +75,7 @@ describe "individual drugs" do
     expect(page).to have_content 'Delete this drug'
   end
 
-  it "deletes an individual drug when a user chooses to destroy it" do
+  it "deletes an individual drug when a user clicks on delete link" do
     user = User.create(name: 'nacho', password: 'testpassword')
     visit '/login'
     fill_in 'Name', with: 'nacho'
