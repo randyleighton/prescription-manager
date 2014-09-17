@@ -4,7 +4,8 @@ describe "drug authentication" do
   it "will not allow user to access drug page without being logged in" do
     visit '/'
     find('img#drug-main').click
-    # find(:xpath, "//a[contains(@href,'/drugs')]").click
+    #another option for clicking the image link
+    #find(:xpath, "//a[contains(@href,'/drugs')]").click
     expect(page).to have_content 'Log In'
   end
 
@@ -28,7 +29,7 @@ describe "adding drugs" do
     click_button 'Log In'
     visit '/drugs'
     click_link 'New Drug'
-    # another way to click new drug
+    # another option for clicking new drug
     # find(:xpath, "//a[contains(@href,'/drugs/new')]").click
     fill_in 'Name', with: 'Norco'
     fill_in 'Description', with: 'Hydrocodone Generic for pain'

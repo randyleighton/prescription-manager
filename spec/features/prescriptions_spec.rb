@@ -57,8 +57,6 @@ describe "adding prescriptions" do
     select 'Norco', :from => 'prescription_drug_id'
     find_field('Drug uom')
     fill_in 'Drug uom', with: '1'
-    # find_field('Renewal interval')
-    # fill_in 'Renewal interval', with: '1'
     click_button 'Create Prescription'
     expect(page).to have_content "Renewal interval can't be blank"
   end

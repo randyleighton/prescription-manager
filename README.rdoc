@@ -22,18 +22,12 @@ Web Browser Address => http://localhost:3000/
   (if gem versions are lower than these try to use "bundle update")
 ---
 There are many new and previous criteria this project will focus on:
-
-New criteria: Conventional Rails
-*Does your code continue to meet all of the standards from last week?
-*Do the routes use resources properly?
-*Are unused routes removed?
-*Is implicit rendering used properly in controllers?
-*Are route helpers used for all URLs?
-*Are all forms built with form helpers?
-*Is the app protected from CSRF?
-*Is the app protected from mass-assignment?
-*Is there thorough integration test coverage?
-*Is authentication implemented properly?
+*Implicit rendering is used in controllers.
+*Route helpers used for all URLs.
+*All forms built with form helpers.
+*App is protected from CSRF and mass-assignment.
+*Extensive Capybara integration tests.
+*Authentication implemented and tested.
 
 Previous Rails Criteria:
 * Routes are created to utilize RESTful format.
@@ -45,21 +39,4 @@ Previous Rails Criteria:
 * Flash message is in place for new record creation, record updating, and deleting. These use bootstrap in the application.html.erb to utilize alerts.
 * Reused code for error checking and forms is refactored into partials.
 * App utilizes the asset pipeline for CSS. Bootstrap is setup and configured to run. The app/assets/stylesheets/application.css.scss file is renamed and contains css.
----
-    TABLE - prescriptions
-    t.integer  "drug_id"
-    t.string   "drug_uom"
-    t.integer  "quantity"
-    t.date     "date"
-    t.integer  "renewal_interval"
-    t.float    "cost_not_in_dh"
-    t.float    "cost_in_dh"
-    t.float    "bill_to_dh"
-    t.datetime "created_at"
-    t.datetime "updated_at"
----
-    TABLE - drugs
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+
