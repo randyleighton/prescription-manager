@@ -27,7 +27,7 @@ describe "adding drugs" do
     click_button 'Log In'
     visit '/drugs'
     click_link 'New Drug'
-    # another way to click new dug
+    # another way to click new drug
     # find(:xpath, "//a[contains(@href,'/drugs/new')]").click
     fill_in 'Name', with: 'Norco'
     fill_in 'Description', with: 'Hydrocodone Generic for pain'
@@ -46,23 +46,39 @@ describe "adding drugs" do
     click_button 'Log In'
     visit '/drugs'
     click_link 'New Drug'
-    # fill_in 'Name', with: 'Norco'
     fill_in 'Description', with: 'Hydrocodone Generic for pain'
     fill_in 'Cost not in dh', with: '10'
     fill_in 'Cost in dh', with: '30'
     fill_in 'Bill to dh', with: '20'
     click_button 'Create Drug'
     expect(page).to have_content "Name can't be blank"
-
-
   end
 end
 
-# describe "individual drugs" do
-#   it "views the information for a specific drug when a user clicks on it" do
+describe "individual drugs" do
+  it "views the information for a specific drug when a user clicks on it" do
+    user = User.create(name: 'nacho', password: 'testpassword')
+    visit '/login'
+    fill_in 'Name', with: 'nacho'
+    fill_in 'Password', with: 'testpassword'
+    click_button 'Log In'
+    visit '/drugs'
+    click_link 'New Drug'
+    fill_in 'Name', with: 'Norco'
+    fill_in 'Description', with: 'Hydrocodone Generic for pain'
+    fill_in 'Cost not in dh', with: '10'
+    fill_in 'Cost in dh', with: '30'
+    fill_in 'Bill to dh', with: '20'
+    click_button 'Create Drug'
+    click_link 'Norco'
+    expect(page).to have_content 'Delete this drug'
+  end
+  # it "deletes a drug when a user chooses to destroy it" do
 
-#   end
-#   it "deletes a drug when a user chooses to destroy it" do
+  # end
+end
 
-#   end
-# end
+
+
+
+
