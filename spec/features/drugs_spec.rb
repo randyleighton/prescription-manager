@@ -37,14 +37,26 @@ describe "adding drugs" do
     click_button 'Create Drug'
     expect(page).to have_content 'Norco created successfully'
   end
+
+  it "will not allow a user to create a new drug if missing information" do
+    user = User.create(name: 'nacho', password: 'testpassword')
+    visit '/login'
+    fill_in 'Name', with: 'nacho'
+    fill_in 'Password', with: 'testpassword'
+    click_button 'Log In'
+    visit '/drugs'
+    click_link 'New Drug'
+    # fill_in 'Name', with: 'Norco'
+    fill_in 'Description', with: 'Hydrocodone Generic for pain'
+    fill_in 'Cost not in dh', with: '10'
+    fill_in 'Cost in dh', with: '30'
+    fill_in 'Bill to dh', with: '20'
+    click_button 'Create Drug'
+    expect(page).to have_content "Name can't be blank"
+
+
+  end
 end
-
-
-
-#   it "will not allow a user to create a new drug if missing information" do
-
-#   end
-# end
 
 # describe "individual drugs" do
 #   it "views the information for a specific drug when a user clicks on it" do
