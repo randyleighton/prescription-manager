@@ -3,7 +3,8 @@ require 'rails_helper'
 describe "drug authentication" do
   it "will not allow user to access drug page without being logged in" do
     visit '/'
-    find(:xpath, "//a[contains(@href,'/drugs')]").click
+    find('img#drug-main').click
+    # find(:xpath, "//a[contains(@href,'/drugs')]").click
     expect(page).to have_content 'Log In'
   end
   it "will allow a user to access drug page if logged in" do
@@ -30,8 +31,6 @@ describe "adding drugs" do
     # find(:xpath, "//a[contains(@href,'/drugs/new')]").click
     fill_in 'Name', with: 'Norco'
     fill_in 'Description', with: 'Hydrocodone Generic for pain'
-    # cost = find(:xpath, "//a[contains(@id, 'cost_not_in_dh')]")
-    # cost.fill_in
     fill_in 'Cost not in dh', with: '10'
     fill_in 'Cost in dh', with: '30'
     fill_in 'Bill to dh', with: '20'
