@@ -28,9 +28,24 @@ describe "prescription authentication" do
 
 end
 
-
-
 describe "adding prescriptions" do
+  it "creates a new prescription if all information is entered correctly" do
+    user = User.create(name: 'nacho', password: 'testpassword')
+    drug = Drug.create(name: 'Norco', description: 'Strong Stuff', cost_not_in_dh: 10, cost_in_dh: 10, bill_to_dh: 10)
+    visit '/login'
+    fill_in 'Name', with: 'nacho'
+    fill_in 'Password', with: 'testpassword'
+    click_button 'Log In'
+    visit '/prescriptions'
+    click_on 'New Prescription'
+    select 'Norco', :from => 'prescription_drug_id'
+    find_field('Drug uom')
+    fill_in 'Drug uom', with: '1'
+    find_field('Renewal interval')
+    fill_in 'Renewal interval', with: '1'
+    click_button 'Create Prescription'
+    expect(page).to have_content 'Norco prescription created successfully.'
+  end
 
 end
 

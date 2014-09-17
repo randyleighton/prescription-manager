@@ -5,9 +5,9 @@
 <%= form_for(@prescription) do |f| %>
   <div class="form-group">
     <%= f.collection_select :drug_id, Drug.all, :id, :name, :class=>'form-select' %>
-    <%= f.label :Unit_of_Measure %>
+    <%= f.label :drug_uom %>
     <%= f.text_field :drug_uom, :autofocus=>true %>
-    <%= f.label :Renewal_interval_in_months %>
+    <%= f.label :renewal_interval %>
     <%= f.text_field :renewal_interval %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.submit(:class => "btn btn-primary") %>
