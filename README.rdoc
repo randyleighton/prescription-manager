@@ -2,7 +2,7 @@
 
 People on medicare advantage insurance have to manage their drug costs with the donut hole. This database app is designed to allow you to manage all your prescriptions and watch their renewals. It also will show you how much cost you need each month based on how they will renew. This will make it easier to budget and plan for expenses. In addition, knowing how much it will add to the donut hole to see where you are at and plan accordingly.
 
-This will utilize ruby , rails and active record.
+This will utilize ruby , rails and active record. - This is being refactored to utilize devise gem for authentication.
 ---
 In addition to the conventional rails coding points this project has significant amount of time devoted to CSS and user look and feel. The home page is responsive and looks great on any device!
 
@@ -10,7 +10,7 @@ I am going to continue to develop this app and build more features into it in th
 ---
 Randy Leighton
 ---
-To view this on heroku: http://prescription-manager.herokuapp.com/
+To view this on heroku: 
 ---
 To run this locally:
 $ git clone https://github.com/randyleighton/prescriptions-management-rails.git
