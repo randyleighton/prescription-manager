@@ -1,5 +1,0 @@
-<% content_for(:title, "New | Drugs" ) %>
-<div>
-  <h4>Enter details for new drug: </h4>
-  <%= render 'form' %>
-</div>
