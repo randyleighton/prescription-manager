@@ -1,0 +1,19 @@
+#error_box.row
+  = render('/layouts/errors', :object => @drug)
+= form_for(@drug) do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name, :autofocus=>true
+  .form-group
+    = f.label :description
+    = f.text_field :description
+  .form-group
+    = f.label :cost_not_in_dh
+    = f.text_field :cost_not_in_dh
+  .form-group
+    = f.label :cost_in_dh
+    = f.text_field :cost_in_dh
+  .form-group
+    = f.label :bill_to_dh
+    = f.text_field :bill_to_dh
+    = f.submit(:class => "btn btn-primary")
