@@ -1,0 +1,9 @@
+- content_for(:title, "Drugs | WoP")
+%div
+  %h3 Current Drugs:
+  .body_fixed.col-xs-9.clearfix.container-fluid
+    - @drugs.each do |drug|
+      .drug_tag= link_to "#{drug.name}", drug_path(drug)
+  %aside.aside_box.col-xs-3.clearfix
+    %div Management Options
+    %div= link_to "New Drug", new_drug_path, :class =>"btn btn-primary"
