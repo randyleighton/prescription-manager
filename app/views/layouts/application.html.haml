@@ -22,7 +22,8 @@
       .nav.navbar-nav.navbar-right
         - if current_user
           .nav-format
-            Logged in as = current_user.name
+            Logged in as
+            = current_user.name
           .nav-format= link_to "Log Out", logout_path
         - else
           .nav-format= link_to "Sign Up", signup_path
@@ -31,7 +32,7 @@
   .yield_body.clearfix
     =yield
   #flash_notice.clearfix
-    - if flash[:notice] == 'Sucessful'
+    - if flash[:notice] == 'Successful'
       .alert.alert-success{:role =>"alert"}
         =flash[:notice]
     - elsif flash[:notice] != nil

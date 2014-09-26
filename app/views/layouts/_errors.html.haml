@@ -1,0 +1,9 @@
+- if object.errors.any?
+  :javascript
+    $(document).ready(function() {
+      $("#error_box").show();
+    });
+%ul
+  - object.errors.full_messages.each do |error|
+    %li= error
+
