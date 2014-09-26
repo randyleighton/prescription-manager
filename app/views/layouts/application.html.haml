@@ -1,0 +1,51 @@
+!!!
+%html{"ng-app"=>"MainApp"}
+%head
+%link{:href=>"http://fonts.googleapis.com/css?family=Lobster", :rel =>"stylesheet", :type =>"text/css"}
+= javascript_include_tag "//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"
+= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+= javascript_include_tag 'application', 'data-turbolinks-track' => true
+= csrf_meta_tags
+%title= yield(:title)
+%body
+.container
+  #page_header.wop
+    = link_to "World of Prescriptions", root_path, :class=>"heading_text"
+  %nav.navbar.navbar-default
+    .navbar-header
+      %button.navbar-toggle{"data-toggle"=>"collapse","data-target"=>".navbar-responsive-collapse", :type =>"button"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      .navbar-brand World of Prescriptions
+    .navbar-collapse.collapse.navbar-responsive-collapse.nav_formatting
+      .nav.navbar-nav.navbar-right
+        - if current_user
+          .nav-format
+            Logged in as = current_user.name
+          .nav-format= link_to "Log Out", logout_path
+        - else
+          .nav-format= link_to "Sign Up", signup_path
+          .nav-format= link_to "Log In", login_path
+        .nav-format= link_to "Home", root_path
+  .yield_body.clearfix
+    =yield
+  #flash_notice.clearfix
+    - if flash[:notice] == 'Sucessful'
+      .alert.alert-success{:role =>"alert"}
+        =flash[:notice]
+    - elsif flash[:notice] != nil
+      .alert.alert-info{:role =>"alert"}
+        =flash[:notice]
+    - if flash[:alert] != nil
+      .alert.alert-danger{:role =>"alert"}
+        =flash[:alert]
+  %footer.footer_css
+    %p{"ng-controller"=>"Clock"} Angular Clock - Current Time: {{currentTime | date: 'h:mm:ss a'}} - Project By Randy Leighton
+
+
+
+
+
+
+

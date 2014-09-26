@@ -12,6 +12,7 @@ gem "simple_form"
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'tzinfo-data'
+gem 'haml'
 
 
 group :development do
