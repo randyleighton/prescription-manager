@@ -1,0 +1,12 @@
+- content_for(:title, "Prescriptions | WoP" )
+%h3 Current Prescriptions:
+.body_fixed.col-xs-9.clearfix.container
+  - @prescriptions.each do |prescription|
+    .prescription_tag
+      %p 
+      Prescription: 
+      = link_to "#{prescription.drug.name}", prescription_path(prescription)
+%aside.aside_box.col-xs-3.clearfix
+  %div  Management Options
+  %div 
+  = link_to "New Prescription", new_prescription_path, :class =>"btn btn-primary"
