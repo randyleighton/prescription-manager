@@ -1,0 +1,14 @@
+- content_for(:title, "Prescription | WoP" )
+
+%div
+  %h4
+  = @prescription.drug.name
+  %p Prescription strength: 
+  = @prescription.drug_uom
+  %p Renewal every: 
+  = @prescription.renewal_interval 
+  months.
+%div
+  = link_to "Delete this prescription", prescription_path(@prescription), :data => {:confirm => "You sure?", :method => "delete"}
+%div
+= link_to "Back", prescriptions_path
