@@ -20,14 +20,15 @@
       .navbar-brand World of Prescriptions
     .navbar-collapse.collapse.navbar-responsive-collapse.nav_formatting
       .nav.navbar-nav.navbar-right
-        - if current_user
+        - if user_signed_in?
           .nav-format
             Logged in as
-            = current_user.name
-          .nav-format= link_to "Log Out", logout_path
+            = current_user.email
+          .nav-format= link_to "Edit Profile", edit_user_registration_path
+          .nav-format= link_to "Log Out", destroy_user_session_path, method: :delete
         - else
-          .nav-format= link_to "Sign Up", signup_path
-          .nav-format= link_to "Log In", login_path
+          .nav-format= link_to "Sign Up", new_user_registration_path
+          .nav-format= link_to "Log In", new_user_session_path
         .nav-format= link_to "Home", root_path
   .yield_body.clearfix
     =yield
@@ -42,7 +43,7 @@
       .alert.alert-danger{:role =>"alert"}
         =flash[:alert]
   %footer.footer_css
-    %p{"ng-controller"=>"Clock"} Angular Clock - Current Time: {{currentTime | date: 'h:mm:ss a'}} - Project By Randy Leighton
+    %p{"ng-controller"=>"Clock"} Angular Clock - Current Time at page load: {{currentTime | date: 'h:mm:ss a'}} - Project By Randy Leighton
 
 
 

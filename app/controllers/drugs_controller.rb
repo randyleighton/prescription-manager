@@ -1,5 +1,5 @@
 class DrugsController < ApplicationController
-
+  before_filter :authenticate_user!
 
   def index
     @drugs = Drug.all
