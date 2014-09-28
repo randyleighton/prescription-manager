@@ -13,6 +13,7 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'tzinfo-data'
 gem 'haml'
+gem 'devise'
 
 
 group :development do
