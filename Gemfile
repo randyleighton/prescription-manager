@@ -7,7 +7,6 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
-# gem 'bcrypt'
 gem "simple_form"
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'

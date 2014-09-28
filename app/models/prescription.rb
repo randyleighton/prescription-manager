@@ -5,6 +5,6 @@ class Prescription < ActiveRecord::Base
   
   has_many :ledger_prescriptions
   belongs_to :drug
-  belongs_to :user
+#   belongs_to :user
 
 end
