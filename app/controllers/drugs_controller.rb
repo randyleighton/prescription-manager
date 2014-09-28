@@ -1,5 +1,5 @@
 class DrugsController < ApplicationController
-  before_filter :authorize, only: [:index, :edit, :update]
+#   before_filter :authorize, only: [:index, :edit, :update]
 
   def index
     @drugs = Drug.all
