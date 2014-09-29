@@ -29,11 +29,11 @@
         - if user_signed_in?
           .nav-format
             Logged in as
-            = current_user.email
+            = current_user.name
           .nav-format= link_to "Edit Profile", edit_user_registration_path
           .nav-format= link_to "Log Out", destroy_user_session_path, method: :delete
         - else
-          .nav-format= link_to "Sign Up", new_user_registration_path
+          .nav-format= link_to "Create Account", new_user_registration_path
           .nav-format= link_to "Log In", new_user_session_path
         .nav-format= link_to "Home", root_path
   .yield_body.clearfix
