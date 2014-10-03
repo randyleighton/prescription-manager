@@ -2,6 +2,21 @@
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Lato:700|Titillium+Web);
 
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  margin: .5em;
+}
+
+.wop {
+  font-family: 'Titillium Web', sans-serif;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  text-align: center;
+  color: #428bca;
+  font-size: 6em;
+  font-style: italic;
+}
+
 .navbar-default .navbar-brand {
   color: #2a6496
 }
@@ -22,43 +37,10 @@
   padding-top: 15px;
 }
 
-body {
-  font-family: 'Lato', sans-serif;
-  font-weight: bold;
-  margin: .5em;
-}
-
-.wop {
-  font-family: 'Titillium Web', sans-serif;
-  text-shadow: black 0.1em 0.1em 0.2em;
-  text-align: center;
-}
-
-@media (max-width: 480px) {
-  .jumbotron a {
-    font-size: 2.8em;
-  }
-  #page_header img {
-  max-height: 20%;
-}
-}
-
 .drug_form {
   float: left;
 }
 
-.heading_text {
-  color: #428bca;
-  font-family: 'Titillium Web', sans-serif;
-  font-size: 6em;
-  font-style: italic;
-}
-#page_header img {
-  max-height: 20%;
-  float: right;
-  border-radius: 10px;
-  border: 2px solid #999;
-}
 .image_box {
   border-radius: 2em;
 }
