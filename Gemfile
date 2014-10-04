@@ -4,7 +4,6 @@ gem 'rails'
 gem 'pg'
 gem 'sass-rails'
 gem 'uglifier'
-gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem "simple_form"
