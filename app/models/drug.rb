@@ -7,7 +7,7 @@ validates :cost_in_dh, presence: true
 validates :bill_to_dh, presence: true
 
 
-has_many :prescriptions
+has_many :prescriptions, dependent: :destroy
 
 end
 
