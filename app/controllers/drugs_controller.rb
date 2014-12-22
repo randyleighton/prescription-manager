@@ -2,7 +2,7 @@ class DrugsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @drugs = Drug.all
+    @drugs = Drug.all.where(user_id:current_user.id)
   end
 
   def new

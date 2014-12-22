@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140928180344) do
+ActiveRecord::Schema.define(version: 20141222004422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20140928180344) do
     t.float    "cost_in_dh"
     t.float    "bill_to_dh"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "filled_prescriptions", force: :cascade do |t|
+    t.integer  "prescription_id"
+    t.integer  "drug_id"
+    t.integer  "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
