@@ -1,0 +1,3 @@
+class FilledPrescriptionsController < ApplicationController
+
+end
