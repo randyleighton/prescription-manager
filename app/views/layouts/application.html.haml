@@ -16,15 +16,17 @@
 %title= yield(:title)
 %body
 .container
-  #page_header.wop
-    = link_to "World of Prescriptions", root_path, :class=>"heading_text"
   %nav.navbar.navbar-default
     .navbar-header
       %button.navbar-toggle{"data-toggle"=>"collapse","data-target"=>".navbar-responsive-collapse", :type =>"button"}
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      .navbar-brand World of Prescriptions
+      .navbar-brand
+        = link_to root_path, :class=>"heading_text" do
+          = image_tag("favicon.ico")
+          Prescription Manager
+
     .navbar-collapse.collapse.navbar-responsive-collapse.nav_formatting
       .nav.navbar-nav.navbar-right
         - if user_signed_in?
@@ -36,7 +38,6 @@
         - else
           .nav-format= link_to "Create Account", new_user_registration_path
           .nav-format= link_to "Log In", new_user_session_path
-        .nav-format= link_to "Home", root_path
   .yield_body.clearfix
     =yield
   #flash_notice.clearfix

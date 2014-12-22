@@ -4,17 +4,6 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  font-weight: bold;
-  margin: .5em;
-}
-
-.wop {
-  font-family: 'Titillium Web', sans-serif;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
-  text-align: center;
-  color: #428bca;
-  font-size: 6em;
-  font-style: italic;
 }
 
 .navbar-default .navbar-brand {
@@ -28,13 +17,12 @@ body {
 .nav-format {
   float: left;
   padding-right: 30px;
-  padding-top: 10px;
+/*  padding-top: 10px;*/
   font-size: 1.5em;
 }
 
 .navbar-brand {
   color: #2a6496;
-  padding-top: 15px;
 }
 
 .drug_form {
@@ -127,6 +115,16 @@ input#user_email, input#user_password, input#user_password_confirmation, input#u
   border-radius: 5px;   */
 }
 
-
-
+a.heading_text {
+  color: #000;
+  font-size: 1.3em;
+  text-decoration: none;
+  img {
+  max-width: 1.5em;
+  }
+  &:hover {
+    color: #337ab7;
+    text-shadow: 1px 1px 1px #000;
+  } 
+}
 
