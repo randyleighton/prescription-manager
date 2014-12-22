@@ -2,7 +2,7 @@
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Raleway:700,400);
 
-$malibu: #98c8fb;
+$carrara: #f4f3f1;
 
 body .yield-top {
   margin-top: 2.5em;
@@ -14,7 +14,7 @@ body .yield-top {
 }
 
 .navbar {
-  background:image-url("pattern-12vd.png");
+  background:image-url("bg-tan.jpg");
   background-color: #b9d3ee;
   height: 70px;
 }
@@ -32,7 +32,7 @@ body .yield-top {
 }
 
 .jumbotron {
-  background-color: $malibu;
+  background-color: $carrara;
   display: block;
   text-align: center;
   /*margin-left: 0 auto;*/
@@ -55,6 +55,10 @@ body .yield-top {
 
 .image_box {
   border-radius: 2em;
+  opacity: .8;
+  &:hover {
+    opacity: 1;
+  }
 }
 .aside_box {
   background-color: #b9d3ee;

@@ -1,7 +1,7 @@
 - content_for(:title, "Prescriptions" )
 .jumbotron
   %h1 Current Prescriptions
-  = link_to "Add a New Prescription", new_prescription_path, :class =>"btn btn-primary btn-lg"
+  = link_to "Add a New Prescription", new_prescription_path, :class =>"btn btn-default btn-lg"
 .body_fixed.col-xs-12
   - @prescriptions.each do |prescription|
     - drug = Drug.find(prescription.drug_id)

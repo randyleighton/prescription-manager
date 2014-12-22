@@ -1,9 +1,8 @@
-- content_for(:title, "Current Drugs | WoP")
-%div
-  %h3 Current Drugs:
-  .body_fixed.col-xs-9.clearfix.container-fluid
-    - @drugs.each do |drug|
-      .drug_tag= link_to "#{drug.name}", drug_path(drug)
-  %aside.aside_box.col-xs-3.clearfix
-    %div Management Options
-    %div= link_to "Create New Drug", new_drug_path, :class =>"btn btn-primary"
+- content_for(:title, "Drugs")
+.jumbotron
+  %h1 Current Drugs:
+  = link_to "Add a New Drug", new_drug_path, :class =>"btn btn-default btn-lg"
+
+.body_fixed.col-xs-9.clearfix.container-fluid
+  - @drugs.each do |drug|
+    .drug_tag= link_to "#{drug.name}", drug_path(drug)
