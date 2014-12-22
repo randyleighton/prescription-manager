@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20141222004422) do
     t.datetime "updated_at"
   end
 
-  create_table "filled_prescriptions", force: :cascade do |t|
+  create_table "filledprescriptions", force: :cascade do |t|
     t.integer  "prescription_id"
     t.integer  "drug_id"
     t.integer  "quantity"
