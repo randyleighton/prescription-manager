@@ -1,6 +1,6 @@
 #error_box.row
   = render('/layouts/errors', :object => @drug)
-= form_for(@drug) do |f|
+= simple_form_for(@drug, html: {class: 'form-horizontal'}) do |f|
   .form-group
     = f.label :name
     = f.text_field :name, :autofocus=>true

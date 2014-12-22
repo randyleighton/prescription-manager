@@ -11,6 +11,5 @@ Rails.application.routes.draw do
   end
 
   resources :drugs
-  resources :sessions
   
 end
