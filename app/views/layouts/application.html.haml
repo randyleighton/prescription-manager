@@ -2,7 +2,6 @@
 %html{"ng-app"=>"MainApp"}
 %head
 = favicon_link_tag 'favicon.ico'
-%link{:href=>"http://fonts.googleapis.com/css?family=Lobster", :rel =>"stylesheet", :type =>"text/css"}
 = javascript_include_tag "//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"
 = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
 = javascript_include_tag 'application', 'data-turbolinks-track' => true
@@ -15,7 +14,6 @@
    });
 %title= yield(:title)
 %body
-.container
   %nav.navbar.navbar-default
     .navbar-header
       %button.navbar-toggle{"data-toggle"=>"collapse","data-target"=>".navbar-responsive-collapse", :type =>"button"}
@@ -38,17 +36,16 @@
         - else
           .nav-format= link_to "Create Account", new_user_registration_path
           .nav-format= link_to "Log In", new_user_session_path
-  .yield_body.clearfix
+
     =yield
-  #flash_notice.clearfix
-    - if flash[:notice] != nil
-      .alert.alert-info{:role =>"alert"}
-        =flash[:notice]
-    - if flash[:alert] != nil
-      .alert.alert-danger{:role =>"alert"}
-        =flash[:alert]
-  %footer.footer_css
-    %p{"ng-controller"=>"Clock"} Angular Clock - Current Time at page load: {{currentTime | date: 'h:mm:ss a'}} - Project By Randy Leighton
+
+    #flash_notice.clearfix
+      - if flash[:notice] != nil
+        .alert.alert-info{:role =>"alert"}
+          =flash[:notice]
+      - if flash[:alert] != nil
+        .alert.alert-danger{:role =>"alert"}
+          =flash[:alert]
 
 
 

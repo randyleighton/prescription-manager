@@ -1,5 +1,6 @@
 - content_for(:title, "Prescriptions" )
-%h3 Current Prescriptions:
+.jumbotron.container-fluid
+  %h1 Current Prescriptions
 .body_fixed.col-xs-9.clearfix.container
   - @prescriptions.each do |prescription|
     - drug = Drug.find(prescription.drug_id)

@@ -1,16 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import url(http://fonts.googleapis.com/css?family=Lato:700|Titillium+Web);
+@import url(http://fonts.googleapis.com/css?family=Raleway:700,400);
 
-body {
-  font-family: 'Lato', sans-serif;
-}
+$malibu: #98c8fb;
+
+
+
 
 .navbar-default .navbar-brand {
   color: #2a6496
 }
 
 .navbar {
+  background:image-url("pattern-el53.png");
   background-color: #b9d3ee;
   height: 70px;
 }
@@ -24,6 +26,17 @@ body {
 
 .navbar-brand {
   color: #2a6496;
+  font-family: 'Raleway', sans-serif;
+}
+
+.jumbotron {
+  background-color: $malibu;
+  display: block;
+  text-align: center;
+  /*margin-left: 0 auto;*/
+  h1 {
+      font-family: 'Raleway', sans-serif;
+  }
 }
 
 .btn-float {
@@ -84,9 +97,6 @@ body {
   max-width: 100%
 }
 
-.footer_css {
-  padding-top: 5em;
-}
 .login_form {
   margin-left: 15px;
   margin-bottom: 15px;
