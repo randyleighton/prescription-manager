@@ -4,12 +4,14 @@
   %thead
     %tr
       %th Drug
-      %th Unit of Measure
+      %th Dosage (10mg, 10-325mg, etc)
+      %th Quantity Prescribed
       %th Renewal
   %tbody
     %tr
       %td= @prescription.drug.name
       %td= @prescription.drug_uom
+      %td= @prescription.quantity_prescribed
       %td= @prescription.renewal_interval.to_s.html_safe + " month(s)"
 
 %div

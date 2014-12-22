@@ -1,13 +1,17 @@
 #error_box.row
   =render('/layouts/errors', :object => @prescription)
-= form_for(@prescription) do |f|
+= simple_form_for(@prescription, html: {class: 'form-horizontal'}) do |f|
   .form-group
     = f.hidden_field :user_id, :value => current_user.id
     = f.collection_select :drug_id, Drug.all, :id, :name ,prompt: true, class: 'form-select'
-    = f.label :drug_uom
+  .form-group
+    = f.label "Dosage (10mg, 10-325mg, etc)", :drug_uom
     = f.text_field :drug_uom, :autofocus=>true
-    = f.label :renewal_interval
+  .form-group
+    = f.label "How long is prescription in Months", :renewal_interval
     = f.text_field :renewal_interval
-    = f.submit(:class => "btn btn-primary")
-
-  
+  .form-group
+    =f.label "Quantity Prescibed", :quantity_prescribed
+    = f.text_field :quantity_prescribed
+  .form-group
+    = f.submit(:class => "btn btn-default")

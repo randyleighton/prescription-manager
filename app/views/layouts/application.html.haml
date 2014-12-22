@@ -37,7 +37,7 @@
           .nav-format= link_to "Create Account", new_user_registration_path
           .nav-format= link_to "Log In", new_user_session_path
 
-    =yield
+    .yield-top= yield
 
     #flash_notice.clearfix
       - if flash[:notice] != nil

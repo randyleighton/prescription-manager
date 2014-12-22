@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20141222020559) do
     t.integer  "drug_id"
     t.string   "drug_uom"
     t.integer  "renewal_interval"
+    t.integer  "quantity_prescribed"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

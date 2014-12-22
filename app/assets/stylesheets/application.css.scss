@@ -4,7 +4,9 @@
 
 $malibu: #98c8fb;
 
-
+body .yield-top {
+  margin-top: 2.5em;
+}
 
 
 .navbar-default .navbar-brand {
@@ -12,7 +14,7 @@ $malibu: #98c8fb;
 }
 
 .navbar {
-  background:image-url("pattern-el53.png");
+  background:image-url("pattern-12vd.png");
   background-color: #b9d3ee;
   height: 70px;
 }
@@ -36,6 +38,8 @@ $malibu: #98c8fb;
   /*margin-left: 0 auto;*/
   h1 {
       font-family: 'Raleway', sans-serif;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+      margin-bottom: 20px;
   }
 }
 
