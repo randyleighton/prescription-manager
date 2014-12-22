@@ -4,5 +4,5 @@ describe User do
   
 #   it { should validate_uniqueness_of :name }
   it { should have_many :prescriptions }
-  
-end
+  it { should have_many(:fillings).through(:prescriptions) }  
+end 

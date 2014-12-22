@@ -5,10 +5,12 @@ Rails.application.routes.draw do
     root to: 'welcome#index'
     match '/sessions/user', to: 'devise/sessions#create', via: :post
   end
+
   resources :prescriptions do
-    resources :drugs
+    resources :fillings
   end
+
+  resources :drugs
   resources :sessions
-  resources :filled_prescriptions
   
 end
