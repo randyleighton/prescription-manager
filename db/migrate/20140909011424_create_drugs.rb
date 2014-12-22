@@ -6,6 +6,8 @@ class CreateDrugs < ActiveRecord::Migration
       t.float :cost_not_in_dh
       t.float :cost_in_dh
       t.float :bill_to_dh
+      t.integer :user_id
+      
       t.timestamps
     end
   end

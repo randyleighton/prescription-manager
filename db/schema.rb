@@ -11,47 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140928223901) do
+ActiveRecord::Schema.define(version: 20140928180344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "drugs", force: true do |t|
+  create_table "drugs", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
     t.float    "cost_not_in_dh"
     t.float    "cost_in_dh"
     t.float    "bill_to_dh"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "ledger_prescriptions", force: true do |t|
-    t.integer  "prescription_id"
-    t.integer  "ledger_id"
-    t.date     "date"
-    t.integer  "quantity"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "ledgers", force: true do |t|
-    t.integer  "donut_hole_total"
-    t.integer  "ytd_paid_total"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "prescriptions", force: true do |t|
+  create_table "prescriptions", force: :cascade do |t|
     t.integer  "drug_id"
     t.string   "drug_uom"
     t.integer  "renewal_interval"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -64,7 +50,6 @@ ActiveRecord::Schema.define(version: 20140928223901) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
