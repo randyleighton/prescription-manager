@@ -1,6 +1,7 @@
 #error_box.row
   = render('/layouts/errors', :object => @drug)
 = simple_form_for(@drug, html: {class: 'form-horizontal'}) do |f|
+  = f.hidden_field :user_id, value: current_user.id
   .form-group
     = f.label :name
     = f.text_field :name, :autofocus=>true
@@ -17,3 +18,4 @@
     = f.label :bill_to_dh
     = f.text_field :bill_to_dh
     = f.submit(:class => "btn btn-primary")
+

@@ -4,7 +4,6 @@ class PrescriptionsController < ApplicationController
   def index
     @prescriptions = Prescription.all.where(user_id:current_user.id)
     @drugs = Drug.all
-
   end
 
   def new

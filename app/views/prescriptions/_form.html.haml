@@ -2,12 +2,12 @@
   =render('/layouts/errors', :object => @prescription)
 = form_for(@prescription) do |f|
   .form-group
-    = f.collection_select :drug_id, Drug.all, :id, :name, :class=>'form-select'
+    = f.hidden_field :user_id, :value => current_user.id
+    = f.collection_select :drug_id, Drug.all, :id, :name ,prompt: true, class: 'form-select'
     = f.label :drug_uom
     = f.text_field :drug_uom, :autofocus=>true
     = f.label :renewal_interval
     = f.text_field :renewal_interval
-    = f.hidden_field :user_id, :value => current_user.id
     = f.submit(:class => "btn btn-primary")
 
   
