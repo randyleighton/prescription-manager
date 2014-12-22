@@ -1,14 +1,18 @@
 - content_for(:title, "Prescription | WoP" )
 
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %th Drug
+      %th Unit of Measure
+      %th Renewal
+  %tbody
+    %tr
+      %td= @prescription.drug.name
+      %td= @prescription.drug_uom
+      %td= @prescription.renewal_interval.to_s.html_safe + " month(s)"
+
 %div
-  %h4
-  = @prescription.drug.name
-  %p Prescription strength: 
-  = @prescription.drug_uom
-  %p Renewal every: 
-  = @prescription.renewal_interval 
-  months.
+  = link_to "Delete this prescription", prescription_path(@prescription), :data => {:confirm => "You sure?", :method => "delete"}, class: "btn btn-default btn-float"
 %div
-  = link_to "Delete this prescription", prescription_path(@prescription), :data => {:confirm => "You sure?", :method => "delete"}
-%div
-= link_to "Back", prescriptions_path
+= link_to "Back", prescriptions_path, class: "btn btn-default btn-float"
