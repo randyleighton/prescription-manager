@@ -1,8 +1,8 @@
-#error_box.row
-  = render('/layouts/errors', :object => @drug)
 .border-form-div
   = simple_form_for(@drug, html: {class: 'form-horizontal'}) do |f|
     %h3 Enter Drug Details
+    #error_box.row
+      = render('/layouts/errors', :object => @drug)
     = f.hidden_field :user_id, value: current_user.id
 
     .form-group

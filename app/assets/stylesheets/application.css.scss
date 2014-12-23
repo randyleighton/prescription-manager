@@ -18,8 +18,40 @@
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Raleway:700,400);
 
+/*--------------------
+SASS Color Variables
+--------------------*/
+$boot_blue: #428bca;
 $carrara: #f4f3f1;
 $st_tropaz: #2a6496;
+$mercury: #e5e5e5;
+
+/*--------------------
+SASS MIXINS
+--------------------*/
+@mixin rounded-corners($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin shadowed-corners($color) {
+  -webkit-box-shadow: 3px 3px 3px $color;
+     -moz-box-shadow: 3px 3px 3px $color;
+          box-shadow: 3px 3px 3px $color;
+}
+@mixin list-bullets($content) {
+  margin: 1em;
+  // margin-left: 1em;
+  &:before {
+  content: $content;
+  font-family: 'FontAwesome';
+  float: left;
+  margin-left: -1.5em;
+  color: $button-sec;
+  }
+}
+
 
 body .yield-top {
   margin-top: 2.5em;
@@ -144,30 +176,21 @@ body .yield-top {
 }
 
 .border-form-div {
-  max-width: 400px;
-  padding: 19px 29px 29px;
+  max-width: 540px;
+  padding: .4em .6em;
   margin: 0 auto;
   background-color: #fff;
-  border: 1px solid #e5e5e5;
-  -webkit-border-radius: 5px;
-     -moz-border-radius: 5px;
-          border-radius: 5px;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-          box-shadow: 0 1px 2px rgba(0,0,0,.05);
-}
-
-input#user_remember_me {
-  margin-right: 5px;
-}
-
-input#user_email, input#user_password, input#user_password_confirmation, input#user_name {
-  margin-bottom: 15px;
-/*   font-size: 16px;
-  height: auto; 
-  padding: 7px 9px;
-  border: 1px solid #e5e5e5;
-  border-radius: 5px;   */
+  border: 1px solid $mercury;
+  @include rounded-corners(.4em);
+  @include shadowed-corners(rgba(0,0,0,.10));
+  h2 {
+    color: $boot_blue;
+    margin: .5em;
+  }
+  a {
+    color: $boot_blue;
+    margin: 3px;
+  }
 }
 
 
