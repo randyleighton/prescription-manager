@@ -14,3 +14,4 @@
 //= require jquery_ujs
 //= require main_app
 //= require bootstrap.js
+//= require scripts.js
