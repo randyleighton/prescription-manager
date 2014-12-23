@@ -5,7 +5,6 @@
     %h3 Enter Drug Details
     = f.hidden_field :user_id, value: current_user.id
 
-
     .form-group
       = f.label "Drug Name",:name
       = f.text_field :name, class: "form-control", :autofocus=>true
@@ -24,11 +23,17 @@
 
     .form-group
       = f.label "Cost you pay if you are in the donut hole",:cost_in_dh
-      = f.text_field :cost_in_dh, class: "form-control"
+      .input-group
+        %span.input-group-addon
+          %i.fa.fa-usd.fa-fw
+        = f.text_field :cost_in_dh, class: "form-control"
 
     .form-group
       = f.label "How much does this bill to donut hole",:bill_to_dh
-      = f.text_field :bill_to_dh, class: "form-control"
+      .input-group
+        %span.input-group-addon
+          %i.fa.fa-usd.fa-fw
+        = f.text_field :bill_to_dh, class: "form-control"
 
     .form-group  
       = f.submit(:class => "btn btn-default")
