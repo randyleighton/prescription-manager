@@ -118,6 +118,7 @@ body .yield-top {
 }
 
 .btn-float {
+  color: $st_tropaz;
   float: left;
   margin-right: 10px;
   background-color: $carrara;
@@ -183,11 +184,11 @@ body .yield-top {
   @include rounded-corners(.4em);
   @include shadowed-corners(rgba(0,0,0,.10));
   h2 {
-    color: $boot_blue;
+    color: $st_tropaz;
     margin: .5em;
   }
   a {
-    color: $boot_blue;
+    color: $st_tropaz;
     // margin: 3px;
   }
 }
@@ -199,6 +200,6 @@ body .yield-top {
   padding: 0 .5em;
   @include rounded-corners(.4em);
   h4 {
-    color: $boot_blue;
+    color: $st_tropaz;
   }
 }
