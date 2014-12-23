@@ -1,7 +1,9 @@
 - content_for(:title, "Drug List")
 .jumbotron
   %h1 Drug List
+  %p Create a library of drugs to use in your prescriptions.
   = link_to "Add a New Drug", new_drug_path, :class =>"btn btn-default btn-lg"
+
 
 .body_fixed.col-xs-9.clearfix.container-fluid
   - @drugs.each do |drug|

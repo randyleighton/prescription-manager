@@ -1,5 +1,7 @@
 - content_for(:title, "#{@prescription.drug.name}" )
 
+.jumbotron
+  %h1=@prescription.drug.name.to_s + " Prescription"
 %table.table.table-bordered.table-striped.table-responsive
   %thead
     %tr
