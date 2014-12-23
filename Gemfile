@@ -12,6 +12,7 @@ gem 'autoprefixer-rails'
 gem 'tzinfo-data'
 gem 'haml'
 gem 'devise'
+gem 'font-awesome-less'
 
 
 group :development do
