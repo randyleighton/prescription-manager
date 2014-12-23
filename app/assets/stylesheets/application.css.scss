@@ -25,6 +25,7 @@ $boot_blue: #428bca;
 $carrara: #f4f3f1;
 $st_tropaz: #2a6496;
 $mercury: #e5e5e5;
+$golden_tainoi: #fec95c;
 
 /*--------------------
 SASS MIXINS
@@ -122,6 +123,10 @@ body .yield-top {
   float: left;
   margin-right: 10px;
   background-color: $carrara;
+}
+
+.btn-lg {
+  background-color: $golden_tainoi;
 }
 
 .drug_form {
