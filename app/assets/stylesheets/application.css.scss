@@ -3,43 +3,56 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:700,400);
 
 $carrara: #f4f3f1;
+$st_tropaz: #2a6496;
 
 body .yield-top {
   margin-top: 2.5em;
 }
 
-
-.navbar-default .navbar-brand {
-  color: #2a6496
-}
-
 .navbar {
-  background:image-url("bg-tan.jpg");
-  background-color: #b9d3ee;
+  background-color: $st_tropaz;
   height: 70px;
 }
 
 .nav-format {
+  color: white;
   float: left;
   padding-right: 30px;
   padding-top: 20px;
   font-size: 1.1em;
+  a {
+    color: white;
+  }
 }
 
 .navbar-brand {
-  color: #2a6496;
+  color: #white;
   font-family: 'Raleway', sans-serif;
+  a {
+    color: white;
+    font-size: 1.3em;
+    text-decoration: none;
+    img {
+    max-width: 1.5em;
+    }
+    &:hover {
+      color: #337ab7;
+      text-shadow: 1px 1px 1px #000;
+    } 
+  }
 }
 
 .jumbotron {
+  padding: 1em;
   background-color: $carrara;
   display: block;
   text-align: center;
   /*margin-left: 0 auto;*/
   h1 {
-      font-family: 'Raleway', sans-serif;
-      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
-      margin-bottom: 20px;
+    color: $st_tropaz;
+    font-family: 'Raleway', sans-serif;
+    text-shadow: 0 1px 0 #000;
+    margin-bottom: 20px;
   }
 }
 
@@ -140,16 +153,4 @@ input#user_email, input#user_password, input#user_password_confirmation, input#u
   border-radius: 5px;   */
 }
 
-a.heading_text {
-  color: #000;
-  font-size: 1.3em;
-  text-decoration: none;
-  img {
-  max-width: 1.5em;
-  }
-  &:hover {
-    color: #337ab7;
-    text-shadow: 1px 1px 1px #000;
-  } 
-}
 
