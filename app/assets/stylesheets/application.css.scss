@@ -30,13 +30,14 @@ body .yield-top {
   font-family: 'Raleway', sans-serif;
   a {
     color: white;
+    text-shadow: 1px 1px 1px #000;
     font-size: 1.3em;
     text-decoration: none;
     img {
     max-width: 1.5em;
     }
     &:hover {
-      color: #337ab7;
+      color: gray;
       text-shadow: 1px 1px 1px #000;
     } 
   }
@@ -47,7 +48,7 @@ body .yield-top {
   background-color: $carrara;
   display: block;
   text-align: center;
-  /*margin-left: 0 auto;*/
+  margin-bottom: 10px; 
   h1 {
     color: $st_tropaz;
     font-family: 'Raleway', sans-serif;
@@ -59,7 +60,7 @@ body .yield-top {
 .btn-float {
   float: left;
   margin-right: 10px;
-  background-color: #b9d3ee;
+  background-color: $carrara;
 }
 
 .drug_form {

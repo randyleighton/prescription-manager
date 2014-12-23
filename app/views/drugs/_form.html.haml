@@ -1,21 +1,24 @@
 #error_box.row
   = render('/layouts/errors', :object => @drug)
-= simple_form_for(@drug, html: {class: 'form-horizontal'}) do |f|
-  = f.hidden_field :user_id, value: current_user.id
-  .form-group
-    = f.label :name
-    = f.text_field :name, :autofocus=>true
-  .form-group
-    = f.label :description
-    = f.text_field :description
-  .form-group
-    = f.label :cost_not_in_dh
-    = f.text_field :cost_not_in_dh
-  .form-group
-    = f.label :cost_in_dh
-    = f.text_field :cost_in_dh
-  .form-group
-    = f.label :bill_to_dh
-    = f.text_field :bill_to_dh
-    = f.submit(:class => "btn btn-default")
+.border-form-div
+  = simple_form_for(@drug, html: {class: 'form-horizontal'}) do |f|
+    %h3 Enter Drug Details
+    = f.hidden_field :user_id, value: current_user.id
+    .form-group
+      = f.label "Drug Name",:name
+      = f.text_field :name, class: "form-control", :autofocus=>true
+    .form-group
+      = f.label "Describe what drug is for",:description
+      = f.text_area :description, class: "form-control"
+    .form-group
+      = f.label "Cost you pay when not in donut hole",:cost_not_in_dh
+      = f.text_field :cost_not_in_dh, class: "form-control"
+    .form-group
+      = f.label "Cost you pay if you are in the donut hole",:cost_in_dh
+      = f.text_field :cost_in_dh, class: "form-control"
+    .form-group
+      = f.label "How much does this bill to donut hole",:bill_to_dh
+      = f.text_field :bill_to_dh, class: "form-control"
+    .form-group  
+      = f.submit(:class => "btn btn-default")
 
