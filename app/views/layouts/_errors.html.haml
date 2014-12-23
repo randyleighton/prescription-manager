@@ -1,9 +1,9 @@
 - if object.errors.any?
-  :javascript
-    $(document).ready(function() {
-      $("#error_box").show();
-    });
-%ul
-  - object.errors.full_messages.each do |error|
-    %li= error
-
+  .error_explanation
+    %h4
+    = pluralize(object.errors.count, "error") 
+    prohibited this activity from being saved:
+    %ul
+    - object.errors.full_messages.each do |msg|
+      %li= msg
+    

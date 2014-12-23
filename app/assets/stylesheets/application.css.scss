@@ -193,4 +193,13 @@ body .yield-top {
   }
 }
 
-
+/*------ error box ------*/
+.error_explanation {
+  border: 1px solid $mercury;
+  margin: 0 0 1em 0;
+  padding: 0 .5em;
+  @include rounded-corners(.4em);
+  h4 {
+    color: $boot_blue;
+  }
+}
