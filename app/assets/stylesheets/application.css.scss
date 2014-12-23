@@ -106,9 +106,13 @@ body .yield-top {
 }
 
 .btn-float {
+  color: $boot_blue;
   float: left;
   margin-right: 10px;
   background-color: $carrara;
+  &:hover {
+    color: $boot_blue;
+  }
 }
 
 .drug_form {
@@ -189,7 +193,7 @@ body .yield-top {
   }
   a {
     color: $boot_blue;
-    margin: 3px;
+    // margin: 3px;
   }
 }
 
