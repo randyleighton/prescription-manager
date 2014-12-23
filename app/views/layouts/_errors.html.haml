@@ -1,8 +1,6 @@
 - if object.errors.any?
   .error_explanation
-    %h4
-    = pluralize(object.errors.count, "error") 
-    prohibited this activity from being saved:
+    %h4= pluralize(object.errors.count, "error").to_s + " needs to be corrected to save this information:"
     %ul
     - object.errors.full_messages.each do |msg|
       %li= msg
