@@ -27,13 +27,13 @@
 
     .navbar-collapse.collapse.navbar-responsive-collapse
       .nav.navbar-nav.navbar-right.btn-group.open
-        %a.btn.btn-primary{:href => "#"}
+        %a.btn.btn-default{:href => "#"}
           %i.fa.fa-user.fa-fw
           - if user_signed_in?
             = current_user.name
           - else
-            Log In
-        %a.btn.btn-primary.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            Log In or Create Account
+        %a.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
           %span.fa.fa-caret-down
         %ul.dropdown-menu
           - if user_signed_in?
