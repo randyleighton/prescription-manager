@@ -25,20 +25,37 @@
           = image_tag("favicon.ico")
           Prescription Manager
 
-    .navbar-collapse.collapse.navbar-responsive-collapse.nav_formatting
-      .nav.navbar-nav.navbar-right
-        - if user_signed_in?
-          .nav-format
-            Logged in as
+    .navbar-collapse.collapse.navbar-responsive-collapse
+      .nav.navbar-nav.navbar-right.btn-group.open
+        %a.btn.btn-primary{:href => "#"}
+          %i.fa.fa-user.fa-fw
+          - if user_signed_in?
             = current_user.name
-          .nav-format= link_to "Edit Profile", edit_user_registration_path
-          .nav-format= link_to "Log Out", destroy_user_session_path, method: :delete
-        - else
-          .nav-format= link_to "Create Account", new_user_registration_path
-          .nav-format= link_to "Log In", new_user_session_path
+          - else
+            Log In
+        %a.btn.btn-primary.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+          %span.fa.fa-caret-down
+        %ul.dropdown-menu
+          - if user_signed_in?
+            %li
+              = link_to edit_user_registration_path do
+                %i.fa.fa-pencil.fa-fw
+                Edit Profile
+            %li
+              = link_to destroy_user_session_path, method: :delete do
+                %i.fa.fa-pencil.fa-fw
+                Log Out
+          - else
+            %li
+              = link_to new_user_registration_path do
+                %i.fa.fa-pencil.fa-fw
+                Create Account
+            %li
+              = link_to new_user_session_path do
+                %i.fa.fa-pencil.fa-fw
+                Log In
 
     .yield-top= yield
-
     #flash_notice.clearfix
       - if flash[:notice] != nil
         .alert.alert-info{:role =>"alert"}
