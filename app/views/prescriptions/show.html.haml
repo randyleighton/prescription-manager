@@ -1,6 +1,6 @@
-- content_for(:title, "Prescription" )
+- content_for(:title, "#{@prescription.drug.name}" )
 
-%table.table.table-bordered.table-striped
+%table.table.table-bordered.table-striped.table-responsive
   %thead
     %tr
       %th Drug

@@ -1,7 +1,27 @@
 - content_for(:title, "#{@drug.name} | WoP" )
+
+%table.table.table-bordered.table-striped.table-responsive
+  %thead
+    %tr
+      %th Drug
+      %th Description
+      %th Cost You Pay
+      %th Cost You Pay (In Donut Hole)
+      %th Amount Billed to Insurance
+  %tbody
+    %tr
+      %td= @drug.name
+      %td= @drug.description
+      %td 
+        $
+        = sprintf('%.2f', @drug.cost_not_in_dh)
+      %td
+        $
+        = sprintf('%.2f', @drug.cost_in_dh)
+      %td
+        $ 
+        = sprintf('%.2f', @drug.bill_to_dh)
+
 %div
-  %h4= @drug.name
-  %p= @drug.description
-%div
-  %p= link_to "Delete this drug", drug_path(@drug), :data => {:confirm => "NEVER delete drugs that there are prescriptions for, are you sure?", :method => "delete"}
-= link_to "Back", drugs_path
+  = link_to "Delete this drug", drug_path(@drug), class: "btn btn-default btn-float", :data => {:confirm => "NEVER delete drugs that there are prescriptions for, are you sure?", :method => "delete"}
+  = link_to "Back", drugs_path, class: "btn btn-default btn-float"

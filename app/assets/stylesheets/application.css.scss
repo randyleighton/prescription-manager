@@ -103,16 +103,24 @@ body .yield-top {
     text-shadow: 0 1px 0 #000;
     margin-bottom: 20px;
   }
+  p {
+    color: $st_tropaz;
+  }
+}
+
+.btn-default {
+  color: $st_tropaz;
+  background-color: white;
+  &:hover {
+    color: white;
+    background-color: $st_tropaz;
+  }
 }
 
 .btn-float {
-  color: $boot_blue;
   float: left;
   margin-right: 10px;
   background-color: $carrara;
-  &:hover {
-    color: $boot_blue;
-  }
 }
 
 .drug_form {
@@ -153,20 +161,7 @@ body .yield-top {
   font-style: bold;
   font-size: 1.3em;
 }
-.drug_tag {
-  padding: 5px;
-  float: left;
-  margin: 2px;
-  background: white;
-  border-radius: 3px;
-  margin-left: 5px;
-  border:1px solid #6699FF;
-}
-.drug_tag:hover, .drug_tag a:hover {
-  background: #6699ff;
-  color: #eee;
-  text-decoration: none;
-}
+
 .body_fixed {
   max-width: 100%
 }
