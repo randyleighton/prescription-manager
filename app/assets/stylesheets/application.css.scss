@@ -65,7 +65,7 @@ SASS MIXINS
   }
 }
 
-body .yield-top {
+.yield-top {
   margin-top: 2.5em;
 }
 
@@ -75,25 +75,29 @@ body .yield-top {
 }
 
 .navbar-nav {
-  padding: 1.1em .5em;
+  padding: .6em .5em 1em 0em;
+  font-size: 1.3em;
 } 
 
-.nav-format {
-  color: white;
-  float: left;
-  padding-right: 30px;
-  padding-top: 20px;
-  font-size: 1.1em;
-  a {
-    color: white;
+.navbar-default {
+  .navbar-nav li a {
+    color: $golden_tainoi;
+  }
+  .dropdown-menu li a {
+    color: $st_tropaz;
   }
 }
 
+// .navbar-default .navbar-nav li a {
+// }
+
+// .dropdown-menu li a {
+// }
+
 .navbar-brand {
-  color: #white;
   font-family: 'Raleway', sans-serif;
   a {
-    color: white;
+    color: $golden_tainoi;
     text-shadow: 1px 1px 1px #000;
     font-size: 1.3em;
     text-decoration: none;
