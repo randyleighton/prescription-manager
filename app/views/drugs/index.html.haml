@@ -4,13 +4,13 @@
   %p Create a library of drugs to use in your prescriptions.
   = link_to "Add a New Drug", new_drug_path, :class =>"btn btn-default btn-lg"
 
-.col-xs-12
+.row
   - @drugs.each do |drug|
-    .col-xs-6.col-sm-4.col-lg-3
-      .panel.panel-default
+    .col-xs-6.col-sm-4.col-lg-3.clearfix
+      %div.panel.panel-default.col-fix
         .panel-heading
-          %h3
-            =image_tag('capsule.png')
+          %h3 
+            =image_tag('capsule.png',class:"index-images")
             = drug.name
         .panel-body
           %p= drug.description
