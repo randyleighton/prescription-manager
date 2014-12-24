@@ -14,6 +14,7 @@
  *= require font-awesome
  *= require_self
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Raleway:700,400);
@@ -53,7 +54,9 @@ SASS MIXINS
   }
 }
 
-/* Responsive media */
+/*------------------------------------
+ Responsive media 
+ -----------------------------------*/
 @media screen and (max-width: 480px) {
   .index-images {
     display: none;
@@ -64,48 +67,66 @@ SASS MIXINS
     }
   }
 }
+@media screen and (max-width:810px){
+  .navbar-nav {
+    padding: .6em .4em 0 0;
+    font-size: .8em;
+  } 
+}
 
+
+
+/* Push the top down from navbar */
 .yield-top {
   margin-top: 2.5em;
 }
 
+/*-------------------
+ Styling for Navbar 
+ ------------------*/
 .navbar {
   background-color: $st_tropaz;
-  height: 70px;
+  min-height: 50px;
+  margin-bottom: 0px;
+}
+.navbar-collapse {
+  min-height: 50px;
 }
 
 .navbar-nav {
-  padding: .6em .5em 1em 0em;
-  font-size: 1.3em;
+  padding: .6em .5em 0 0;
+  font-size: 1.1em;
 } 
 
 .navbar-default {
   .navbar-nav li a {
     color: $golden_tainoi;
+    &:hover {
+    color: white;
+    }
   }
   .dropdown-menu li a {
     color: $st_tropaz;
   }
 }
 
-// .navbar-default .navbar-nav li a {
-// }
-
-// .dropdown-menu li a {
-// }
-
 .navbar-brand {
   font-family: 'Raleway', sans-serif;
+  padding: .6em 0 0 .6em;
   a {
     color: $golden_tainoi;
     text-shadow: 1px 1px 1px #000;
     font-size: 1.3em;
     text-decoration: none;
     img {
-    max-width: 1.5em;
+      opacity: .9;
+      max-width: 1.5em;
+      &:hover {
+        opacity: 1;
+      }
     }
     &:hover {
-      color: gray;
+      color: white;
       text-shadow: 1px 1px 1px #000;
     } 
   }
@@ -128,6 +149,9 @@ SASS MIXINS
   }
 }
 
+/*----------------------------
+Button Stying
+----------------------------*/
 .btn-default {
   color: $st_tropaz;
   background-color: white;
@@ -148,10 +172,8 @@ SASS MIXINS
   background-color: $golden_tainoi;
 }
 
-.drug_form {
-  float: left;
-}
 
+/* Welcome page images */
 .image_box {
   border-radius: 2em;
   opacity: .8;
@@ -159,6 +181,10 @@ SASS MIXINS
     opacity: 1;
   }
 }
+
+/*-------------------------
+Sidebar
+-------------------------*/
 .aside_box {
   background-color: #b9d3ee;
   padding: 10px;
@@ -187,10 +213,7 @@ SASS MIXINS
   font-size: 1.3em;
 }
 
-.login_form {
-  margin-left: 15px;
-  margin-bottom: 15px;
-}
+/* devise Registration buttons */
 .button-format {
   margin: 15px 5px 15px 5px;
 }
@@ -224,7 +247,9 @@ SASS MIXINS
   }
 }
 
-
+/*------------------------------- 
+Drug and Prescription index pages
+-------------------------------*/
 .panel-heading {
   padding: .4em;
   h3 {
@@ -232,9 +257,11 @@ SASS MIXINS
   }
 }
 
-
-
 .index-images {
   width: 1.1em;
 }
+
+
+
+
 
