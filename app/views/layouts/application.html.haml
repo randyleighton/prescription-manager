@@ -14,9 +14,9 @@
    });
 %title= yield(:title)
 %body
-  %nav.navbar.navbar-default
+  %nav.navbar.navbar-default.navbar-fixed-top
     .navbar-header
-      %button.navbar-toggle{"data-toggle"=>"collapse","data-target"=>".navbar-responsive-collapse", :type =>"button"}
+      %button.navbar-toggle{"data-toggle"=>"collapse","data-target"=>".navbar-collapse"}
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
@@ -25,7 +25,7 @@
           = image_tag("favicon.ico")
           Prescription Manager
 
-    .navbar-collapse.collapse.navbar-responsive-collapse
+    .collapse.navbar-collapse
       .nav.navbar-nav.navbar-right.btn-group.open
         %a.btn.btn-default{:href => "#"}
           %i.fa.fa-user.fa-fw
