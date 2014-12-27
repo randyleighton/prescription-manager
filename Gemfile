@@ -1,18 +1,18 @@
 source 'https://rubygems.org'
 
-gem 'rails'
-gem 'pg'
-gem 'sass-rails'
-gem 'uglifier'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem "simple_form"
-gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
-gem 'tzinfo-data'
-gem 'haml'
+gem 'bootstrap-sass'
 gem 'devise'
 gem 'font-awesome-rails'
+gem 'haml'
+gem 'jquery-rails'
+gem 'pg'
+gem 'rails'
+gem 'sass-rails'
+gem "simple_form"
+gem 'turbolinks'
+gem 'tzinfo-data'
+gem 'uglifier'
 
 
 group :development do
@@ -22,17 +22,21 @@ group :development do
 end
 
 group :test, :development do
-  gem 'rspec-rails'
-  gem 'pry'
+  gem 'database_cleaner'
   gem 'launchy'
+  gem 'letter_opener'
+  gem 'pry'
+  gem 'rspec-rails'
 end
 
 group :test do
-  gem 'shoulda-matchers'
   gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'shoulda-matchers'
 end
 
 group :production do
-  gem 'rails_12factor'
   gem 'angular-rails-templates'
+  gem 'rails_12factor'
 end
