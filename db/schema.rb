@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20141222020559) do
     t.integer  "prescription_id"
     t.float    "price_paid"
     t.string   "location_filled"
+    t.integer  "user_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
