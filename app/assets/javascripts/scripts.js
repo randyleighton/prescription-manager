@@ -1,3 +1,8 @@
 $(document).ready(function () {
-    $("#toggler").click();
+  $("#toggler").click();
+
+  setTimeout(function(){
+    $('#flash_notice').remove();
+  }, 5000);
+
 });

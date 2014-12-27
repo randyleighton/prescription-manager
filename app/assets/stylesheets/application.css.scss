@@ -99,16 +99,29 @@ SASS MIXINS
 } 
 
 .navbar-default {
-  .navbar-nav li a {
-    color: $golden_tainoi;
-    &:hover {
-    color: white;
+  .navbar-nav {
+    padding-top: 2px;
+    li a {
+      color: $golden_tainoi;
+      &:hover {
+      color: white;
+      }
     }
   }
-  .dropdown-menu li a {
+}
+
+.dropdown-toggle {
+  background-color: $st_tropaz !important;
+  color: $golden_tainoi !important;
+}
+
+.dropdown-menu {
+  background-color: $st_tropaz;
+  li a {
     color: $st_tropaz;
   }
 }
+
 
 .navbar-brand {
   font-family: 'Raleway', sans-serif;
