@@ -276,7 +276,11 @@ Drug and Prescription index pages
   width: 1.1em;
 }
 
-
+/* Tables for Prescriptions and Drugs */
+th {
+  background-color: $st_tropaz;
+  color: $golden_tainoi;
+}
 
 
 
