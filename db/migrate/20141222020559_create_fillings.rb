@@ -3,9 +3,8 @@ class CreateFillings < ActiveRecord::Migration
     create_table :fillings do |t|
       t.belongs_to :prescription
       t.float :price_paid
-      t.string :location_filled
       t.integer :user_id
-      t.timestamps null: false
+      t.timestamps
     end
   end
 end
