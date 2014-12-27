@@ -2,6 +2,7 @@ class CreateFillings < ActiveRecord::Migration
   def change
     create_table :fillings do |t|
       t.belongs_to :prescription
+      t.datetime :date_filled
       t.float :price_paid
       t.integer :user_id
       t.integer :pharmacy_id

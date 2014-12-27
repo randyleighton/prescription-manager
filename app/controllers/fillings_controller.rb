@@ -1,6 +1,6 @@
 class FillingsController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :find_prescription, except: :index
+  before_filter :find_prescription
   before_filter :find_filling, except: [:index,:new,:create]
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
@@ -22,6 +22,8 @@ class FillingsController < ApplicationController
   end
 
   def show
+    @drug = Drug.find(@prescription.drug_id)
+    @pharmacy = Pharmacy.find(@filling.pharmacy_id)
   end
 
   def update
@@ -41,7 +43,7 @@ class FillingsController < ApplicationController
 private
 
   def filling_params
-    params.require(:filling).permit(:name, :description, :cost_not_in_dh, :cost_in_dh, :bill_to_dh, :user_id)
+    params.require(:filling).permit(:prescription_id, :date_filled, :price_paid, ,:user_id, :pharmacy_id)
   end
 
   def find_prescription

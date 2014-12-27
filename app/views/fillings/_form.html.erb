@@ -1,6 +1,6 @@
 <%= render 'layouts/errors', object: @filling %>
 
-<%= form_for(@filling, html: { class: 'form-horizontal' }, url: prescription_fillings_path(@prescription,@filling)) do |f| %>
+<%= form_for(([@prescription.filling, @filling], html: { class: 'form-horizontal' }) do |f| %>
 
   <%= f.hidden_field :prescription_id, :value => @prescription.id %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
@@ -9,6 +9,13 @@
       <%= f.label "Price", class: "col-xs-12 col-sm-2"%>
     <div class="col-xs-11 col-sm-9">
       <%= f.text_area :price_paid, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Date you filled at Pharmacy", class: 'col-sm-4 control-label' %>
+    <div class="col-sm-8">
+    <%= f.date_field :date_filled, class: 'form-control' %>
     </div>
   </div>
 

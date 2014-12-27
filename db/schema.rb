@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20141227223014) do
 
   create_table "fillings", force: :cascade do |t|
     t.integer  "prescription_id"
+    t.datetime "date_filled"
     t.float    "price_paid"
     t.integer  "user_id"
     t.integer  "pharmacy_id"
