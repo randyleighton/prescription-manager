@@ -35,6 +35,8 @@ class PrescriptionsController < ApplicationController
     redirect_to prescriptions_path
   end
 
+private
+
   def prescription_params
     params.require(:prescription).permit(:drug_id, :drug_uom, :renewal_interval, :quantity_prescribed,:user_id)
   end

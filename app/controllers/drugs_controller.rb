@@ -30,6 +30,8 @@ class DrugsController < ApplicationController
     redirect_to drugs_path
   end
 
+private
+
   def drug_params
     params.require(:drug).permit(:name, :description, :cost_not_in_dh, :cost_in_dh, :bill_to_dh, :user_id)
   end
