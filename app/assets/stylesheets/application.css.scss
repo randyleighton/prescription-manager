@@ -263,7 +263,9 @@ Sidebar
 /*------------------------------- 
 Drug and Prescription index pages
 -------------------------------*/
-.panel-heading {
+.panel-default .panel-heading {
+  background-color: $st_tropaz;
+  color: $golden_tainoi;
   padding: .4em;
   h3 {
     margin: .5em 0;
