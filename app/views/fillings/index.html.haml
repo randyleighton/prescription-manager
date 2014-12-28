@@ -1,0 +1,10 @@
+- content_for(:title, "Filled Prescriptions")
+.col-pads
+  %h2 Filled Prescriptions
+.col-pads
+  %ul.fa-ul
+    - @fillings.each do |filling|
+      - pharmacy = Pharmacy.find(filling.pharmacy.id)
+      - prescription = Prescription.find(filling.prescription_id)
+      %li
+        = link_to content_tag(:i,nil,class: 'fa fa-chevron-right') + "Prescription filled at #{pharmacy.name}", prescription_filling_path(prescription,filling),title:"View this filling from #{pharmacy.name}"

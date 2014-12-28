@@ -1,0 +1,33 @@
+- content_for(:title, "#{@drug.name} Prescription")
+
+%h3 Filled Prescription Details
+
+%div
+  %h4 Filled Prescription Details
+  %p
+    %b Price Paid: 
+    = @filling.price_paid
+  %p
+    %b Pharmacy Name: 
+    = @pharmacy.name
+  %p
+    %b Pharmacy Phone:
+    = @pharmacy.phone
+  %p
+    %b Pharmacy Website: 
+    = @pharmacy.url
+%div
+  %h4 Prescription
+  %p
+    %b Drug Name: 
+    = @drug.name
+  %p
+    %b Drug Unit of Measure: 
+    = @prescription.drug_uom
+  %p
+    %b Renewal Interval: 
+    = @prescription.renewal_interval
+  %p
+    %b Quanity Prescribed: 
+    = @prescription.quantity_prescribed
+

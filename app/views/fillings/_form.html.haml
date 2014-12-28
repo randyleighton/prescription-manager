@@ -1,0 +1,25 @@
+= render 'layouts/errors', object: @filling
+
+= simple_form_for(([@prescription, @filling]), html: { class: 'form-horizontal' }) do |f| 
+  =f.hidden_field :prescription_id, value: @prescription.id 
+  =f.hidden_field :user_id, value: current_user.id 
+
+  .form-group
+    = f.label "Price", :price_paid, class: " col-xs-3 col-sm-3 form-label"
+    .col-xs-5.col-sm-5
+      = f.number_field :price_paid, class: "form-control"
+
+  .form-group
+    .col-xs-3.col-sm-3
+      = f.label "Date filled", :date_filled, class: "form-label"
+    .col-sm-5
+      = f.date_field :date_filled, class: "form-control"
+
+  .form-group
+    .col-xs-3.col-sm-3= f.label "Filling Pharmacy"
+    .col-xs-5.col-sm-5.form-select= f.collection_select :pharmacy_id, Pharmacy.all, :id, :name, prompt: true
+
+  .form-group
+    .col-sm-offset-3.col-sm-9
+      = f.submit(class: "btn btn-default float-btn", title: f.object.new_record? ? "Fill Prescription" : "Update Prescription Filling")
+      = link_to "Cancel", :back, class: "btn btn-default float-btn",title:"Cancel"
