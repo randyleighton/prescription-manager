@@ -177,9 +177,17 @@ Button Stying
 .btn-float {
   color: $st_tropaz;
   float: left;
-  margin-right: 10px;
+  margin: 5px 5px;
   background-color: $carrara;
 }
+
+.btn-nofloat {
+  color: $st_tropaz;
+  margin: 5px 5px;
+  background-color: $carrara;
+}
+
+
 
 .btn-lg {
   background-color: $golden_tainoi;
@@ -277,6 +285,7 @@ Drug and Prescription index pages
 }
 
 /* Tables for Prescriptions and Drugs */
+
 th {
   background-color: $st_tropaz;
   color: $golden_tainoi;

@@ -3,21 +3,25 @@
 .jumbotron
   %h1=@prescription.drug.name.to_s + " Prescription"
   = link_to "I filled this Prescription, I want to add that now", new_prescription_filling_path(@prescription), :class =>"btn btn-default btn-lg"
-%table.table.table-bordered.table-striped.table-responsive
-  %thead
-    %tr
-      %th Drug
-      %th Dosage (10mg, 10-325mg, etc)
-      %th Quantity Prescribed
-      %th Renewal
-  %tbody
-    %tr
-      %td= @prescription.drug.name
-      %td= @prescription.drug_uom
-      %td= @prescription.quantity_prescribed
-      %td= @prescription.renewal_interval.to_s.html_safe + " month(s)"
+%div.view-pres
+  %h2 Doctor Prescription Details
+  %table.table.table-bordered.table-striped.table-responsive
+    %thead
+      %tr
+        %th Drug
+        %th Dosage (10mg, 10-325mg, etc)
+        %th Quantity Prescribed
+        %th Renewal
+    %tbody
+      %tr
+        %td= @prescription.drug.name
+        %td= @prescription.drug_uom
+        %td= @prescription.quantity_prescribed
+        %td= @prescription.renewal_interval.to_s.html_safe + " month(s)"
+  .row
+    = link_to "Edit the Prescription", edit_prescription_path(@prescription), class: "btn btn-default btn-nofloat"
+    = link_to "Delete this prescription", prescription_path(@prescription), :data => {:confirm => "WARNING! This deletes all the pharmacy filling records!!", :method => "delete"}, class: "btn btn-default btn-nofloat"
+    = link_to "Back", prescriptions_path, class: "btn btn-default btn-nofloat"
 
-%div
-  = link_to "Delete this prescription", prescription_path(@prescription), :data => {:confirm => "You sure?", :method => "delete"}, class: "btn btn-default btn-float"
-%div
-= link_to "Back", prescriptions_path, class: "btn btn-default btn-float"
+%div.view-fill
+  %h2 Pharmacy Fillings

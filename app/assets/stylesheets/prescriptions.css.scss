@@ -1,0 +1,36 @@
+/*--------------------
+SASS Color Variables
+--------------------*/
+$boot_blue: #428bca;
+$carrara: #f4f3f1;
+$st_tropaz: #2a6496;
+$mercury: #e5e5e5;
+$golden_tainoi: #fec95c;
+
+.view-pres {
+  height: 200px;
+  padding: 0px 5px;
+  display: block;
+  margin: 10px 0px;
+  table {
+    margin: 5px 0;
+  }
+  h2 {
+    color: $st_tropaz;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  }
+  .row {
+    margin: 0px !important;
+  }
+}
+
+.view-fill {
+  display: block;
+  height: 300px;
+  background-color: $st_tropaz;
+  padding: 0px 5px;
+  h2 {
+    color: $golden_tainoi;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  }
+}
