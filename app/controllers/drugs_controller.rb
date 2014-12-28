@@ -1,5 +1,6 @@
 class DrugsController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :find_drug, except: [:index, :new, :create]
 
   def index
     @drugs = Drug.all.where(user_id:current_user.id)
@@ -19,12 +20,21 @@ class DrugsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @drug.update_attributes(drug_params)
+      redirect_to drug_path(@drug), notice: "#{@drug.name} updated successfully."
+    else
+      render 'edit', notice: "Failed to Update."
+    end
+  end
+
   def show
-    @drug = Drug.find(params[:id])
   end
 
   def destroy
-    @drug = Drug.find(params[:id])
       flash[:notice] = "Successful"
     @drug.destroy
     redirect_to drugs_path
@@ -34,6 +44,10 @@ private
 
   def drug_params
     params.require(:drug).permit(:name, :description, :cost_not_in_dh, :cost_in_dh, :bill_to_dh, :user_id)
+  end
+
+  def find_drug
+        @drug = Drug.find(params[:id])
   end
 
 end
