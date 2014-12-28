@@ -2,6 +2,7 @@
 
 .jumbotron
   %h1=@prescription.drug.name.to_s + " Prescription"
+  = link_to "I filled this Prescription, I want to add that now", new_prescription_filling_path(@prescription), :class =>"btn btn-default btn-lg"
 %table.table.table-bordered.table-striped.table-responsive
   %thead
     %tr

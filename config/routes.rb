@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :prescriptions do
     resources :fillings
   end
-
+  resources :fillings, only: :index
   resources :drugs
   
 end

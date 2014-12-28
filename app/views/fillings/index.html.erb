@@ -1,14 +1,18 @@
 <% content_for(:title, "Contacts") %>
 
-<div class="row index-head">
-  <h2>List of Filled Prescriptions</h2>
+<div class="col-pads">
+  <h2>Filled Prescriptions</h2>
 </div>
 
-<div class="row contacts-ul">
+<div class="col-pads">
   <ul class="fa-ul">
     <% @fillings.each do |filling| %>
-      <% pharmacy = Pharmacy.find(params[:pharmacy_id]) %>
-      <li><p><%= link_to "#Prescription filled at #{pharmacy.name}", prescription_filling_path(@prescription,filling),title:"View this filling from #{pharmacy.name}" %></p></li>
+      <% pharmacy = Pharmacy.find(filling.pharmacy.id) %>
+      <% prescription = Prescription.find(filling.prescription_id) %>
+      <li>
+        <%= link_to content_tag(:i,nil,class: 'fa fa-chevron-right') + " Prescription filled at #{pharmacy.name}", prescription_filling_path(prescription,filling),title:"View this filling from #{pharmacy.name}" %>
+      </li>
     <% end %>
   </ul>
 </div>
+

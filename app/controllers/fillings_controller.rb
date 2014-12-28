@@ -1,21 +1,21 @@
 class FillingsController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :find_prescription
+  before_filter :find_prescription, except: :index
   before_filter :find_filling, except: [:index,:new,:create]
-  rescue_from ActiveRecord::RecordNotFound, with: :not_found
+  # rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def index
     @fillings = Filling.all.where(user_id:current_user.id)
   end
 
   def new
-    @filling = @prescription.filling.new
+    @filling = @prescription.fillings.new
   end
 
   def create
-    @filling = @filling.create(filling_params)
+    @filling = @prescription.fillings.create(filling_params)
     if @filling.valid?
-      redirect_to prescription_path(@prescription), notice: "#{@filling.name} created successfully."
+      redirect_to prescription_path(@prescription), notice: "Filling on #{@filling.date_filled} created successfully."
     else
       render 'new'
     end
@@ -43,7 +43,7 @@ class FillingsController < ApplicationController
 private
 
   def filling_params
-    params.require(:filling).permit(:prescription_id, :date_filled, :price_paid, ,:user_id, :pharmacy_id)
+    params.require(:filling).permit(:prescription_id, :date_filled, :price_paid, :user_id, :pharmacy_id)
   end
 
   def find_prescription
