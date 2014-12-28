@@ -35,7 +35,7 @@ class DrugsController < ApplicationController
   end
 
   def destroy
-      flash[:notice] = "Successful"
+      flash[:notice] = "Removed Successfully"
     @drug.destroy
     redirect_to drugs_path
   end
