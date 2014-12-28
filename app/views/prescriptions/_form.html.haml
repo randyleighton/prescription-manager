@@ -1,5 +1,5 @@
 #error_box.row
-  =render('/layouts/errors', :object => @prescription)
+  =render('layouts/errors', :object => @prescription)
 = simple_form_for(@prescription, html: {class: 'form-horizontal'}) do |f|
   .form-group
     = f.hidden_field :user_id, :value => current_user.id

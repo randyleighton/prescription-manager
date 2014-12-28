@@ -1,5 +1,6 @@
 class PrescriptionsController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :find_prescription, except: [:index, :new, :create]
   
   def index
     @prescriptions = Prescription.all.where(user_id:current_user.id)
@@ -24,12 +25,22 @@ class PrescriptionsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @prescription.update_attributes(prescription_params)
+      redirect_to prescription_path(@prescription), notice: "Prescription updated successfully."
+    else
+      render 'edit', notice: "Failed to Update."
+    end
+  end
+
   def show
-    @prescription = Prescription.find(params[:id])
+
   end
 
   def destroy
-    @prescription = Prescription.find(params[:id])
     @prescription.destroy
       flash[:notice] = "Successful"
     redirect_to prescriptions_path
@@ -41,4 +52,8 @@ private
     params.require(:prescription).permit(:drug_id, :drug_uom, :renewal_interval, :quantity_prescribed,:user_id)
   end
   
+  def find_prescription
+    @prescription = Prescription.find(params[:id])
+  end
+
 end
