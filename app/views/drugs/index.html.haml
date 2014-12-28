@@ -2,7 +2,7 @@
 .jumbotron
   %h1 Drug List
   %p Create a library of drugs to use in your prescriptions.
-  = link_to "Add a New Drug", new_drug_path, :class =>"btn btn-default btn-lg"
+  = link_to '<i class="fa fa-plus-square-o fa-fw"></i> Add a New Drug'.html_safe, new_drug_path, :class =>"btn btn-default btn-lg"
 
 .row
   - @drugs.each do |drug|
@@ -14,4 +14,4 @@
             = drug.name
         .panel-body
           %p= drug.description
-          = link_to "More Info", drug_path(drug), class: "btn btn-default btn-float"
+          = link_to '<i class="fa fa-info-circle fa-fw"></i> More Info'.html_safe, drug_path(drug), class: "btn btn-default btn-float"

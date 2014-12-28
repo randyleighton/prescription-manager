@@ -1,29 +1,30 @@
-- content_for(:title, "#{@drug.name} | WoP" )
+- content_for(:title, "#{@drug.name}" )
 .jumbotron
   %h1= @drug.name
-%table.table.table-bordered.table-striped.table-responsive
-  %thead
-    %tr
-      %th Drug
-      %th Description
-      %th Cost You Pay
-      %th Cost You Pay (In Donut Hole)
-      %th Amount Billed to Insurance
-  %tbody
-    %tr
-      %td= @drug.name
-      %td= @drug.description
-      %td 
-        $
-        = sprintf('%.2f', @drug.cost_not_in_dh)
-      %td
-        $
-        = sprintf('%.2f', @drug.cost_in_dh)
-      %td
-        $ 
-        = sprintf('%.2f', @drug.bill_to_dh)
+%div.view-pres  
+  %table.table.table-bordered.table-striped.table-responsive
+    %thead
+      %tr
+        %th Drug
+        %th Description
+        %th Cost You Pay
+        %th Cost You Pay (In Donut Hole)
+        %th Amount Billed to Insurance
+    %tbody
+      %tr
+        %td= @drug.name
+        %td= @drug.description
+        %td 
+          $
+          = sprintf('%.2f', @drug.cost_not_in_dh)
+        %td
+          $
+          = sprintf('%.2f', @drug.cost_in_dh)
+        %td
+          $ 
+          = sprintf('%.2f', @drug.bill_to_dh)
 
-%div
-  = link_to '<i class="fa fa-edit fa-fw"></i> Edit Details'.html_safe, edit_drug_path(@drug), class: "btn btn-default btn-nofloat"
-  = link_to '<i class="fa fa-trash fa-fw"></i> Delete this Drug'.html_safe, drug_path(@drug), class: "btn btn-default btn-float", :data => {:confirm => "NEVER delete drugs that there are prescriptions for, are you sure?", :method => "delete"}
-  = link_to '<i class="fa fa-chevron-left"></i> Back'.html_safe, drugs_path, class: "btn btn-default btn-float"
+  %row
+    = link_to '<i class="fa fa-edit fa-fw"></i> Edit Details'.html_safe, edit_drug_path(@drug), class: "btn btn-default btn-nofloat"
+    = link_to '<i class="fa fa-trash fa-fw"></i> Delete this Drug'.html_safe, drug_path(@drug), class: "btn btn-default btn-nofloat", :data => {:confirm => "NEVER delete drugs that there are prescriptions for, are you sure?", :method => "delete"}
+    = link_to '<i class="fa fa-chevron-left"></i> Back'.html_safe, drugs_path, class: "btn btn-default btn-nofloat"

@@ -2,7 +2,7 @@
 .jumbotron
   %h1 Current Prescriptions
   %p View and create your prescriptions for the drugs from your drug list.
-  = link_to "Add a New Prescription", new_prescription_path, :class =>"btn btn-default btn-lg"
+  = link_to '<i class="fa fa-plus-square-o fa-fw"></i> Add a New Prescription'.html_safe, new_prescription_path, :class =>"btn btn-default btn-lg"
 
 %div.col-xs-12
   - @prescriptions.each do |prescription|
@@ -15,6 +15,6 @@
             = prescription.drug.name
         .panel-body
           %p= prescription.drug.description
-          = link_to "View Prescription", prescription_path(prescription), class: "btn btn-default btn-float"
+          = link_to '<i class="fa fa-info-circle fa-fw"></i> View Prescription'.html_safe, prescription_path(prescription), class: "btn btn-default btn-float"
 
 
