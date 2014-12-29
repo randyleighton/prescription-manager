@@ -21,7 +21,7 @@
       = f.text_field :url, class: "form-control"
 
   .col-sm-offset-3
-    = button_tag("<i id='iconChange'class='fa fa-list-alt'> I want to add an Address (Optional)</i>".html_safe,id:"add-pharm-address",type:'button',class: "btn btn-default btn-nofloat btn-create",title:'Click if you want to to add an address to this pharmacy')
+    = button_tag(f.object.new_record? ? "<i id='iconChange'class='fa fa-list-alt'> Add an Address (Optional)</i>".html_safe : "<i id='iconChange'class='fa fa-list-alt'> Update the Address</i>".html_safe,id:"add-pharm-address",type:'button',class: "btn btn-default btn-nofloat btn-create",title:'Click if you want to to add an address to this pharmacy')
 
   %div#add-address
     .form-group

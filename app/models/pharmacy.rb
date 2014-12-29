@@ -3,7 +3,7 @@ class Pharmacy < ActiveRecord::Base
   has_many :fillings
   validates :name, presence: true, uniqueness: true
 
-  before_save :external_link, :reject_if => :url_blank
+  before_save :external_link
 
 private
 
