@@ -1,37 +1,27 @@
 - content_for(:title, "#{@pharmacy.name}" )
 .jumbotron
   %h1= @pharmacy.name
-  = link_to '<i class="fa fa-chevron-left"></i> Back to Pharmacy List'.html_safe, pharmacies_path, class: "btn btn-default btn-nofloat btn-lg"
+  = link_to '<i class="fa fa-chevron-left"></i> Back to Pharmacy List'.html_safe, pharmacies_path, class: "btn btn-default btn-nofloat btn-lg", title: "Back to Pharmacy List"
 %div.view-pres
-
   %p
     %b Website: 
-    = link_to "#{@pharmacy.url}", @pharmacy.url, target: "_blank"
-
+    = link_to "#{@pharmacy.url}", @pharmacy.url, target: "_blank", title: "View #{@pharmacy.url}"
   %p
     %b Phone:
     = @pharmacy.phone
-
-  - if @pharmacy.street != ""
-    %p
-      %b Street Address:
-      = @pharmacy.street
-
-  - if @pharmacy.city != ""
-    %p
-      %b City:
-      = @pharmacy.city
-
-  - if @pharmacy.state != ""
-    %p
-      %b State Address:
-      = @pharmacy.state
-
-  - if @pharmacy.zip != ""
-    %p
-      %b Zip:
-      = @pharmacy.zip
-
+  %table.table.table-bordered.table-striped.table-responsive
+    %thead
+      %tr
+        %th Street
+        %th City
+        %th State
+        %th Zip
+    %tbody
+      %tr
+        %td= @pharmacy.street
+        %td= @pharmacy.city
+        %td= @pharmacy.state
+        %td= @pharmacy.zip
   %row
-    = link_to '<i class="fa fa-edit fa-fw"></i> Edit Details'.html_safe, edit_pharmacy_path(@pharmacy), class: "btn btn-default btn-nofloat"
-    = link_to '<i class="fa fa-trash fa-fw"></i> Delete this pharmacy'.html_safe, pharmacy_path(@pharmacy), class: "btn btn-default btn-nofloat", :data => {:confirm => "NEVER delete pharmacys that there are prescriptions for, are you sure?", :method => "delete"}
+    = link_to '<i class="fa fa-edit fa-fw"></i> Update Pharmacy Details'.html_safe, edit_pharmacy_path(@pharmacy), class: "btn btn-default btn-nofloat",title:"Update Pharmacy Details"
+    = link_to '<i class="fa fa-trash fa-fw"></i> Delete this pharmacy'.html_safe, pharmacy_path(@pharmacy), class: "btn btn-default btn-nofloat", :data => {:confirm => "WARNING, this will delete all prescriptions you have filled here! Are you sure?", :method => "delete"}, title:"Delete this Pharmacy, WARNING"
