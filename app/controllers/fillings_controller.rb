@@ -10,6 +10,7 @@ class FillingsController < ApplicationController
 
   def new
     @filling = @prescription.fillings.new
+    @filling.build_pharmacy
   end
 
   def create
@@ -43,7 +44,8 @@ class FillingsController < ApplicationController
 private
 
   def filling_params
-    params.require(:filling).permit(:prescription_id, :date_filled, :price_paid, :user_id, :pharmacy_id)
+    params.require(:filling).permit(:prescription_id, :date_filled, :price_paid, 
+                   :user_id, :pharmacy_id, pharmacy_attributes:[:name, :url, :phone])
   end
 
   def find_prescription
