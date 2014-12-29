@@ -1,8 +1,8 @@
-- content_for(:title, "Drug List")
+- content_for(:title, "Drug Library")
 .jumbotron
-  %h1 Drug List
+  %h1 Drug Library
   %p Create a library of drugs to use in your prescriptions.
-  = link_to '<i class="fa fa-plus-square-o fa-fw"></i> Add a New Drug'.html_safe, new_drug_path, :class =>"btn btn-default btn-lg"
+  = link_to '<i class="fa fa-plus-square-o fa-fw"></i> Add a New Drug'.html_safe, new_drug_path, :class =>"btn btn-default btn-lg", title:"Add a New Drug"
 
 .row
   - @drugs.each do |drug|
@@ -14,4 +14,4 @@
             = drug.name
         .panel-body
           %p= drug.description
-          = link_to '<i class="fa fa-info-circle fa-fw"></i> More Info'.html_safe, drug_path(drug), class: "btn btn-default btn-float"
+          = link_to '<i class="fa fa-info-circle fa-fw"></i> More Info'.html_safe, drug_path(drug), class: "btn btn-default btn-float", title: "See More Info for #{drug.name}"
