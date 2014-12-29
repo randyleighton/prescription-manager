@@ -53,6 +53,7 @@ SASS MIXINS
   }
 }
 
+
 /*------------------------------------
  Responsive media 
  -----------------------------------*/
@@ -149,7 +150,9 @@ SASS MIXINS
   background-color: $carrara;
   display: block;
   text-align: center;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
+  border-top: 1px solid $mercury;
+  border-bottom: 1px solid $mercury;
   h1 {
     color: $st_tropaz;
     font-family: 'Raleway', sans-serif;
@@ -181,13 +184,13 @@ Button Stying
   color: $st_tropaz;
   float: left;
   margin: 5px 5px;
-  background-color: $carrara;
+  /*background-color: $carrara;*/
 }
 
 .btn-nofloat {
   color: $st_tropaz;
   margin: 5px 5px;
-  background-color: $carrara;
+/*  background-color: $carrara;*/
 }
 
 
@@ -274,13 +277,19 @@ Sidebar
 /*------------------------------- 
 Drug and Prescription index pages
 -------------------------------*/
-.panel-default .panel-heading {
-  background-color: $st_tropaz;
-  color: $golden_tainoi;
-  padding: .4em;
-  h3 {
-    margin: .5em 0;
+.panel-default {
+  .panel-heading {
+    background-color: $st_tropaz;
+    color: $golden_tainoi;
+    padding: .4em;
+    h3 {
+      margin: .5em 0;
+    }
   }
+}
+
+.panel-body {
+  background-color: $carrara;
 }
 
 .index-images {
