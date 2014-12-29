@@ -9,6 +9,10 @@ $(document).ready(function () {
     $('.add-pharm').toggle();
     $('#iconChange').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
 
+  $('#create-drug').click(function(){
+    $('.add-drug').toggle();
+    $('#iconChange').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
+
   }); 
 
 });
