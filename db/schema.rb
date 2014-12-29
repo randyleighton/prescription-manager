@@ -40,6 +40,9 @@ ActiveRecord::Schema.define(version: 20141227223014) do
   create_table "pharmacies", force: :cascade do |t|
     t.string  "name"
     t.string  "phone"
+    t.string  "street"
+    t.string  "state"
+    t.string  "zip"
     t.text    "url"
     t.integer "user_id"
   end
