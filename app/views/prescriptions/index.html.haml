@@ -11,7 +11,7 @@
       .panel.panel-default
         .panel-heading
           %h4
-            %i.fa.fa-fw.fa-check
+            =image_tag('prescription-icon.png', class:"presc-image")
             = prescription.drug.name
         .panel-body
           %p= prescription.drug.description
