@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   end
   resources :fillings, only: :index
   resources :drugs
+  resources :pharmacies
   
 end

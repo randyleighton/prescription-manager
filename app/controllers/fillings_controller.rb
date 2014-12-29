@@ -2,7 +2,7 @@ class FillingsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :find_prescription, except: :index
   before_filter :find_filling, except: [:index,:new,:create]
-  # rescue_from ActiveRecord::RecordNotFound, with: :not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def index
     @fillings = Filling.all.where(user_id:current_user.id)
