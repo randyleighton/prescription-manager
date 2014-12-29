@@ -1,17 +1,36 @@
-#error_box.row
-  =render('layouts/errors', :object => @prescription)
+=render('layouts/errors', :object => @prescription)
+
 = simple_form_for(@prescription, html: {class: 'form-horizontal'}) do |f|
+  = f.hidden_field :user_id, :value => current_user.id
+
   .form-group
-    = f.hidden_field :user_id, :value => current_user.id
-    = f.collection_select :drug_id, Drug.all, :id, :name ,prompt: true, class: 'form-select'
+    .col-xs-12.col-sm-5
+      = f.label "Drug for this prescription ", :name
+    .col-xs-12.col-sm-5
+      = f.collection_select :drug_id, Drug.all, :id, :name ,{ prompt: "Choose from your list" }, class: 'form-select'
+
   .form-group
-    = f.label "Dosage (10mg, 10-325mg, etc)", :drug_uom
-    = f.text_field :drug_uom, :autofocus=>true
+    .col-xs-12.col-sm-5
+      = f.label "Dosage (10mg, 10-325mg, etc)", :drug_uom
+    .col-xs-12.col-sm-5
+      = f.text_field :drug_uom, :autofocus=>true
+
   .form-group
-    = f.label "How long is prescription in Months", :renewal_interval
-    = f.text_field :renewal_interval
+    .col-xs-12.col-sm-5
+      = f.label "How long is prescription", :renewal_interval
+    .col-xs-5
+      = f.select :renewal_interval, options_for_select(1..4), { prompt: "Quantity of" }
+      %b months
+
   .form-group
-    =f.label "Quantity Prescibed", :quantity_prescribed
-    = f.text_field :quantity_prescribed
-  .form-group
-    = f.submit(:class => "btn btn-default")
+    .col-xs-12.col-sm-5
+      =f.label "Quantity Prescibed", :quantity_prescribed
+    .col-xs-4
+      = f.text_field :quantity_prescribed
+
+  .form-group  
+    .col-sm-offset-3.col-sm-9
+      = button_tag(type: 'submit', class: "btn btn-default btn-float", title: f.object.new_record? ? "Create Drug" : "Update Drug") do 
+        %i.fa.fa-check-circle.fa-fw
+        = f.object.new_record? ? "Create Drug" : "Update Drug"
+      = link_to '<i class="fa fa-chevron-left"></i> Back'.html_safe, :back, class: "btn btn-default btn-float"
