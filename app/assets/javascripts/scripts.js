@@ -13,6 +13,10 @@ $(document).ready(function () {
     $('.add-drug').toggle();
     $('#iconChange').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
 
+  $('#add-pharm-address').click(function(){
+    $('#add-address').toggle();
+    $('#iconChange').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
+
   }); 
 
 });

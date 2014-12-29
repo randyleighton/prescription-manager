@@ -1,9 +1,9 @@
-class DrugsController < ApplicationController
+class PharmaciesController < ApplicationController
   before_filter :authenticate_user!
   before_filter :find_pharmacy, except: [:index, :new, :create]
 
   def index
-    @pharmacies = Pharmacy.all.where(user.id:current_user.id)
+    @pharmacies = Pharmacy.all.where(user_id:current_user.id)
   end
 
   def new
@@ -43,7 +43,7 @@ class DrugsController < ApplicationController
 private
 
   def pharmacy_params
-    params.require(:drug).permit(:name, :url, :phone, :user_id)
+    params.require(:drug).permit(:name, :url, :phone, :street, :city, :state, :user_id)
   end
 
   def find_pharmacy

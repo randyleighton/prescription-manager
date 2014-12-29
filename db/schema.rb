@@ -38,9 +38,10 @@ ActiveRecord::Schema.define(version: 20141227223014) do
   end
 
   create_table "pharmacies", force: :cascade do |t|
-    t.string "name"
-    t.string "phone"
-    t.text   "url"
+    t.string  "name"
+    t.string  "phone"
+    t.text    "url"
+    t.integer "user_id"
   end
 
   create_table "prescriptions", force: :cascade do |t|

@@ -4,6 +4,7 @@ class CreatePharmacy < ActiveRecord::Migration
       t.string :name
       t.string :phone
       t.text :url
+      t.integer :user_id
     end
   end
 end

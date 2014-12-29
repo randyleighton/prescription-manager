@@ -1,7 +1,7 @@
 =render('layouts/errors', :object => @pharmacy)
 
 = simple_form_for(@pharmacy, html: {class: 'form-horizontal'}) do |f|
-
+  = f.hidden_field :user_id, value: current_user.id
   .form-group
     .col-xs-12.col-sm-5
       .form-label= f.label "Pharmacy Name ", :name
@@ -13,6 +13,33 @@
       .form-label= f.label "Phone Number", :phone
     .col-xs-12.col-sm-5
       .form-control= f.phone_field :phone
+
+  = button_tag("<i id='iconChange'class='fa fa-chevron-down'> I want to add an Address</i>".html_safe,id:"add-pharm-address",type:'button',class: "btn btn-default btn-nofloat btn-create",title:'Click if you want to to add an address to this pharmacy')
+
+  %div#add-address
+    .form-group
+      .col-xs-12.col-sm-5
+        .form-label= f.label "Street Address", :street
+      .col-xs-12.col-sm-5
+        .form-control= f.phone_field :street
+
+          .form-group
+      .col-xs-12.col-sm-5
+        .form-label= f.label "City", :city
+      .col-xs-12.col-sm-5
+        .form-control= f.phone_field :state
+
+          .form-group
+      .col-xs-12.col-sm-5
+        .form-label= f.label "State", :state
+      .col-xs-12.col-sm-5
+        .form-control= f.phone_field :state
+
+    .form-group
+      .col-xs-12.col-sm-5
+        .form-label= f.label "Zip Code", :zip
+      .col-xs-12.col-sm-5
+        .form-control= f.phone_field :zip      
 
   .form-group
     .col-xs-12.col-sm-5
