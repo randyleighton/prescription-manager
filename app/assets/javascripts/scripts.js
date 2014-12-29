@@ -8,15 +8,16 @@ $(document).ready(function () {
   $('#create-pharmacy').click(function(){
     $('.add-pharm').toggle();
     $('#iconChange').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
+  }); 
 
   $('#create-drug').click(function(){
     $('.add-drug').toggle();
     $('#iconChange').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
+  }); 
 
   $('#add-pharm-address').click(function(){
     $('#add-address').toggle();
-    $('#iconChange').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
-
+    $(this).remove();
   }); 
 
 });

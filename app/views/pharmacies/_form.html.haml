@@ -4,48 +4,50 @@
   = f.hidden_field :user_id, value: current_user.id
   .form-group
     .col-xs-12.col-sm-5
-      .form-label= f.label "Pharmacy Name ", :name
+      = f.label "Pharmacy Name ", :name, class: "form-label"
     .col-xs-12.col-sm-5
-      .form-control= f.text_field :name
+      = f.text_field :name, class: "form-control"
 
   .form-group
     .col-xs-12.col-sm-5
-      .form-label= f.label "Phone Number", :phone
+      = f.label "Phone Number", :phone, class: "form-label"
     .col-xs-12.col-sm-5
-      .form-control= f.phone_field :phone
+      = f.phone_field :phone, class: "form-control"
 
-  = button_tag("<i id='iconChange'class='fa fa-chevron-down'> I want to add an Address</i>".html_safe,id:"add-pharm-address",type:'button',class: "btn btn-default btn-nofloat btn-create",title:'Click if you want to to add an address to this pharmacy')
+  .form-group
+    .col-xs-12.col-sm-5
+      = f.label "Website Address", :url, class: "form-label"
+    .col-xs-12.col-sm-5
+      = f.text_field :url, class: "form-control"
+
+  .col-sm-offset-3
+    = button_tag("<i id='iconChange'class='fa fa-list-alt'> I want to add an Address (Optional)</i>".html_safe,id:"add-pharm-address",type:'button',class: "btn btn-default btn-nofloat btn-create",title:'Click if you want to to add an address to this pharmacy')
 
   %div#add-address
     .form-group
       .col-xs-12.col-sm-5
-        .form-label= f.label "Street Address", :street
+        = f.label "Street Address", :street, class: "form-label"
       .col-xs-12.col-sm-5
-        .form-control= f.phone_field :street
+        = f.text_field :street, class: "form-control"
 
     .form-group
       .col-xs-12.col-sm-5
-        .form-label= f.label "City", :city
+        = f.label "City", :city, class: "form-label"
       .col-xs-12.col-sm-5
-        .form-control= f.phone_field :state
+        = f.text_field :city, class: "form-control"
 
     .form-group
       .col-xs-12.col-sm-5
-        .form-label= f.label "State", :state
+        = f.label "State", :state, class: "form-label"
       .col-xs-12.col-sm-5
-        .form-control= f.phone_field :state
+        = f.text_field :state, class: "form-control"
 
     .form-group
       .col-xs-12.col-sm-5
-        .form-label= f.label "Zip Code", :zip
+        = f.label "Zip Code", :zip, class: "form-label"
       .col-xs-12.col-sm-5
-        .form-control= f.phone_field :zip      
+        = f.text_field :zip, class: "form-control"
 
-  .form-group
-    .col-xs-12.col-sm-5
-      .form-label= f.label "Website Address", :url
-    .col-xs-12.col-sm-5
-      .form-control= f.text_field :url
 
   .form-group  
     .col-sm-offset-3.col-sm-9

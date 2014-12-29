@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20141227223014) do
     t.string  "name"
     t.string  "phone"
     t.string  "street"
+    t.string  "city"
     t.string  "state"
     t.string  "zip"
     t.text    "url"
