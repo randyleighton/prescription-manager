@@ -37,7 +37,7 @@ class PrescriptionsController < ApplicationController
   end
 
   def show
-
+    @fillings = @prescription.fillings.all
   end
 
   def destroy

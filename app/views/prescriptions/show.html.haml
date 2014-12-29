@@ -26,3 +26,7 @@
 
 %div.view-fill
   %h2 Pharmacy Fillings
+  - @fillings.each do |filling|
+    - pharmacy = Pharmacy.find(filling.pharmacy_id)
+    =link_to "<i class='fa fa-book fa-fw'></i>#{filling.date_filled.strftime('%m/%d/%Y')} for #{@prescription.drug.name} at #{pharmacy.name}".html_safe, prescription_filling_path(@prescription,filling)
+

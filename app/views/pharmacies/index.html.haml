@@ -1,7 +1,7 @@
 - content_for(:title, "Pharmacy List")
 .jumbotron
   %h1 Pharmacy List
-  %p Create a library of Pharmacies to use in your prescriptions.
+  %p Your favorite Pharmacies you use to fill your prescriptions.
   = link_to '<i class="fa fa-plus-square-o fa-fw"></i> Add a New Pharmacy'.html_safe, new_pharmacy_path, :class =>"btn btn-default btn-lg"
 
 .row
@@ -14,5 +14,4 @@
             = pharmacy.name
         .panel-body
           %p= pharmacy.phone
-          %p= pharmacy.url
           = link_to '<i class="fa fa-info-circle fa-fw"></i> More Info'.html_safe, pharmacy_path(pharmacy), class: "btn btn-default btn-float"

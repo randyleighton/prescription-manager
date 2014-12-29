@@ -43,7 +43,7 @@ class PharmaciesController < ApplicationController
 private
 
   def pharmacy_params
-    params.require(:drug).permit(:name, :url, :phone, :street, :city, :state, :user_id)
+    params.require(:pharmacy).permit(:name, :url, :phone, :street, :city, :state, :zip, :user_id)
   end
 
   def find_pharmacy
