@@ -2,7 +2,10 @@
 
 .jumbotron
   %h1=@prescription.drug.name.to_s + " Prescription"
-  = link_to '<i class="fa fa-plus-square-o fa-fw"></i> I filled this Prescription, I want to add that now'.html_safe, new_prescription_filling_path(@prescription), :class =>"btn btn-default btn-lg"
+  %div
+    %div= link_to '<i class="fa fa-plus-square-o fa-fw"></i> I filled this Prescription, I want to add that now'.html_safe, new_prescription_filling_path(@prescription), :class =>"btn btn-default btn-lg btn-nofloat"
+    %div= link_to '<i class="fa fa-chevron-left"></i> Back to Prescription List'.html_safe, prescriptions_path, class: "btn btn-default btn-nofloat btn-lg"
+
 %div.view-pres
   %h2 Doctor Prescription Details
   %table.table.table-bordered.table-striped.table-responsive
@@ -22,11 +25,10 @@
     = link_to '<i class="fa fa-edit fa-fw"></i> Edit Details'.html_safe, edit_prescription_path(@prescription), class: "btn btn-default btn-nofloat"
     = link_to '<i class="fa fa-trash fa-fw"></i> Delete Prescription'.html_safe,prescription_path(@prescription), :data => {:confirm => "WARNING! This deletes all the pharmacy filling records!!", :method => "delete"}, class: "btn btn-default btn-nofloat" 
 
-    = link_to '<i class="fa fa-chevron-left"></i> Back'.html_safe, prescriptions_path, class: "btn btn-default btn-nofloat"
 
 %div.view-fill
   %h2 Pharmacy Fillings
   - @fillings.each do |filling|
     - pharmacy = Pharmacy.find(filling.pharmacy_id)
-    =link_to "<i class='fa fa-book fa-fw'></i>#{filling.date_filled.strftime('%m/%d/%Y')} for #{@prescription.drug.name} at #{pharmacy.name}".html_safe, prescription_filling_path(@prescription,filling)
+    =link_to "<i class='fa fa-book fa-fw'></i> #{filling.date_filled.strftime('%m/%d/%Y')} for #{@prescription.drug.name} at #{pharmacy.name}".html_safe, prescription_filling_path(@prescription,filling)
 
