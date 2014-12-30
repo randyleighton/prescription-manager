@@ -1,7 +1,6 @@
 class Pharmacy < ActiveRecord::Base
 
-  validates :name, presence: true, uniqueness: true
-
+  validates :name, presence: true
   has_many :fillings
   belongs_to :user
 
