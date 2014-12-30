@@ -1,24 +1,23 @@
-- content_for(:title, "World of Prescriptions" )
-.col-xs-12.col-sm-6.col-md-3
+- content_for(:title, "Prescription Manager" )
+.row-one
   = link_to image_tag("prescription.jpg", :id=>'prescrip-main' ,:class=>"image_box img-responsive img-thumbnail"), prescriptions_path
-  %h3 Manage Prescriptions
+  %h1 Prescriptions
   %p Add new prescriptions, view all current prescriptions
-.col-xs-12.col-sm-6.col-md-3
+
+.row-two
+  %div= link_to image_tag("drug.jpg", :id=>'drug-main', :class=>"image_box img-responsive img-thumbnail"), drugs_path
+  %div
+    %h1 Drug Library
+  %div
+    %p Add and view all drugs in your library. These will be added to your prescriptions.
+
+.row-three
   = link_to image_tag("drug.jpg", :id=>'drug-main', :class=>"image_box img-responsive img-thumbnail"), drugs_path
-  %h3 Manage Drugs
-  %p Add and view all drugs in your library. These will be added to your prescriptions.
-.col-xs-12.col-sm-6.col-md-3
+  %h1 Pharmacies
+  %p Manage your pharmacies. These are used when you fill a prescription.
+
+.row-four
   = image_tag("cost.jpg", :class=>"image_box img-responsive img-thumbnail")
-  %h3 Manage costs
+  %h3 Manage Costs
   %p Look at your totals for the donut hole and how much you have spent on prescriptions year to date.
   %p.coming-soon This feature is in progress!
-%aside.col-xs-12.col-sm-6.col-md-3
-  .aside_box
-    %h4 Donut Hole Remaining:
-    %p Coming Soon!
-  .aside_box
-    %h4 Out of Pocket YTD:
-    %p Coming Soon!
-  .aside_box2
-    %p Utilize this tool on your home computer, tablet, or cell phone to manage your monthly prescriptions. It is challenging to understand the donut hole and to understand the current yearly cost. This tool allows you to put in a monthly cost to your donut hole from your statement and the tool will keep track of the yearly running total for the donut hole and your total prescriptions cost you have paid. For more on the donut hole gap from the government website click here 
-    %a{:href=>"http://www.medicare.gov/part-d/costs/coverage-gap/part-d-coverage-gap.html", :target=>"_blank"} Medicare.gov

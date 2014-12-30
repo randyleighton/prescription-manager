@@ -11,6 +11,7 @@ class DrugsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @drug = Drug.new(drug_params)
     if @drug.save
       flash[:notice] = "#{@drug.name} created successfully."

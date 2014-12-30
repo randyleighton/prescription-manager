@@ -1,0 +1,33 @@
+/*--------------------
+SASS Color Variables
+--------------------*/
+$carrara: #f4f3f1;
+$st_tropaz: #2a6496;
+$mercury: #e5e5e5;
+$golden_tainoi: #fec95c;
+
+/*--------------------
+SASS MIXINS
+--------------------*/
+@mixin rounded-corners($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin shadowed-corners($color) {
+  -webkit-box-shadow: 3px 3px 3px $color;
+     -moz-box-shadow: 3px 3px 3px $color;
+          box-shadow: 3px 3px 3px $color;
+}
+@mixin list-bullets($content) {
+  margin: 1em;
+  // margin-left: 1em;
+  &:before {
+  content: $content;
+  font-family: 'FontAwesome';
+  float: left;
+  margin-left: -1.5em;
+  color: $button-sec;
+  }
+}

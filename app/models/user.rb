@@ -7,5 +7,5 @@ class User < ActiveRecord::Base
   has_many :prescriptions, dependent: :destroy
   has_many :fillings, through: :prescriptions
   has_many :drugs, dependent: :destroy
-
+  has_many :pharmacies, dependent: :destroy
 end
