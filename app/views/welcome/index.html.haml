@@ -1,4 +1,12 @@
 - content_for(:title, "Prescription Manager" )
+.head-row.jumbotron
+  %h1 Welcome to Prescription Manager
+  %p Create a personalized account now to start managing your medicare prescriptions and your total drug costs to avoid the "donut hole" as long as possible.
+  %br
+  %p If you want to try it out before creating your own account: 
+  %p= link_to "Log In with the guest account ", new_user_session_path, id: "login-prof",class: "guest-style"
+
+
 .row-one
   = link_to image_tag("prescription.jpg", :id=>'prescrip-main' ,:class=>"image_box img-responsive img-thumbnail"), prescriptions_path, title:"Manage Prescriptions"
   %h1 Prescriptions

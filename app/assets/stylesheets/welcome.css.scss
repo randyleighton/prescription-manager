@@ -11,3 +11,13 @@
   text-align: center;
   background-color:$carrara;
 }
+
+.guest-style {
+  color: $golden_tainoi;
+  text-shadow: 0 .5px 0 $st_tropaz;
+  &:hover {
+    text-decoration: none;
+    color: $st_tropaz;
+    text-shadow: 0 .5px 0 black;
+  }
+}
