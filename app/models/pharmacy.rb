@@ -1,7 +1,9 @@
 class Pharmacy < ActiveRecord::Base
 
-  has_many :fillings
   validates :name, presence: true, uniqueness: true
+
+  has_many :fillings
+  belongs_to :user
 
   before_save :external_link
 

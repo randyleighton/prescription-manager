@@ -1,13 +1,22 @@
 class Drug < ActiveRecord::Base
 
-validates :name, presence: true, uniqueness: true
+has_many :prescriptions, dependent: :destroy
+belongs_to :user
+
+validates :name, presence: true
 validates :description, presence: true
 validates :cost_not_in_dh, presence: true
 validates :cost_in_dh, presence: true
 validates :bill_to_dh, presence: true
+# after_save :verify_id
 
+# private
 
-has_many :prescriptions, dependent: :destroy
+#   def verify_id
+#     if self.id == self.user.id
+#       validate :name, uniqueness: true
+#     end
+#   end
 
 end
 

@@ -4,11 +4,11 @@ class PrescriptionsController < ApplicationController
   
   def index
     @prescriptions = Prescription.all.where(user_id:current_user.id)
-    @drugs = Drug.all
+    @drugs = Drug.all.where(user_id:current_user.id)
   end
 
   def new
-    @drugs = Drug.all
+    @drugs = Drug.all.where(user_id:current_user.id)
     if !@drugs.any?
       redirect_to drugs_path, notice: 'Create drugs to use in your prescriptions'
     end
