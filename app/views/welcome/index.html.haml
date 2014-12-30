@@ -1,18 +1,18 @@
 - content_for(:title, "Prescription Manager" )
 .row-one
-  = link_to image_tag("prescription.jpg", :id=>'prescrip-main' ,:class=>"image_box img-responsive img-thumbnail"), prescriptions_path
+  = link_to image_tag("prescription.jpg", :id=>'prescrip-main' ,:class=>"image_box img-responsive img-thumbnail"), prescriptions_path, title:"Manage Prescriptions"
   %h1 Prescriptions
   %p Add new prescriptions, view all current prescriptions
 
 .row-two
-  %div= link_to image_tag("drug.jpg", :id=>'drug-main', :class=>"image_box img-responsive img-thumbnail"), drugs_path
+  %div= link_to image_tag("drug.jpg", :id=>'drug-main', :class=>"image_box img-responsive img-thumbnail"), drugs_path, title:"Manage Drugs"
   %div
     %h1 Drug Library
   %div
     %p Add and view all drugs in your library. These will be added to your prescriptions.
 
 .row-three
-  = link_to image_tag("pharmacy.jpg", :id=>'drug-main', :class=>"image_box img-responsive img-thumbnail"), drugs_path
+  = link_to image_tag("pharmacy.jpg", :id=>'drug-main', :class=>"image_box img-responsive img-thumbnail"), drugs_path, title:"Manage Drug Library"
   %h1 Pharmacies
   %p Manage your pharmacies. These are used when you fill a prescription.
 
