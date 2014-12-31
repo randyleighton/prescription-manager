@@ -4,6 +4,8 @@ class Pharmacy < ActiveRecord::Base
   has_many :fillings
   belongs_to :user
 
+  scope :order_by, ->{ order(name: :asc)}
+
   before_save :external_link
 
 private

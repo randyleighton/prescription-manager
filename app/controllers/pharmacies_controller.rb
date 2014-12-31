@@ -3,7 +3,7 @@ class PharmaciesController < ApplicationController
   before_filter :find_pharmacy, except: [:index, :new, :create]
 
   def index
-    @pharmacies = Pharmacy.all.where(user_id:current_user.id)
+    @pharmacies = Pharmacy.all.where(user_id:current_user.id).order_by
   end
 
   def new
