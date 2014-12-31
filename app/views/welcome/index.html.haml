@@ -6,28 +6,3 @@
       %p Create a personalized account now to start managing your medicare prescriptions and your total drug costs to avoid the "donut hole" as long as possible.
       %p If you want to try it out before creating your own account: 
       %p= link_to "Log In with the guest account ", new_user_session_path, id: "login-prof",class: "guest-style"
-%div.welcome-rows
-  .col-xs-12.col-sm-6
-    .welcome-sections
-      %h1 Prescriptions
-      = link_to image_tag("prescription.jpg", :id=>'prescrip-main' ,:class=>"img-box"), prescriptions_path, title:"Manage Prescriptions"
-      %p Add new prescriptions, view all current prescriptions
-
-  .col-xs-12.col-sm-6
-    .welcome-sections
-      %h1 Drug Library
-      = link_to image_tag("drug.jpg", :id=>'drug-main', :class=>"img-box"), drugs_path, title:"Manage Drugs"
-      %p Add and view all drugs in your library. These will be added to your prescriptions.
-
-%div.welcome-rows
-  .col-xs-12.col-sm-6
-    .welcome-sections
-      %h1 Pharmacies
-      = link_to image_tag("pharmacy.jpg", :id=>'pharmacy-main', :class=>"img-box"), pharmacies_path, title:"Manage your Pharmacies"
-      %p Manage your pharmacies. These are used when you fill a prescription.
-  .col-xs-12.col-sm-6
-    .welcome-sections
-      %h1 Manage Costs
-      = image_tag("cost.jpg", :class=>"img-box")
-      %p Look at your totals for the donut hole and how much you have spent on prescriptions year to date.
-

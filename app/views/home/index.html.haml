@@ -1,8 +1,10 @@
 - content_for(:title, "Prescription Manager" )
 .head-row
   .jumbotron
-    %h1 Prescription Manager for
-    = @user.name
+    %h1 Prescription Manager
+    %p 
+      You are logged in as 
+      = @user.name
 
 %div.welcome-rows
   .col-xs-12.col-sm-6
