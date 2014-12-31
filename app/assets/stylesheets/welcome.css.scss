@@ -20,20 +20,24 @@
   display:block;
   text-align: center;
   margin: 0 auto;
+  padding: 40px 60px;
   h1, p {
     color: $st_tropaz;
   }
 }
+.col-sm-6 {
+  padding:0px !important;
+}
+
 
 .welcome-rows {
-  padding: 0px 8.33333333333333%
+  padding: 0px 5%
 }
 
 .img-box {
-  border: 1px solid $mercury;
+  border: 3px double $mercury;
   border-radius: .6em;
-  box-shadow: 1px 1px 1px $mercury;
-  max-width: 75%;
+  max-width: 100%;
   opacity: .8;
   &:hover {
     opacity: 1;
