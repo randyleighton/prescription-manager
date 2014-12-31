@@ -1,24 +1,11 @@
 @import "sass_vars.css.scss";
 
-.row-one, .row-three {
-  display: block;
-  text-align: center;
-  background-color:white;
-}
-
-.row-two, .row-four {
-  display: block;
-  text-align: center;
-  background-color:$carrara;
-}
-
 .guest-style {
   color: $golden_tainoi;
   text-shadow: 0 .5px 0 $st_tropaz;
   &:hover {
     text-decoration: none;
     color: $st_tropaz;
-    text-shadow: 0 .5px 0 black;
   }
 }
 
@@ -28,3 +15,28 @@
   padding: 0 5.5em;
   margin: 0 0 .5em;
 }
+
+.welcome-sections {
+  display:block;
+  text-align: center;
+  margin: 0 auto;
+  h1, p {
+    color: $st_tropaz;
+  }
+}
+
+.welcome-rows {
+  padding: 0px 8.33333333333333%
+}
+
+.img-box {
+  border: 1px solid $mercury;
+  border-radius: .6em;
+  box-shadow: 1px 1px 1px $mercury;
+  max-width: 75%;
+  opacity: .8;
+  &:hover {
+    opacity: 1;
+  }
+}
+
