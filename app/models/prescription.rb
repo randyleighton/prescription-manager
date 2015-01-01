@@ -7,4 +7,6 @@ class Prescription < ActiveRecord::Base
   belongs_to :drug
   belongs_to :user
 
+  scope :order_by, ->{ joins(:drug).order('drugs.name ASC') }
+
 end
