@@ -17,7 +17,7 @@
               Edit Profile
           %li
             = link_to destroy_user_session_path, method: :delete do
-              %i.fa.fa-pencil.fa-fw
+              %i.fa.fa-sign-out.fa-fw
               Log Out
     - else
       %li.dropdown
@@ -25,9 +25,9 @@
         %ul.dropdown-menu
           %li
             = link_to new_user_registration_path do
-              %i.fa.fa-pencil.fa-fw
+              %i.fa.fa-plus-circle.fa-fw
               Create Account
           %li
             = link_to new_user_session_path do
-              %i.fa.fa-pencil.fa-fw
+              %i.fa.fa-sign-in.fa-fw
               Log In
