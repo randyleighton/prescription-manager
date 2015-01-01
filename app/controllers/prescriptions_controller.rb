@@ -3,12 +3,12 @@ class PrescriptionsController < ApplicationController
   before_filter :find_prescription, except: [:index, :new, :create]
   
   def index
-    @prescriptions = Prescription.all.where(user_id:current_user.id)
-    @drugs = Drug.all.where(user_id:current_user.id)
+    @prescriptions = Prescription.all.where(user_id:current_user.id).order_by
+    @drugs = Drug.all.where(user_id:current_user.id).order_by
   end
 
   def new
-    @drugs = Drug.all.where(user_id:current_user.id)
+    @drugs = Drug.all.where(user_id:current_user.id).order_by
     if !@drugs.any?
       redirect_to drugs_path, notice: 'Create drugs to use in your prescriptions'
     end

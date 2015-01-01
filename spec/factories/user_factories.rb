@@ -1,8 +1,8 @@
 FactoryGirl.define do
 
   factory :drug do
-    name Faker::Internet.user_name
-    description "Norco Hydrocodone"
+    name "Norco"
+    description "Hydrocodone for Pain"
     cost_not_in_dh 10
     cost_in_dh  30
     bill_to_dh  30
@@ -11,7 +11,7 @@ FactoryGirl.define do
 
   factory :prescription do
     drug_id 1
-    drug_oum "10-325mg"
+    drug_uom "10-325mg"
     renewal_interval 3
     quantity_prescribed 100
     user_id 1
