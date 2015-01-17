@@ -9,10 +9,22 @@
       %tr
         %th Drug
         %th Description
+        %th Cost You Pay
+        %th Cost You Pay (In Donut Hole)
+        %th Amount Billed to Insurance
     %tbody
       %tr
         %td= @drug.name
         %td= @drug.description
+        %td 
+          $
+          = sprintf('%.2f', @drug.cost_not_in_dh)
+        %td
+          $
+          = sprintf('%.2f', @drug.cost_in_dh)
+        %td
+          $ 
+          = sprintf('%.2f', @drug.bill_to_dh)
 
   %row
     = link_to '<i class="fa fa-edit fa-fw"></i> Edit this Drug'.html_safe, edit_drug_path(@drug), class: "btn btn-default btn-nofloat", title: "Edit this Drug"

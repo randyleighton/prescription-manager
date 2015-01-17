@@ -7,7 +7,7 @@
     %div= link_to '<i class="fa fa-chevron-left"></i> Back to Prescription List'.html_safe, prescriptions_path, class: "btn btn-default btn-nofloat btn-lg", title:"Back to Prescription List"
 
 %div.view-pres
-  %h2 Doctor Prescription Details
+  %h2 Doctor Prescription
   %table.table.table-bordered.table-striped.table-responsive
     %thead
       %tr
@@ -30,5 +30,5 @@
   %h2 Pharmacy Fillings
   - @fillings.each do |filling|
     - pharmacy = Pharmacy.find(filling.pharmacy_id)
-    =link_to "<i class='fa fa-book fa-fw'></i> #{filling.date_filled.strftime('%m/%d/%Y')} for #{@prescription.drug.name} at #{pharmacy.name}".html_safe, prescription_filling_path(@prescription,filling), title: "View this Prescription Filling for #{@prescription.drug.name}"
+    %p= link_to "<i class='fa fa-book fa-fw'></i> #{filling.date_filled.strftime('%m/%d/%Y')} for #{@prescription.drug.name} at #{pharmacy.name}".html_safe, prescription_filling_path(@prescription,filling), title: "View this Prescription Filling for #{@prescription.drug.name}"
 
