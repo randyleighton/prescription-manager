@@ -3,9 +3,6 @@ FactoryGirl.define do
   factory :drug do
     name "Norco"
     description "Hydrocodone for Pain"
-    cost_not_in_dh 10
-    cost_in_dh  30
-    bill_to_dh  30
     user_id 1
   end
 
@@ -32,6 +29,7 @@ FactoryGirl.define do
     prescription_id 1
     date_filled DateTime.now
     price_paid 10
+    medicare_paid 10
     pharmacy_id 1
     user_id 1
   end
