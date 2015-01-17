@@ -5,9 +5,20 @@
   =f.hidden_field :user_id, value: current_user.id 
 
   .form-group
-    = f.label "Price Paid", :price_paid, class: " col-xs-3 col-sm-3 form-label"
-    .col-xs-5.col-sm-5
-      = f.number_field :price_paid, class: "form-control"
+    = f.label :price_paid, "How much did you pay at pharmacy?", class: "col-xs-12 col-sm-3 form-label"
+    .col-xs-3.col-sm-3
+      .input-group
+        %span.input-group-addon
+          %i.fa.fa-usd.fa-fw
+        = f.text_field :price_paid, class: "form-control"
+
+  .form-group
+    = f.label "Cost medicare paid?",:medicare_paid, class: "col-xs-12 col-sm-3 form-label"
+    .col-xs-3.col-sm-3
+      .input-group
+        %span.input-group-addon
+          %i.fa.fa-usd.fa-fw
+        = f.text_field :medicare_paid, class: "form-control"
 
   .form-group
     .col-xs-3.col-sm-3
