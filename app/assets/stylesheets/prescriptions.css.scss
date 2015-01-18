@@ -18,7 +18,8 @@
 
 .view-fill {
   display: block;
-  height: 300px;
+  overflow: auto;
+  height: 100%;
   background-color: $st_tropaz;
   padding: 0px 5px;
   h2 {
@@ -26,7 +27,7 @@
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
   }
   a {
-    color: $golden_tainoi;
+    color: $st_tropaz;
     font-size: 1.1em;
   }
 }

@@ -25,10 +25,18 @@
     = link_to '<i class="fa fa-edit fa-fw"></i> Update this Prescription'.html_safe, edit_prescription_path(@prescription), class: "btn btn-default btn-nofloat", title:"Update this Prescription"
     = link_to '<i class="fa fa-trash fa-fw"></i> Delete this Prescription'.html_safe,prescription_path(@prescription), :data => {:confirm => "WARNING! This deletes all the pharmacy filling records!!", :method => "delete"}, class: "btn btn-default btn-nofloat", title:"Delete this Prescription" 
 
-
 %div.view-fill
   %h2 Pharmacy Fillings
   - @fillings.each do |filling|
-    - pharmacy = Pharmacy.find(filling.pharmacy_id)
-    %p= link_to "<i class='fa fa-book fa-fw'></i> #{filling.date_filled.strftime('%m/%d/%Y')} for #{@prescription.drug.name} at #{pharmacy.name}".html_safe, prescription_filling_path(@prescription,filling), title: "View this Prescription Filling for #{@prescription.drug.name}"
+    .col-xs-6.col-sm-4.col-md-3
+      .panel.panel-default
+        .panel-heading.pan-head
+          %h4
+            =image_tag('prescription-icon.png', class:"presc-image")
+            = @prescription.drug.name
+        .panel-body.pan-bod
+          - pharmacy = Pharmacy.find(filling.pharmacy_id)
+          %p= link_to "<i class='fa fa-book fa-fw'></i> #{pharmacy.name} - #{filling.date_filled.strftime('%m/%d/%Y')}".html_safe, prescription_filling_path(@prescription,filling), title: "View this Prescription Filling for #{@prescription.drug.name}"
+
+
 

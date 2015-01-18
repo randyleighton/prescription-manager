@@ -202,6 +202,7 @@ Drug and Prescription index pages
 -------------------------------*/
 .panel-default {
   .panel-heading {
+    height: 100%;
     background-color: $st_tropaz;
     color: $golden_tainoi;
     padding: .4em;
@@ -212,8 +213,23 @@ Drug and Prescription index pages
 }
 
 .panel-body {
+  height: 100%;
   background-color: $carrara;
 }
+
+
+.pan-head {
+  background-color: $golden_tainoi !important;
+  color: $st_tropaz !important;
+}
+
+.panel-bod {
+  background-color: white !important;
+  p a {
+    color: $st_tropaz !important;
+  }
+}
+
 
 .index-images {
   width: 1.1em;
