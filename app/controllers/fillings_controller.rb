@@ -28,10 +28,10 @@ class FillingsController < ApplicationController
   end
 
   def update
-      binding.pry
-    if @filling.update_attributes(filling_params)
+    if @filling.update(filling_params)
       redirect_to prescription_path(@prescription), notice: "Updated Successfully"
     else
+      binding.pry
       render 'edit', notice: "Failed to Update"
 
     end

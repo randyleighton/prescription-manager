@@ -4,7 +4,6 @@ belongs_to :prescription
 belongs_to :pharmacy
 belongs_to :user
 
-validates :pharmacy_id, presence: true
 validates :prescription_id, presence: true
 validates :price_paid, presence: true
 
