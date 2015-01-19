@@ -28,10 +28,12 @@ class FillingsController < ApplicationController
   end
 
   def update
+      binding.pry
     if @filling.update_attributes(filling_params)
       redirect_to prescription_path(@prescription), notice: "Updated Successfully"
     else
       render 'edit', notice: "Failed to Update"
+
     end
   end
 
@@ -44,7 +46,7 @@ class FillingsController < ApplicationController
 private
 
   def filling_params
-    params.require(:filling).permit(:prescription_id, :date_filled, :price_paid, 
+    params.require(:filling).permit(:prescription_id, :date_filled, :medicare_paid, :price_paid, 
                    :user_id, :pharmacy_id, pharmacy_attributes:[:name, :url, :phone])
   end
 

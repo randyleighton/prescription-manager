@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20150117201824) do
     t.integer  "pharmacy_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.float    "user_paid"
     t.float    "medicare_paid"
   end
 

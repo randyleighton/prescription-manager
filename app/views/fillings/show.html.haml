@@ -1,12 +1,17 @@
 - content_for(:title, "#{@drug.name} Prescription")
 
-%h3 Filled Prescription Details
+.jumbotron
+  %h4 Filled Prescription for
+  %h3=@drug.name
 
-%div
-  %h4 Filled Prescription Details
+.col-xs-12.col-sm-6
+  %h3 Filled Prescription Details
   %p
     %b Price Paid: 
     = @filling.price_paid
+  %p
+    %b Medicare Paid:
+    = @filling.medicare_paid
   %p
     %b Pharmacy Name: 
     = @pharmacy.name
@@ -15,9 +20,10 @@
     = @pharmacy.phone
   %p
     %b Pharmacy Website: 
-    = @pharmacy.url
-%div
-  %h4 Prescription
+    = link_to "#{@pharmacy.url}", @pharmacy.url, target: "_blank", title: "View #{@pharmacy.url}"
+
+.col-xs-12.col-sm-6
+  %h3 Prescription
   %p
     %b Drug Name: 
     = @drug.name
@@ -31,4 +37,6 @@
     %b Quanity Prescribed: 
     = @prescription.quantity_prescribed
 
+.col-xs-12
+  = link_to '<i class="fa fa-edit fa-fw"></i> Edit this Filling'.html_safe, edit_prescription_filling_path(@prescription, @filling), class: "btn btn-default btn-nofloat", title: "Edit this Prescription Filling"
   = link_to '<i class="fa fa-chevron-left"></i> Back'.html_safe, prescription_path(@prescription), class: "btn btn-default btn-float"
