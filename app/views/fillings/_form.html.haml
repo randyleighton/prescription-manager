@@ -29,12 +29,13 @@
   .form-group
     .col-xs-3.col-sm-3= f.label "Where was it filled?"
     .col-xs-5.col-sm-5
-      .form-select= f.collection_select :pharmacy_id, Pharmacy.all.where(user_id:current_user.id), :id, :name, { prompt: 'Choose an Existing Pharmacy' }
-      or
+      .form-select= f.collection_select :pharmacy_id, Pharmacy.all.where(user_id:current_user.id), :id, :name, { prompt: 'Choose Existing Pharmacy' }
+      #choose-or or
       = button_tag("<i id='iconChange'class='fa fa-chevron-down'> Create New Pharmacy</i>".html_safe,id:"create-pharmacy",type:'button',class: "btn btn-default btn-nofloat btn-create",title:'Click to create a new pharmacy if it is not in the list')
 
       %div.add-pharm
         = f.fields_for :pharmacy do |pharmacy|
+          = pharmacy.hidden_field :user_id, value: current_user.id 
           = pharmacy.text_field :name, placeholder: 'Pharmacy Name',class: "form-control"
           = pharmacy.text_field :url, placeholder: 'Website Address', class: "form-control"
           = pharmacy.phone_field :phone, placeholder: 'Phone Number', class: "form-control"

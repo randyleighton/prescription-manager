@@ -15,6 +15,9 @@ Filling.destroy_all
 print "..."
 Drug.destroy_all
 print "..."
+Pharmacy.destroy_all
+print "..."
+
 puts "Done.".green
 
 # Create New Data

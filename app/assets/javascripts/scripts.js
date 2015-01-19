@@ -5,10 +5,6 @@ $(document).ready(function () {
     $('#flash_notice').remove();
   }, 5000);
 
-  $('#create-pharmacy').click(function(){
-    $('.add-pharm').toggle();
-    $('#iconChange').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
-  }); 
 
   $('#create-drug').click(function(){
     $('.add-drug').toggle();
@@ -18,6 +14,21 @@ $(document).ready(function () {
   $('#add-pharm-address').click(function(){
     $('#add-address').toggle();
     $(this).remove();
+  }); 
+
+  // $('#filling_pharmacy_id').click(function() {
+  //   event.preventDefault;
+  //   alert("selection element clicked");
+  //   $('#create-pharmacy').toggle();
+  // })
+
+  $('#create-pharmacy').click(function(){
+    // $('form#new_filling').find('filling[pharmacy_id]').removeAttr('selected');
+    // $("select[name='filling_pharmacy_id']").find("option[value='Choose an Existing Pharmacy']").attr("selected","selected");
+    $('#filling_pharmacy_id').toggle();
+    $('#choose-or').toggle();
+    $('.add-pharm').toggle();
+    $('#iconChange').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
   }); 
 
 });
