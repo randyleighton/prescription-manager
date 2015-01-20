@@ -23,8 +23,12 @@ $(document).ready(function () {
   // })
 
   $('#create-pharmacy').click(function(){
+    // $('#filling_pharmacy_id').children().remove().end().append('<option selected value="Choose Existing Pharmacy">Choose Existing Pharmacy</option>') ;
+
     // $('form#new_filling').find('filling[pharmacy_id]').removeAttr('selected');
+
     // $("select[name='filling_pharmacy_id']").find("option[value='Choose an Existing Pharmacy']").attr("selected","selected");
+
     $('#filling_pharmacy_id').toggle();
     $('#choose-or').toggle();
     $('.add-pharm').toggle();

@@ -1,0 +1,5 @@
+= f.fields_for object, remote: true do |pharmacy|
+  = pharmacy.hidden_field :user_id, value: current_user.id 
+  = pharmacy.text_field :name, placeholder: 'Pharmacy Name',class: "form-control"
+  = pharmacy.text_field :url, placeholder: 'Website Address', class: "form-control"
+  = pharmacy.phone_field :phone, placeholder: 'Phone Number', class: "form-control"

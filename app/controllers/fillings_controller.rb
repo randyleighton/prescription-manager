@@ -15,10 +15,13 @@ class FillingsController < ApplicationController
 
   def create
     @filling = @prescription.fillings.create(filling_params)
-    if @filling.valid?
-      redirect_to prescription_path(@prescription), notice: "Filling on #{@filling.date_filled} created successfully."
-    else
-      render 'new'
+    respond_to do |format|
+      if @filling.valid?
+        format.html { redirect_to prescription_path(@prescription), notice: "Filling on #{@filling.date_filled} created successfully." }
+      else
+        format.html { render 'new' }
+        format.js
+      end
     end
   end
 

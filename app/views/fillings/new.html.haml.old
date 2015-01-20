@@ -2,4 +2,4 @@
 
 %div.border-form-div
   %h3 Fill a Prescription:
-  #fill-presc-from-fill= render 'form'
+  #fill-form= render 'form'
