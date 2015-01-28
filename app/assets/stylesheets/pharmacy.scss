@@ -1,15 +1,18 @@
-@import "sass_vars.css.scss";
+@import "sass_vars.scss";
 
 .add-pharm, .add-drug {
   display: none;
 }
+
 #add-address {
   display: none;
 }
+
 #add-pharm-address {
   margin-bottom: 10px;
 }
 
 .view-pharm {
-  padding: 0 5px;
+  margin: .75em 0 1.5em;
+  padding: 0 .5em;
 }

@@ -4,7 +4,7 @@
   %p Your favorite Pharmacies you use to fill your prescriptions.
   = link_to '<i class="fa fa-plus-square-o fa-fw"></i> Add a New Pharmacy'.html_safe, new_pharmacy_path, :class =>"btn btn-default btn-lg", title:"Add a New Pharmacy"
 
-.row
+.view-pharm
   - @pharmacies.each do |pharmacy|
     .col-xs-12.col-sm-4.col-lg-3
       %div.panel.panel-default
