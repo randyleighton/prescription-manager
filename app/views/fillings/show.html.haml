@@ -2,7 +2,7 @@
 
 .jumbotron
   %h4 Filled Prescription for
-  %h3=@drug.name
+  %h1=@drug.name
 
 .col-xs-12.col-sm-6
   %h3 Filled Prescription Details
@@ -35,6 +35,7 @@
   %p
     %b Renewal Interval: 
     = @prescription.renewal_interval
+    months
   %p
     %b Quanity Prescribed: 
     = @prescription.quantity_prescribed
