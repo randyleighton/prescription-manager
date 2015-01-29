@@ -1,54 +1,61 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<% content_for(:title, "Edit Profile") %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form-horizontal' }) do |f| %>
-<%= devise_error_messages! %>
+<div class="border-form-div">
+  <h2>Update your Profile</h2>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form-horizontal' }) do |f| %>
+    <%= devise_error_messages! %>
 
-<div class="form-group">
-    <%= f.label :name, class: 'col-sm-2 control-label'  %>
-    <div class="col-sm-6">
-        <%= f.text_field :name, autofocus: true, class: 'form-control'  %>
+    <div class="form-group">
+        <%= f.label :name, "Full Name", class: 'col-xs-12 col-sm-4 control-label'  %>
+        <div class="input-group col-xs-12 col-sm-7">
+          <span class="input-group-addon"><i class="fa fa-user fa-fw form-fa"></i></span>
+          <%= f.text_field :name, autofocus: true, class: 'form-control'  %>
+        </div>
     </div>
-</div>
 
-<div class="form-group">
-    <%= f.label :email, class: 'col-sm-2 control-label'  %>
-    <div class="col-sm-6">
-        <%= f.email_field :email, class: 'form-control'  %>
+    <div class="form-group">
+        <%= f.label :email, "Email", class: 'col-xs-12 col-sm-4 control-label'  %>
+        <div class="input-group col-xs-12 col-sm-7">
+          <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw form-fa"></i></span>
+          <%= f.email_field :email, class: 'form-control'  %>
+        </div>
     </div>
-</div>
 
-<div class="form-group">
-    <%= f.label :password, class: 'col-sm-2 control-label'  %> <i>(leave blank if you don't want to change it)</i>
-    <div class="col-sm-6">
-        <%= f.password_field :password, autocomplete: "off", class: 'form-control'  %>
+    <div class="form-group">
+        <%= f.label :password, "New Password", class: 'col-xs-12 col-sm-4 control-label'  %>
+        <div class="input-group col-xs-12 col-sm-7">
+          <span class="input-group-addon"><i class="fa fa-key fa-fw form-fa"></i></span>
+          <%= f.password_field :password, :placeholder => 'Enter new password if changing', autocomplete: "off", class: 'form-control'  %>
+        </div>
     </div>
-</div>
 
 
-<div class="form-group">
-    <%= f.label :password_confirmation, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-6">
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'  %>
+    <div class="form-group">
+        <%= f.label :password_confirmation, "Confirm Password", class: 'col-xs-12 col-sm-4 control-label' %>
+        <div class="input-group col-xs-12 col-sm-7">
+          <span class="input-group-addon"><i class="fa fa-key fa-fw form-fa"></i></span>
+          <%= f.password_field :password_confirmation, :placeholder => 'Confirm if changing password', autocomplete: "off", class: 'form-control'  %>
+        </div>
     </div>
-</div>
 
-<div class="form-group">
-    <%= f.label :current_password, class: 'col-sm-2 control-label' %> <i>(we need your current password to confirm your changes)</i>
-    <div class="col-sm-6">
-        <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
+    <div class="form-group">
+        <%= f.label :current_password, "Current Password", class: 'col-xs-12 col-sm-4 control-label' %>
+        <div class="input-group col-xs-12 col-sm-7">
+          <span class="input-group-addon"><i class="fa fa-key fa-fw form-fa"></i></span>
+          <%= f.password_field :current_password, autocomplete: "off", :placeholder => 'Enter if you make changes', class: 'form-control' %>
+        </div>
     </div>
+
+    <% if current_user.email != "test@test.com" %>
+      <div class="form-group">
+        <div class="col-xs-12 col-sm-offset-4 col-sm-12">
+          <%= button_tag(type: "submit", class: "btn btn-default float-btn btn-lg", title: "Update Profile") do %>
+            <i class="fa fa-sign-in fa-fw"></i> Update Profile
+          <% end %>
+          <%= link_to "<i class='fa fa-arrow-circle-left fa-fw'></i> Cancel".html_safe, :back, class: "btn btn-default float-btn btn-lg",title:"Cancel" %>
+        </div>
+      </div>
+    <% end %>
+
+  <% end %>
 </div>
-
-<div class="form-group">
-    <div class="col-sm-offset-2 col-sm-6">
-        <%= f.submit "Update", class: "btn btn-primary" %>
-    </div>
-</div>
-
-<% end %>
-
-<h4>Cancel my account</h4>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-default btn-xs' %></p>
-
-<%= link_to "Back", :back %>
