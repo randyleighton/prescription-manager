@@ -1,5 +1,5 @@
 describe Doctor do
 
-it { should belong_to :prescription }
+it { should has_many :prescriptions }
 
 end

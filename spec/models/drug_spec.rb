@@ -1,8 +1,8 @@
 describe Drug do
 
   it { should validate_presence_of :name }
-  it { should validate_presence_of :description}
-  it {should have_many :prescriptions}
+  it { should validate_presence_of :description }
+  it { should have_many :prescriptions }
 
   it "should sort drugs alphabetically when calling the scope" do
     drug1 = FactoryGirl.create(:drug, name:"Tizanidine")
