@@ -4,8 +4,7 @@ class CreateDoctors < ActiveRecord::Migration
       t.string :name
       t.string :practice_name
       t.string :office_phone
-      t.belongs_to :prescription, index: true
     end
-    add_foreign_key :doctors, :prescriptions
+    add_column :prescriptions, :doctor_id, :integer
   end
 end

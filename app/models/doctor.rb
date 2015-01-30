@@ -1,5 +1,5 @@
 class Doctor < ActiveRecord::Base
 
-  belongs_to :prescription
+  has_many :prescriptions
 
 end

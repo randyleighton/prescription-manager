@@ -8,11 +8,9 @@ class PrescriptionsController < ApplicationController
   end
 
   def new
-    @drugs = Drug.all.where(user_id:current_user.id).order_by
-    if !@drugs.any?
-      redirect_to drugs_path, notice: 'Create drugs to use in your prescriptions'
-    end
     @prescription = Prescription.new
+    @drug = @prescription.build_drug #build the parent drug object
+    @doctor = @prescription.build_doctor #build the parent doctor object
   end
 
   def create
@@ -38,6 +36,8 @@ class PrescriptionsController < ApplicationController
 
   def show
     @fillings = @prescription.fillings.all
+    @drugs = @prescription.drugs.all
+    @doctors = @prescription.doctors.all
   end
 
   def destroy

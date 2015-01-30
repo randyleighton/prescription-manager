@@ -17,12 +17,13 @@ Drug.destroy_all
 print "..."
 Pharmacy.destroy_all
 print "..."
-
+Doctor.destroy_all
+print "..."
 puts "Done.".green
 
 # Create New Data
 print "Seeding Database".magenta
-user = User.create(email: "randyleighton@yahoo.com", name:"Randy", password: "test1234")
+user = User.create(email: "test@test.com", name:"Tester", password: "test1234")
 print "..."
 drug1 = Drug.create(user_id: user.id, name: "Hydrocodone", description:"Narcotic Pain Relief")
 drug2 = Drug.create(user_id: user.id, name: "Gabapentin", description: "Pain Inhibitor")
