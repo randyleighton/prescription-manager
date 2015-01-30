@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150117201824) do
+ActiveRecord::Schema.define(version: 20150130005219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "doctors", force: :cascade do |t|
+    t.string  "name"
+    t.string  "practice_name"
+    t.string  "office_phone"
+    t.integer "prescription_id"
+  end
+
+  add_index "doctors", ["prescription_id"], name: "index_doctors_on_prescription_id", using: :btree
 
   create_table "drugs", force: :cascade do |t|
     t.string   "name"
@@ -75,4 +84,5 @@ ActiveRecord::Schema.define(version: 20150117201824) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "doctors", "prescriptions"
 end
