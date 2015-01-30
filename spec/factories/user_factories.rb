@@ -34,4 +34,12 @@ FactoryGirl.define do
     user_id 1
   end
 
+  factory :doctor do
+    name "Doc McStuffins"
+    practice_name "Keiser Perm"
+    office_phone "503-456-7890"
+    email "docmcstuffins@keiserperm.com"
+    user_id 1
+  end
+
 end

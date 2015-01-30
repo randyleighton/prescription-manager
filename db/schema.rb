@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150130005219) do
     t.string  "name"
     t.string  "practice_name"
     t.string  "office_phone"
+    t.string  "email"
     t.integer "user_id"
   end
 
