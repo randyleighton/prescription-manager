@@ -6,11 +6,11 @@
   - if Drug.all.count > 0
     .form-group
       .col-xs-12.col-sm-5
-        = f.label "Drug for this prescription ", :name
+        = f.label "Drug for this prescription", :name
       .col-xs-12.col-sm-5
         = f.collection_select :drug_id, Drug.all.where(user_id:current_user.id), :id, :name ,{ prompt: "Choose from your list" }, class: 'form-select'
   - else
-    - render 'drug', object: @drug, f:f
+    = render 'new_drug', object: @drug, f:f
 
   - if Doctor.all.count > 0
     .form-group
@@ -19,7 +19,7 @@
       .col-xs-12.col-sm-5
         = f.collection_select :doctor_id, Doctor.all.where(user_id:current_user.id), :id, :name ,{ prompt: "Choose from your list" }, class: 'form-select'
   - else
-    - render 'doctor', object: @doctor, f:f
+    = render 'new_doctor', object: @doctor, f:f
 
   .form-group
     .col-xs-12.col-sm-5
