@@ -17,9 +17,10 @@ ActiveRecord::Schema.define(version: 20150130005219) do
   enable_extension "plpgsql"
 
   create_table "doctors", force: :cascade do |t|
-    t.string "name"
-    t.string "practice_name"
-    t.string "office_phone"
+    t.string  "name"
+    t.string  "practice_name"
+    t.string  "office_phone"
+    t.integer "user_id"
   end
 
   create_table "drugs", force: :cascade do |t|
