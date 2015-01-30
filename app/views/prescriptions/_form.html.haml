@@ -3,11 +3,23 @@
 = simple_form_for(@prescription, html: {class: 'form-horizontal'}) do |f|
   = f.hidden_field :user_id, :value => current_user.id
 
-  .form-group
-    .col-xs-12.col-sm-5
-      = f.label "Drug for this prescription ", :name
-    .col-xs-12.col-sm-5
-      = f.collection_select :drug_id, Drug.all.where(user_id:current_user.id), :id, :name ,{ prompt: "Choose from your list" }, class: 'form-select'
+  - if Drug.all.count > 0
+    .form-group
+      .col-xs-12.col-sm-5
+        = f.label "Drug for this prescription ", :name
+      .col-xs-12.col-sm-5
+        = f.collection_select :drug_id, Drug.all.where(user_id:current_user.id), :id, :name ,{ prompt: "Choose from your list" }, class: 'form-select'
+  - else
+    - render 'drug', object: @drug, f:f
+
+  - if Doctor.all.count > 0
+    .form-group
+      .col-xs-12.col-sm-5
+        = f.label "Prescribing Doctor Name", :name
+      .col-xs-12.col-sm-5
+        = f.collection_select :doctor_id, Doctor.all.where(user_id:current_user.id), :id, :name ,{ prompt: "Choose from your list" }, class: 'form-select'
+  - else
+    - render 'doctor', object: @doctor, f:f
 
   .form-group
     .col-xs-12.col-sm-5

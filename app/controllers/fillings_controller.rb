@@ -10,7 +10,7 @@ class FillingsController < ApplicationController
 
   def new
     @filling = @prescription.fillings.new
-    @filling.build_pharmacy
+    @filling.build_pharmacy #build the parent pharmacy object
   end
 
   def create

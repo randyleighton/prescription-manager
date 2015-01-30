@@ -20,7 +20,8 @@ describe Prescription do
     it "should sort prescriptions by drug name order" do
       expect(Prescription.all.order_by). to eq [prescription2, prescription1]
     end
-
   end
+
+
 
 end
