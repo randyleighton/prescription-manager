@@ -3,6 +3,7 @@ describe Prescription do
   it { should belong_to :user }
   it { should belong_to :drug }
   it { should have_many :fillings }
+  it { should have_many :doctors}
 
   it { should validate_presence_of :drug_uom }
   it { should validate_presence_of :renewal_interval }

@@ -4,6 +4,7 @@ class Prescription < ActiveRecord::Base
   validates :renewal_interval, presence: true
 
   has_many :fillings, dependent: :destroy
+  has_many :doctors
   belongs_to :drug
   belongs_to :user
 
