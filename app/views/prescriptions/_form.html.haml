@@ -1,7 +1,6 @@
 =render('layouts/errors', :object => @prescription)
 
 = simple_form_for(@prescription, html: {class: 'form-horizontal'}) do |f|
-  = f.hidden_field :user_id, :value => current_user.id
 
   - if Drug.all.count > 0
     .form-group
@@ -46,3 +45,5 @@
         %i.fa.fa-check-circle.fa-fw
         = f.object.new_record? ? "Create Prescription" : "Update Prescription"
       = link_to '<i class="fa fa-chevron-left"></i> Cancel'.html_safe, :back, class: "btn btn-default btn-float", title:"Cancel"
+      
+  = f.hidden_field :user_id, :value => current_user.id

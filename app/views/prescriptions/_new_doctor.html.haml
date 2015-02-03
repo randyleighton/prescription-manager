@@ -1,6 +1,11 @@
 = f.fields_for object do |doctor|
-  = doctor.hidden_field :user_id, value: current_user.id 
-  = doctor.text_field :name, placeholder: 'Doctor Name',class: "form-control"
-  = doctor.text_field :practice_name, placeholder: 'Practice Name', class: "form-control"
-  = doctor.email_field :email, placeholder: "Doctor Email", class: "form-control"
-  = doctor.phone_field :office_phone, placeholder: 'Office Phone Number', class: "form-control"
+  = doctor.hidden_field :user_id, value: current_user.id
+
+  .form-group
+    .col-xs-12.col-sm-5
+      = doctor.label "Enter Doctor Information"
+    .col-xs-12.col-sm-7
+      = doctor.text_field :name, placeholder: 'Doctor Name',class: "form-control"
+      = doctor.text_field :practice_name, placeholder: 'Practice Name', class: "form-control"
+      = doctor.email_field :email, placeholder: "Doctor Email", class: "form-control"
+      = doctor.phone_field :office_phone, placeholder: 'Office Phone Number', class: "form-control"

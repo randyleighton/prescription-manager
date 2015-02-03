@@ -15,6 +15,7 @@ class PrescriptionsController < ApplicationController
 
   def create
     @prescription = Prescription.new(prescription_params)
+    b
     if @prescription.save
       flash[:notice] = "Prescription created successfully."
       redirect_to prescriptions_path
@@ -49,9 +50,10 @@ class PrescriptionsController < ApplicationController
 private
 
   def prescription_params
-    params.require(:prescription).permit(:doctor_id, :drug_id, :drug_uom, :renewal_interval, :quantity_prescribed,:user_id,
-                                          drug_attributes: [:name, :description, :user_id],
-                                          doctor_attributes: [:name, :practice_name, :office_phone, :email, :user_id])
+    params.require(:prescription).permit(:doctor_id, :drug_id, :drug_uom, :renewal_interval,
+                                         :quantity_prescribed,:user_id,
+                                         drug_attributes: [:name, :description, :user_id],
+                                         doctor_attributes: [:name, :practice_name, :office_phone, :email, :user_id])
   end
   
   def find_prescription
