@@ -49,8 +49,9 @@ class FillingsController < ApplicationController
 private
 
   def filling_params
-    params.require(:filling).permit(:prescription_id, :date_filled, :medicare_paid, :price_paid, 
-                   :user_id, :pharmacy_id, pharmacy_attributes:[:name, :url, :phone, :user_id])
+    params.require(:filling).permit(:prescription_id, :date_filled, :medicare_paid, 
+                                    :price_paid, :user_id, :pharmacy_id,
+                                    pharmacy_attributes:[:name, :url, :phone, :user_id])
   end
 
   def find_prescription
