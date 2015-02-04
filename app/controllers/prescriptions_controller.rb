@@ -9,14 +9,13 @@ class PrescriptionsController < ApplicationController
 
   def new
     @prescription = Prescription.new
-    @drug = @prescription.build_drug #build the parent drug object
-    @doctor = @prescription.build_doctor #build the parent doctor object
+    @prescription.build_drug #build the parent drug object
+    @prescription.build_doctor #build the parent doctor object
   end
 
   def create
+    binding.pry
     @prescription = Prescription.create(prescription_params)
-    @drug = @drug.create(prescription_params)
-    @doctor = @doctor.create(prescription_params)
     if @prescription.valid?
       flash[:notice] = "Prescription created successfully."
       redirect_to prescriptions_path
