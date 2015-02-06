@@ -14,7 +14,6 @@ class PrescriptionsController < ApplicationController
   end
 
   def create
-    binding.pry
     @prescription = Prescription.create(prescription_params)
     if @prescription.valid?
       flash[:notice] = "Prescription created successfully."
