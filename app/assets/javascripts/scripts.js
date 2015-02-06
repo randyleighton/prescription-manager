@@ -10,7 +10,6 @@ $(document).ready(function () {
     $('#choose-drug').hide();
     $('#create-new-drug').toggle();
     $('.add-new-drug').toggle();
-    $('#iconChange').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
   }); 
 
   $('#create-new-doc').click(function(){
@@ -18,7 +17,6 @@ $(document).ready(function () {
     $('#choose-doc').hide();
     $('#create-new-doc').toggle();
     $('.add-new-doc').toggle();
-    $('#iconChange').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
   }); 
 
   $('#add-pharm-address').click(function(){

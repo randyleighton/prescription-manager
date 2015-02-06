@@ -8,7 +8,7 @@
     .col-xs-12.col-sm-6
       = f.collection_select :drug_id, Drug.all.where(user_id:current_user.id), :id, :name ,{ prompt: "Choose from your list" }, class: 'form-control'
       #choose-drug or
-      = button_tag("<i id='iconChange'class='fa fa-chevron-down'> Add a New Drug</i>".html_safe, id:"create-new-drug",type:'button',class: "btn btn-default btn-nofloat btn-create", title:'Add a new Drug if it is not in the list')
+      = button_tag("<i id='iconChange'class='fa fa-plus'> Add a New Drug</i>".html_safe, id:"create-new-drug",type:'button',class: "btn btn-default btn-nofloat btn-create", title:'Add a new Drug if it is not in the list')
       %div.add-new-drug
         = render 'new_drug', object: :drug, f: f
       %hr
@@ -21,12 +21,15 @@
     .col-xs-12.col-sm-6
       = f.collection_select :doctor_id, Doctor.all.where(user_id:current_user.id), :id, :name ,{ prompt: "Choose from your list" }, class: 'form-control'
       #choose-doc or
-      = button_tag("<i id='iconChange'class='fa fa-chevron-down'> Add a New Doctor</i>".html_safe, id:"create-new-doc",type:'button',class: "btn btn-default btn-nofloat btn-create", title:'Add a new Doctor if they are not in the list')
+      = button_tag("<i id='iconChange'class='fa fa-plus'> Add a New Doctor</i>".html_safe, id:"create-new-doc",type:'button',class: "btn btn-default btn-nofloat btn-create", title:'Add a new Doctor if they are not in the list')
       %div.add-new-doc
         = render 'new_doctor', object: :doctor, f: f
       %hr
   - else
-    = render 'new_doctor', object: :doctor, f:f
+    .col-xs-12.col-sm-5
+      = f.label "Enter Doctor Information"
+    .col-xs-12.col-sm-6
+      = render 'new_doctor', object: :doctor, f:f
 
   .form-group
     .col-xs-12.col-sm-5
