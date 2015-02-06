@@ -34,20 +34,19 @@
   .form-group
     .col-xs-12.col-sm-5
       = f.label "Dosage (10mg, 10-325mg, etc)", :drug_uom
-    .col-xs-12.col-sm-5
+    .col-xs-12.col-sm-6
       = f.text_field :drug_uom, class: "form-control"
 
   .form-group
     .col-xs-12.col-sm-5
       = f.label "How long is prescription", :renewal_interval
-    .col-xs-5
-      = f.select :renewal_interval, options_for_select(1..4), { prompt: "Quantity of" }, class: "form-control"
-      %b months
+    .col-xs-12.col-sm-6
+      = f.select :renewal_interval, options_for_select(1..4), { prompt: "Quantity of Months" }, class: "form-control"
 
   .form-group
     .col-xs-12.col-sm-5
-      =f.label "Quantity Prescibed", :quantity_prescribed
-    .col-xs-4
+      =f.label "Quantity of Drug Prescribed", :quantity_prescribed
+    .col-xs-12.col-sm-6
       = f.text_field :quantity_prescribed, class: "form-control"
 
   .form-group  
