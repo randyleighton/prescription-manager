@@ -6,8 +6,11 @@ $(document).ready(function () {
   }, 5000);
 
 
-  $('#create-drug').click(function(){
-    $('.add-drug').toggle();
+  $('#create-new-drug').click(function(){
+    $('#prescription_drug_id').toggle();
+    $('#choose-or').toggle();
+    $('#create-new-drug').toggle();
+    $('.add-new-drug').toggle();
     $('#iconChange').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
   }); 
 
