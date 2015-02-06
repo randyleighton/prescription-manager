@@ -7,7 +7,7 @@ $(document).ready(function () {
 
   $('#create-new-drug').click(function(){
     $('#prescription_drug_id').toggle();
-    $('#choose-or').toggle();
+    $('.choose-or').hide();
     $('#create-new-drug').toggle();
     $('.add-new-drug').toggle();
     $('#iconChange').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
@@ -15,7 +15,7 @@ $(document).ready(function () {
 
   $('#create-new-doc').click(function(){
     $('#prescription_doctor_id').toggle();
-    $('#choose-or').toggle();
+    $('.choose-or').hide();
     $('#create-new-doc').toggle();
     $('.add-new-doc').toggle();
     $('#iconChange').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
