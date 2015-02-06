@@ -1,4 +1,5 @@
 = f.fields_for object do |drug|
-  = drug.hidden_field :user_id, value: current_user.id 
-  = drug.text_field :name, placeholder: 'Drug Name',class: "form-control"
-  = drug.text_field :description, placeholder: 'Describe this drug',class: "form-control"
+  .form-group
+    = drug.hidden_field :user_id, value: current_user.id 
+    = drug.text_field :name, placeholder: 'Drug Name',class: "form-control"
+    = drug.text_field :description, placeholder: 'Describe this drug',class: "form-control"

@@ -1,6 +1,5 @@
 = f.fields_for object do |doctor|
   = doctor.hidden_field :user_id, value: current_user.id
-
   .form-group
     = doctor.text_field :name, placeholder: 'Doctor Name',class: "form-control"
     = doctor.text_field :practice_name, placeholder: 'Practice Name', class: "form-control"
