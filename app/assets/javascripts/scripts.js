@@ -5,11 +5,16 @@ $(document).ready(function () {
     $('#flash_notice').remove();
   }, 5000);
 
+  $('#prescription_drug_id').change(function() {
+    value = $(this).val()
+    alert(value)
+  });
+
   $('#create-new-drug').click(function(){
     $('#prescription_drug_id').toggle();
     $('#choose-drug').hide();
     $('#create-new-drug').toggle();
-    $('.add-new-drug').append("<%= escape_javascript(render 'new_drug', object: :drug, f: f) %>");
+    $('.add-new-drug').toggle();
   }); 
 
   $('#create-new-doc').click(function(){
