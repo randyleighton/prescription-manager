@@ -6,8 +6,21 @@ $(document).ready(function () {
   }, 5000);
 
   $('#prescription_drug_id').change(function() {
-    value = $(this).val()
-    alert(value)
+    value = $('#prescription_drug_id option:selected').text()
+    if (value !== "Choose from your list") {
+      $(".add-new-drug").remove();
+      $('#choose-drug').hide();
+      $('#create-new-drug').toggle();
+    }
+  });
+
+  $('#prescription_doctor_id').change(function() {
+    value = $('#prescription_doctor_id option:selected').text()
+    if (value !== "Choose from your list") {
+      $('.add-new-doc').remove();
+      $('#choose-doc').hide();
+      $('#create-new-doc').toggle();
+    }
   });
 
   $('#create-new-drug').click(function(){

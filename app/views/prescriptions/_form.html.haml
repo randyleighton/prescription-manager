@@ -10,7 +10,7 @@
       #choose-drug or
       = button_tag("<i id='iconChange'class='fa fa-plus'> Add a New Drug</i>".html_safe, id:"create-new-drug",type:'button',class: "btn btn-default btn-nofloat btn-create", title:'Add a new Drug if it is not in the list')
       %div.add-new-drug
-        
+        = render 'new_drug', object: :drug, f: f
       %hr
   - else
     = render 'new_drug', object: :drug, f:f
