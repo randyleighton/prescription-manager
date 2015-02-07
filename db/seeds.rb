@@ -40,7 +40,7 @@ filling1 = Filling.create(user_id: user.id, prescription_id: prescription1.id, p
 print "..."
 filling2 = Filling.create(user_id: user.id, prescription_id: prescription2.id, pharmacy_id: pharmacy2.id, date_filled: DateTime.now, medicare_paid: 15, price_paid: 15)
 print "..."
-# doctor1 = Doctor.create(user_id: user.id, name: "Doc McStuffins", practice_name: "Keiser Perm", office_phone: "503-123-4567", email: "docmcstuffins@keiserperm.com")
+doctor1 = Doctor.create(user_id: user.id, name: "Doc McStuffins", practice_name: "Keiser Perm", office_phone: "503-123-4567", email: "docmcstuffins@keiserperm.com")
 print "..."
 puts "Done.".green
 puts "Created " + "#{User.count}".green + " Users,".black +
