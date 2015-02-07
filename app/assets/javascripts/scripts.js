@@ -9,7 +9,7 @@ $(document).ready(function () {
     $('#prescription_drug_id').toggle();
     $('#choose-drug').hide();
     $('#create-new-drug').toggle();
-    $('.add-new-drug').toggle();
+    $('.add-new-drug').append("<%= escape_javascript(render 'new_drug', object: :drug, f: f) %>");
   }); 
 
   $('#create-new-doc').click(function(){
