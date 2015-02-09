@@ -33,6 +33,9 @@
       %b Drug Unit of Measure: 
       = @prescription.drug_uom
     %p
+      %b Prescribing Doctor
+      = @prescription.doctor.name
+    %p
       %b Renewal Interval: 
       = @prescription.renewal_interval
       months
