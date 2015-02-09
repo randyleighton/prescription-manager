@@ -28,9 +28,11 @@ print "..."
 drug1 = Drug.create(user_id: user.id, name: "Hydrocodone", description:"Narcotic Pain Relief")
 drug2 = Drug.create(user_id: user.id, name: "Gabapentin", description: "Pain Inhibitor")
 print "..."
-prescription1 = Prescription.create(user_id: user.id, drug_id: drug1.id, drug_uom: "10-325mg", renewal_interval: 1, quantity_prescribed: 100)
+doctor1 = Doctor.create(user_id: user.id, name: "Doc McStuffins", practice_name: "Keiser Perm", office_phone: "503-123-4567", email: "docmcstuffins@keiserperm.com")
 print "..."
-prescription2 = Prescription.create(user_id: user.id, drug_id: drug2.id, drug_uom: "600mg", renewal_interval: 3, quantity_prescribed: 90)
+prescription1 = Prescription.create(user_id: user.id, drug_id: drug1.id, drug_uom: "10-325mg", renewal_interval: 1, quantity_prescribed: 100, doctor_id: doctor1.id)
+print "..."
+prescription2 = Prescription.create(user_id: user.id, drug_id: drug2.id, drug_uom: "600mg", renewal_interval: 3, quantity_prescribed: 90, doctor_id: doctor1.id)
 print "..."
 pharmacy1 = Pharmacy.create(user_id: user.id, name: "Walgreens", phone: "503-123-4567", url:"http://www.walgreens.com", street: "123 Portland Road", city: "Salem", state:"OR", zip: "97302") 
 print "..."
@@ -39,8 +41,6 @@ print "..."
 filling1 = Filling.create(user_id: user.id, prescription_id: prescription1.id, pharmacy_id: pharmacy1.id, date_filled: DateTime.now, medicare_paid: 50, price_paid: 15)
 print "..."
 filling2 = Filling.create(user_id: user.id, prescription_id: prescription2.id, pharmacy_id: pharmacy2.id, date_filled: DateTime.now, medicare_paid: 15, price_paid: 15)
-print "..."
-doctor1 = Doctor.create(user_id: user.id, name: "Doc McStuffins", practice_name: "Keiser Perm", office_phone: "503-123-4567", email: "docmcstuffins@keiserperm.com")
 print "..."
 puts "Done.".green
 puts "Created " + "#{User.count}".green + " Users,".black +

@@ -14,12 +14,14 @@
         %th Drug
         %th Dosage (10mg, 10-325mg, etc)
         %th Quantity Prescribed
+        %th Prescribing Doctor
         %th Renewal
     %tbody
       %tr
         %td= @prescription.drug.name
         %td= @prescription.drug_uom
         %td= @prescription.quantity_prescribed
+        %td= @prescription.doctor.name
         %td= @prescription.renewal_interval.to_s.html_safe + " month(s)"
   .row
     = link_to '<i class="fa fa-edit fa-fw"></i> Update this Prescription'.html_safe, edit_prescription_path(@prescription), class: "btn btn-default btn-nofloat", title:"Update this Prescription"
