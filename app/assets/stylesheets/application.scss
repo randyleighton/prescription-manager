@@ -255,7 +255,9 @@ th {
   width: 100%;
   background-color: $st_tropaz;
   padding: 20px 0 0 0;
-  height: 100px;
+  a {
+    color: $golden_tainoi;
+  }
 }
 
 
