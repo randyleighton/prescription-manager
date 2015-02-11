@@ -1,6 +1,4 @@
 .collapse.navbar-collapse
-  %ul.nav.navbar-nav
-    %li= link_to "Contact", "#"
   %ul.nav.navbar-nav.navbar-right
     - if user_signed_in?
       %li= link_to "Prescriptions", prescriptions_path
