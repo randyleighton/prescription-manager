@@ -11,24 +11,32 @@
     .welcome-sections
       %h1 Prescriptions
       = link_to image_tag("prescription.jpg", :id=>'prescrip-main' ,:class=>"img-box"), prescriptions_path, title:"Manage Prescriptions"
-      %p Add and view prescriptions & record when they are filled at the pharmacy.
+      %p Add and view prescriptions & record when they are filled at the pharmacy. Now you can create a new doctor and drug as you create a new prescription.
 
   .col-xs-12.col-sm-6
     .welcome-sections
       %h1 Drug Library
       = link_to image_tag("drug.jpg", :id=>'drug-main', :class=>"img-box"), drugs_path, title:"Manage Drugs"
-      %p Add and view all drugs in your library. These will be added to your prescriptions.
+      %p Add and view all drugs in your library. These will be added to your prescriptions. You do not need to create these first to create prescriptions.
 
 %div.welcome-rows
   .col-xs-12.col-sm-6
     .welcome-sections
       %h1 Pharmacies
       = link_to image_tag("pharmacy.jpg", :id=>'pharmacy-main', :class=>"img-box"), pharmacies_path, title:"Manage your Pharmacies"
-      %p Manage your pharmacies. These are used when you fill a prescription.
+      %p Manage your pharmacies. These are used when you fill a prescription.  You do not need to create these first to fill a prescriptions.
+  .col-xs-12.col-sm-6
+    .welcome-sections
+      %h1 Doctor List
+      = image_tag("doctor.jpg", :class=>"img-box")
+      %p Manage your doctors. Add new doctors or update them. Used in your prescriptions. You do not need to create these first to create prescriptions.
+
+%div.welcome-rows
   .col-xs-12.col-sm-6
     .welcome-sections
       %h1 Manage Costs
       = image_tag("cost.jpg", :class=>"img-box")
       %p Look at your totals for the donut hole and how much you have spent on prescriptions year to date.
+
 
 = render 'layouts/nav_footer'
