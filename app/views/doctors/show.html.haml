@@ -13,13 +13,13 @@
     %b Office email:
     = @doctor.email
   %row
-    = link_to '<i class="fa fa-edit fa-fw"></i> Update Pharmacy Details'.html_safe, edit_pharmacy_path(@pharmacy), class: "btn btn-default btn-nofloat",title:"Update Pharmacy Details"
-    = link_to '<i class="fa fa-trash fa-fw"></i> Delete this pharmacy'.html_safe, pharmacy_path(@pharmacy), class: "btn btn-default btn-nofloat", :data => {:confirm => "WARNING, this will delete all prescriptions you have filled here! Are you sure?", :method => "delete"}, title:"Delete this Pharmacy, WARNING"
+    = link_to '<i class="fa fa-edit fa-fw"></i> Update Doctor Details'.html_safe, edit_doctor_path(@doctor), class: "btn btn-default btn-nofloat",title:"Update Doctor Details"
+    = link_to '<i class="fa fa-trash fa-fw"></i> Delete this doctor'.html_safe, doctor_path(@doctor), class: "btn btn-default btn-nofloat", :data => {:confirm => "WARNING, this will delete all prescriptions you have filled here! Are you sure?", :method => "delete"}, title:"Delete this Doctor, WARNING"
 
 %div.view-fill
-  %h2 Prescriptions Filled at this Pharmacy
-  - @pharmacy.fillings.each do |filling|
-    - prescription = Prescription.find(filling.prescription_id)
+  %h2 Prescriptions by this Doctor
+  binding.pry
+  - @doctor.prescriptions.each do |prescription|
     .col-xs-6.col-sm-4.col-md-3
       .panel.panel-default
         .panel-heading.pan-head
@@ -27,5 +27,6 @@
             =image_tag('prescription-icon.png', class:"presc-image")
             = prescription.drug.name
         .panel-body.pan-bod
-          %p= link_to "<i class='fa fa-book fa-fw'></i> Filled on #{filling.date_filled.strftime('%m/%d/%Y')}".html_safe, prescription_filling_path(prescription,filling), title: "View this Prescription Filling for #{prescription.drug.name}"
+          - drug = Drug.find(prescription.drug_id)
+          %p= link_to "<i class='fa fa-book fa-fw'></i>Prescription for: #{drug.name}".html_safe, prescription_path(prescription), title: "View this Prescription Filled by #{@doctor.name}"
 
