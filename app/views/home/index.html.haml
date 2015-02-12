@@ -28,7 +28,7 @@
   .col-xs-12.col-sm-6
     .welcome-sections
       %h1 Doctor List
-      = image_tag("doctor.jpg", :class=>"img-box")
+      = link_to image_tag("doctor.jpg", id:'doctor-main', :class=>"img-box"), doctors_path, title:"Manage your Doctors"
       %p Manage your doctors. Add new doctors or update them. Used in your prescriptions. You do not need to create these first to create prescriptions.
 
 %div.welcome-rows
