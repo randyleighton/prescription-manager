@@ -1,4 +1,4 @@
-=render('layouts/errors', :object => @pharmacy)
+=render('layouts/errors', :object => @doctor)
 
 = simple_form_for(@doctor, html: {class: 'form-horizontal'}) do |f|
   = f.hidden_field :user_id, value: current_user.id

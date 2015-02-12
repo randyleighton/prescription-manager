@@ -12,7 +12,7 @@ class DoctorsController < ApplicationController
 
   def create
     @doctor = Doctor.new(doctor_params)
-    if @doctor.valid?
+    if @doctor.save
       redirect_to doctors_path, notice: "#{@doctor.name} Created Successfully"
     else
       render 'new', notice: "Failed to create"
@@ -29,7 +29,7 @@ class DoctorsController < ApplicationController
 
   def update
     if @doctor.update(doctor_params)
-      redirect_to doctor_path(doctor), notice: "#{@doctor.name} Updated Successfully"
+      redirect_to doctor_path(@doctor), notice: "#{@doctor.name} Updated Successfully"
     else
       render 'edit', notice: "Failed to Update"
     end
@@ -37,6 +37,8 @@ class DoctorsController < ApplicationController
 
   def destroy
     flash[:notice]= "Removed Successfully"
+    @doctor.destroy
+    redirect_to doctors_path
   end
 
 private
