@@ -1,0 +1,34 @@
+=render('layouts/errors', :object => @pharmacy)
+
+= simple_form_for(@doctor, html: {class: 'form-horizontal'}) do |f|
+  = f.hidden_field :user_id, value: current_user.id
+  .form-group
+    .col-xs-12.col-sm-5
+      = f.label "Doctor Name ", :name, class: "form-label"
+    .col-xs-12.col-sm-5
+      = f.text_field :name, class: "form-control"
+
+  .form-group
+    .col-xs-12.col-sm-5
+      = f.label "Practice Name", :practice_name, class: "form-label"
+    .col-xs-12.col-sm-5
+      = f.text_field :practice_name, class: "form-control"
+
+  .form-group
+    .col-xs-12.col-sm-5
+      = f.label "Office Phone Number", :office_phone, class: "form-label"
+    .col-xs-12.col-sm-5
+      = f.phone_field :office_phone, class: "form-control"
+
+  .form-group
+    .col-xs-12.col-sm-5
+      = f.label "Doctors Office email", :email, class: "form-label"
+    .col-xs-12.col-sm-5
+      = f.phone_field :email, class: "form-control"
+
+  .form-group  
+    .col-sm-offset-3.col-sm-9
+      = button_tag(type: 'submit', class: "btn btn-default btn-float", title: f.object.new_record? ? "Create Doctor" : "Update Doctor") do 
+        %i.fa.fa-check-circle.fa-fw
+        = f.object.new_record? ? "Create Doctor" : "Update Doctor"
+      = link_to '<i class="fa fa-chevron-left"></i> Cancel'.html_safe, :back, class: "btn btn-default btn-float", title:"Cancel"
