@@ -28,6 +28,8 @@ $(document).ready(function () {
     $('#choose-drug').hide();
     $('#create-new-drug').toggle();
     $('.add-new-drug').toggle();
+    $("#prescription_drug_attributes_name").val("");
+    $("#prescription_drug_attributes_description").val("");
   }); 
 
   $('#create-new-doc').click(function(){
