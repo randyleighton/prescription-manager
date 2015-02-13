@@ -35,6 +35,10 @@ $(document).ready(function () {
     $('#choose-doc').hide();
     $('#create-new-doc').toggle();
     $('.add-new-doc').toggle();
+    $("#prescription_doctor_attributes_name").val("");
+    $("#prescription_doctor_attributes_practice_name").val("");
+    $("#prescription_doctor_attributes_email").val("");
+    $("#prescription_doctor_attributes_office_phone").val("");
   }); 
 
   $('#add-pharm-address').click(function(){
