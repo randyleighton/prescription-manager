@@ -14,7 +14,7 @@
     = @doctor.email
   %row
     = link_to '<i class="fa fa-edit fa-fw"></i> Update Doctor Details'.html_safe, edit_doctor_path(@doctor), class: "btn btn-default btn-nofloat",title:"Update Doctor Details"
-    = link_to '<i class="fa fa-trash fa-fw"></i> Delete this doctor'.html_safe, doctor_path(@doctor), class: "btn btn-default btn-nofloat", :data => {:confirm => "WARNING, this will delete all prescriptions you have filled here! Are you sure?", :method => "delete"}, title:"Delete this Doctor, WARNING"
+    = link_to '<i class="fa fa-trash fa-fw"></i> Delete this doctor'.html_safe, doctor_path(@doctor), class: "btn btn-default btn-nofloat", :data => {:confirm => "WARNING, this will delete all prescriptions this doctor has written! Are you sure?", :method => "delete"}, title:"Delete this Doctor, WARNING"
 
 %div.view-fill
   %h2 Prescriptions by this Doctor

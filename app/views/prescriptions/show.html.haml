@@ -25,7 +25,7 @@
         %td= @prescription.renewal_interval.to_s.html_safe + " month(s)"
   .row
     = link_to '<i class="fa fa-edit fa-fw"></i> Update this Prescription'.html_safe, edit_prescription_path(@prescription), class: "btn btn-default btn-nofloat", title:"Update this Prescription"
-    = link_to '<i class="fa fa-trash fa-fw"></i> Delete this Prescription'.html_safe,prescription_path(@prescription), :data => {:confirm => "WARNING! This deletes all the pharmacy filling records!!", :method => "delete"}, class: "btn btn-default btn-nofloat", title:"Delete this Prescription" 
+    = link_to '<i class="fa fa-trash fa-fw"></i> Delete this Prescription'.html_safe,prescription_path(@prescription), :data => {:confirm => "WARNING! This deletes this prescription and ALL the pharmacy filling records!!", :method => "delete"}, class: "btn btn-default btn-nofloat", title:"Delete this Prescription" 
 
 %div.view-fill
   %h2 Pharmacy Fillings

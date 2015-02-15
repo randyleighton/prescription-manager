@@ -16,4 +16,4 @@
 
   %row
     = link_to '<i class="fa fa-edit fa-fw"></i> Edit this Drug'.html_safe, edit_drug_path(@drug), class: "btn btn-default btn-nofloat", title: "Edit this Drug"
-    = link_to '<i class="fa fa-trash fa-fw"></i> Delete this Drug'.html_safe, drug_path(@drug), class: "btn btn-default btn-nofloat", :data => {:confirm => "NEVER delete drugs that there are prescriptions for, are you sure?", :method => "delete"}, title: "Delete this Drug, WARNING"
+    = link_to '<i class="fa fa-trash fa-fw"></i> Delete this Drug'.html_safe, drug_path(@drug), class: "btn btn-default btn-nofloat", :data => {:confirm => "NEVER delete drugs that there are prescriptions for, are you sure you want to delete this drug and ALL its prescriptions", :method => "delete"}, title: "Delete this Drug, WARNING"
